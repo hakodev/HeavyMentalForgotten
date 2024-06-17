@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
-    private SpriteRenderer spriteRenderer;
     [SerializeField] private float moveSpeed;
     private float horizontalAxis;
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update() {
