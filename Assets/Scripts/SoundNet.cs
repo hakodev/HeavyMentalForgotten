@@ -22,17 +22,18 @@ public class SoundNet : MonoBehaviour
     [Header("Hover Color Stats, Not Connected")]
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
-    [SerializeField] private float colorTransitionSpeed;
     private bool isHovering;
     private float hoverTime;
-    private float t;
     
     [Header("Sound Orb Connected Stats")]
     [SerializeField] private Color connectedStartColor;
     [SerializeField] private Color connectedEndColor;
     [SerializeField] private AudioClip connectedAudioClip;
     [SerializeField] private float ConnectedColorTransitionSpeed;
-
+    [SerializeField] private float ConnectedVibrationIntensity; //Keep it low, its very sensitive
+    [SerializeField] private float vibrationSpeed;
+    [SerializeField] private List<Vector3> lineRendererPositions = new List<Vector3>(); // WIP for line renderer removal
+    
     private GameObject[] connectedOrbs;
     private bool followMouse;
     [SerializeField] private LineRenderer lineRenderer;
@@ -60,8 +61,23 @@ public class SoundNet : MonoBehaviour
 
     private void Update()
     {
-        Connected();
-
+        if (followMouse)
+        {
+            time = 0f;
+        }
+        
+        //Saving all the positions of line renderer to a list
+        lineRendererPositions.Clear();
+        for (int i = 0; i < lineRenderer.positionCount; i++)
+        {
+            lineRendererPositions.Add(lineRenderer.GetPosition(i));
+        }
+        
+        if (this.gameObject.CompareTag("SoundOrbConnected"))
+        {
+            Connected();
+        }
+        
         if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering)
         {
             StartCoroutine(Notconnected());
@@ -89,7 +105,7 @@ public class SoundNet : MonoBehaviour
             
             foreach (GameObject orb in connectedOrbs)
             {
-                StartCoroutine(Fadeinout(orb));
+                StartCoroutine(Fadeinout(orb, connectedStartColor, connectedEndColor));
                 
                 if (audioSource != null)
                 {
@@ -112,7 +128,7 @@ public class SoundNet : MonoBehaviour
         {
             if (!followMouse)
             {
-                //Fade Effect
+                //Fade Effect - Just fading out
                 float alpha = Mathf.Lerp(1, 0, time / duration);
                 Color newColor = spriteRenderer.color;
                 newColor.a = alpha;
@@ -139,8 +155,8 @@ public class SoundNet : MonoBehaviour
             time += Time.deltaTime / 60f;
             yield return null;
         }
-
-        if (!followMouse)
+        
+        if (time >= duration)
         {
             gameObject.SetActive(false);
         }
@@ -153,7 +169,7 @@ public class SoundNet : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
         }
         
-        StartCoroutine(Fadeinout(this.gameObject));
+        StartCoroutine(Fadeinout(this.gameObject, startColor, endColor));
         
         while (true)
         {
@@ -172,31 +188,35 @@ public class SoundNet : MonoBehaviour
         
         for (int i = 0; i < connectedOrbs.Length; i++)
         {
+            Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 
+                UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
+            
+            connectedOrbs[i].transform.position += vibration;
             lineRenderer.SetPosition(i, connectedOrbs[i].transform.position);
         }
     }
     
-    private IEnumerator Fadeinout(GameObject orb)
+    private IEnumerator Fadeinout(GameObject orb, Color firstColor, Color lastColor)
     {
-        float t = 0;
+        float curveEvaulate = 0;
         SpriteRenderer orbRenderer = orb.GetComponent<SpriteRenderer>();
 
         while (true)
         {
-            float curveValue = fadeCurve.Evaluate(t);
-            Color newColor = Color.Lerp(connectedStartColor, connectedEndColor, curveValue);
+            float curveValue = fadeCurve.Evaluate(curveEvaulate);
+            Color newColor = Color.Lerp(firstColor, lastColor, curveValue);
             orbRenderer.color = newColor;
 
             if(!isHovering)
             {
-                orbRenderer.color = connectedStartColor;
+                orbRenderer.color = firstColor;
                 break;
             }
 
-            t += Time.deltaTime / ConnectedColorTransitionSpeed;
-            if (t > 1)
+            curveEvaulate += Time.deltaTime / ConnectedColorTransitionSpeed;
+            if (curveEvaulate > 1)
             {
-                t = 0; // Reset t to 0 when it reaches 1
+                curveEvaulate = 0;
             }
 
             yield return null;

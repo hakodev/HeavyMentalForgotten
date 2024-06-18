@@ -292,4 +292,6 @@ MonoBehaviour:
   connectedEndColor: {r: 1, g: 0, b: 0.6119466, a: 1}
   connectedAudioClip: {fileID: 8300000, guid: 62ab57796a7302345b7593a61f1c83b2, type: 3}
   ConnectedColorTransitionSpeed: 5
+  ConnectedVibrationIntensity: 0.002
+  vibrationSpeed: 200
   lineRenderer: {fileID: 0}
