@@ -10,14 +10,18 @@ public class CameraFollow : MonoBehaviour {
     //[SerializeField] private float cameraDeadzoneTop;
     //[SerializeField] private float cameraDeadzoneBottom;
 
-    private void LateUpdate() {
+    [SerializeField] private float followSpeed;
+    private Vector3 currentVelocity = Vector3.zero;
+
+    private void FixedUpdate() {
         FollowPlayer();
     }
 
     private void FollowPlayer() {
-        float playerPositionX = Mathf.Clamp(playerTransform.position.x, cameraDeadzoneLeft, cameraDeadzoneRight);
-        //float playerPositionY = Mathf.Clamp(playerTransform.position.y, cameraDeadzoneBottom, cameraDeadzoneTop);
+        float clampedPositionX = Mathf.Clamp(playerTransform.position.x, cameraDeadzoneLeft, cameraDeadzoneRight);
+        //float clampedPositionY = Mathf.Clamp(playerTransform.position.y, cameraDeadzoneBottom, cameraDeadzoneTop);
 
-        this.transform.position = new Vector3(playerPositionX, this.transform.position.y, this.transform.position.z);
+        Vector3 targetPosition = new(clampedPositionX, this.transform.position.y, this.transform.position.z);
+        this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, followSpeed);
     }
 }
