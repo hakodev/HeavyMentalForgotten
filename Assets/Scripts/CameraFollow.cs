@@ -11,7 +11,6 @@ public class CameraFollow : MonoBehaviour {
     //[SerializeField] private float cameraDeadzoneBottom;
 
     [SerializeField] private float followSpeed;
-    private Vector3 currentVelocity = Vector3.zero;
 
     private void FixedUpdate() {
         FollowPlayer();
