@@ -35,37 +35,36 @@ public class SoundNet : MonoBehaviour
 
     private GameObject[] connectedOrbs;
     private bool followMouse;
-    private LineRenderer lineRenderer;
+    [SerializeField] private LineRenderer lineRenderer;
     
     // The code is still roughly written and needs to be properly formed once approved
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
-        lineRenderer.positionCount = 3;
-        targetPosition = this.gameObject.transform.position; // Initialize target position
+        targetPosition = this.gameObject.transform.position;
     }
 
     private void Start()
     {
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
+        
+        lineRenderer.positionCount = connectedOrbs.Length; 
+        lineRenderer.SetPosition(0, transform.position);
+
         for (int i = 0; i < connectedOrbs.Length; i++)
         {
-            lineRenderer.SetPosition(i, connectedOrbs[i].transform.position);
-            lineRenderer.positionCount = connectedOrbs.Length + 1;
+            lineRenderer.SetPosition(i, connectedOrbs[i].transform.position); 
         }
     }
 
     private void Update()
     {
+        Connected();
+
         if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering)
         {
             StartCoroutine(Notconnected());
-        }
-        else 
-        {
-            Connected();
         }
         
         if (followMouse)
@@ -163,7 +162,6 @@ public class SoundNet : MonoBehaviour
                 spriteRenderer.color = startColor;
                 break;
             }
-            
             yield return null;
         }
     }
