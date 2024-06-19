@@ -274,15 +274,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
-      value: SoundOrbConnected (1)
+      value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.62
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.09
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -317,6 +321,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: totalLines
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: lineRenderer
       value: 
       objectReference: {fileID: 1091375866}
@@ -324,6 +332,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: ConnectedVibrationIntensity
       value: 0.002
@@ -351,13 +363,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.2900124
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.075572
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -395,6 +411,10 @@ PrefabInstance:
       propertyPath: lineRenderer
       value: 
       objectReference: {fileID: 1091375866}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -440,11 +460,11 @@ Transform:
   - {fileID: 1780097312}
   - {fileID: 262478631}
   - {fileID: 180712164}
+  - {fileID: 1846996420}
   - {fileID: 2007804971}
   - {fileID: 8386169171579059935}
   - {fileID: 1225362833}
   - {fileID: 1083915465}
-  - {fileID: 1846996420}
   - {fileID: 1382166706}
   - {fileID: 482012941}
   m_Father: {fileID: 0}
@@ -666,9 +686,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.95
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -714,6 +738,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: ConnectedVibrationIntensity
       value: 0.002
@@ -900,13 +928,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.196419
+      value: -6.31
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.996285
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -944,6 +976,10 @@ PrefabInstance:
       propertyPath: lineRenderer
       value: 
       objectReference: {fileID: 1091375866}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1037,9 +1073,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.97
+      value: -6.71
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1085,6 +1125,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: ConnectedVibrationIntensity
       value: 0.002
@@ -1244,13 +1288,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.05
+      value: -2.15
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1292,6 +1340,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: ConnectedVibrationIntensity
       value: 0.002
