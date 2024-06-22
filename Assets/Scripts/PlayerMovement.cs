@@ -4,7 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rigid2d;
     private float horizontalAxis;
-    [SerializeField] private float moveSpeed;
+    private float moveSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
+    [field: SerializeField] public bool RunMode { get; set; }
 
     private void Awake() {
         rigid2d = GetComponent<Rigidbody2D>();
@@ -12,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         horizontalAxis = Input.GetAxisRaw("Horizontal");
+        moveSpeed = RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 
     private void FixedUpdate() {
