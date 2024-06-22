@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class SoundNet : MonoBehaviour
 
     [Header("Audio Source")]
     private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip notConnectedAudio;
     
     [Header("Hover Color Stats, Not Connected")]
     [SerializeField] private Color startColor;
@@ -32,63 +33,54 @@ public class SoundNet : MonoBehaviour
     [SerializeField] private float ConnectedColorTransitionSpeed;
     [SerializeField] private float ConnectedVibrationIntensity; //Keep it low, its very sensitive
     [SerializeField] private float vibrationSpeed;
-    private List<Vector3> lineRendererPositions = new List<Vector3>();
     [SerializeField] private int totalLines;
+    List<(Vector3 Start, Vector3 End)> lineSegments = new List<(Vector3 Start, Vector3 End)>();
     private GameObject[] connectedOrbs;
     private bool followMouse;
-    [SerializeField] private LineRenderer lineRenderer;
     
+
     // The code is still roughly written and needs to be properly formed once approved
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         targetPosition = this.gameObject.transform.position;
+
+        connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
     }
 
     private void Start()
     {
-        connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
-        
-        lineRenderer.positionCount = connectedOrbs.Length; 
-        lineRenderer.SetPosition(0, transform.position);
 
-        for (int i = 0; i < connectedOrbs.Length; i++)
-        {
-            lineRenderer.SetPosition(i, connectedOrbs[i].transform.position); 
-        }
     }
 
     private void Update()
     {
+        
+        //Reset fade effect timer
         if (followMouse)
         {
             time = 0f;
         }
-        
-        //Saving all the positions of line renderer to a list
-        lineRendererPositions.Clear();
-        for (int i = 0; i < lineRenderer.positionCount; i++)
-        {
-            lineRendererPositions.Add(lineRenderer.GetPosition(i));
-        }
-        
+
         if (this.gameObject.CompareTag("SoundOrbConnected"))
         {
             Connected();
         }
-        
+
         if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering)
         {
             StartCoroutine(Notconnected());
         }
-        
+
+        //Follow Mouse
         if (followMouse)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
         }
+        
     }
 
     private void OnMouseDown()
@@ -112,7 +104,7 @@ public class SoundNet : MonoBehaviour
                 StartCoroutine(Fadeinout(orb, connectedStartColor, connectedEndColor));
                 
                 AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
-                Debug.Log(orbAudioSource, orbAudioSource.gameObject);
+                // Debug.Log(orbAudioSource, orbAudioSource.gameObject);
                 if (orbAudioSource != null && !orbAudioSource.isPlaying)
                 {
                     orbAudioSource.Play();
@@ -162,7 +154,7 @@ public class SoundNet : MonoBehaviour
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 
                 speedOfMovement * Time.deltaTime);
             
-            time += Time.deltaTime / 60f;
+            time += Time.deltaTime / 50f;
             yield return null;
         }
         
@@ -176,7 +168,7 @@ public class SoundNet : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(audioClip);
+            audioSource.PlayOneShot(notConnectedAudio);
         }
         
         StartCoroutine(Fadeinout(this.gameObject, startColor, endColor));
@@ -194,34 +186,19 @@ public class SoundNet : MonoBehaviour
 
     private void Connected()
     {
-        lineRenderer.positionCount = totalLines * 2;
-
-        int lineIndex = 0;
         for (int i = 0; i < connectedOrbs.Length; i++)
         {
             for (int j = i + 1; j < connectedOrbs.Length; j++)
             {
-                if (lineIndex / 2 >= totalLines)
-                {
-                    break;
-                }
+
 
                 Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
                     UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
 
                 connectedOrbs[i].transform.position += vibration;
                 connectedOrbs[j].transform.position += vibration;
-
-                lineRenderer.SetPosition(lineIndex, connectedOrbs[i].transform.position);
-                lineIndex++;
-                lineRenderer.SetPosition(lineIndex, connectedOrbs[j].transform.position);
-                lineIndex++;
             }
-
-            if (lineIndex / 2 >= totalLines)
-            {
-                break;
-            }
+            
         }
     }
     
