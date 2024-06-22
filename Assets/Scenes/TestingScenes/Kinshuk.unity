@@ -296,6 +296,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   m_PrefabInstance: {fileID: 262478630}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &305730911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+  m_PrefabInstance: {fileID: 8840219033035234390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &479847418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,14 +309,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object1
+      value: 
+      objectReference: {fileID: 1275491707}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object2
+      value: 
+      objectReference: {fileID: 305730911}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[1].Object1
+      value: 
+      objectReference: {fileID: 1275491707}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[1].Object2
+      value: 
+      objectReference: {fileID: 1137267704}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
+      objectReference: {fileID: 0}
+    - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -386,6 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -407,10 +453,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.78
@@ -479,7 +545,8 @@ PrefabInstance:
       propertyPath: edgeColliderObject
       value: 
       objectReference: {fileID: 1091375863}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -633,6 +700,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   m_PrefabInstance: {fileID: 7494476547296729544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137267704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+  m_PrefabInstance: {fileID: 2007804970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1225362832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,6 +713,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object1
+      value: 
+      objectReference: {fileID: 1973001211}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object2
+      value: 
+      objectReference: {fileID: 1275491707}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -649,6 +733,22 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.91
@@ -723,6 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -731,6 +832,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1225362832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1275491707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+  m_PrefabInstance: {fileID: 479847418}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350876870
 GameObject:
@@ -903,10 +1009,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.31
@@ -975,7 +1101,8 @@ PrefabInstance:
       propertyPath: edgeColliderObject
       value: 
       objectReference: {fileID: 1091375863}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1072,6 +1199,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   m_PrefabInstance: {fileID: 2138753280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1973001211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+  m_PrefabInstance: {fileID: 1225362832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2007804970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1080,6 +1212,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object1
+      value: 
+      objectReference: {fileID: 1137267704}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object2
+      value: 
+      objectReference: {fileID: 305730911}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[1].Object1
+      value: 
+      objectReference: {fileID: 1137267704}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[1].Object2
+      value: 
+      objectReference: {fileID: 1973001211}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -1088,6 +1240,22 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.71
@@ -1162,6 +1330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1347,6 +1516,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object1
+      value: 
+      objectReference: {fileID: 305730911}
+    - target: {fileID: 0}
+      propertyPath: gameObjectPair.Array.data[0].Object2
+      value: 
+      objectReference: {fileID: 1275491707}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -1355,6 +1536,22 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba2ca623caf9c1f4e9f2521e6ed04236, type: 2}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.26530647
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.15
@@ -1429,6 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
