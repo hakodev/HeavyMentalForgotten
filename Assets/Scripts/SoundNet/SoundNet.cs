@@ -31,11 +31,9 @@ public class SoundNet : MonoBehaviour
     [SerializeField] private Color connectedEndColor;
     [SerializeField] private AudioClip connectedAudioClip;
     [SerializeField] private float ConnectedColorTransitionSpeed;
-    [SerializeField] private float ConnectedVibrationIntensity; //Keep it low, its very sensitive
+    [SerializeField] private float ConnectedVibrationIntensity;
     [SerializeField] private float vibrationSpeed;
-    [SerializeField] private int totalLines;
-    List<(Vector3 Start, Vector3 End)> lineSegments = new List<(Vector3 Start, Vector3 End)>();
-    private GameObject[] connectedOrbs;
+    public GameObject[] connectedOrbs;
     private bool followMouse;
     
 
@@ -49,14 +47,8 @@ public class SoundNet : MonoBehaviour
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
     }
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
-        
         //Reset fade effect timer
         if (followMouse)
         {
@@ -80,7 +72,6 @@ public class SoundNet : MonoBehaviour
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
         }
-        
     }
 
     private void OnMouseDown()
@@ -190,15 +181,12 @@ public class SoundNet : MonoBehaviour
         {
             for (int j = i + 1; j < connectedOrbs.Length; j++)
             {
-
-
                 Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
                     UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
 
                 connectedOrbs[i].transform.position += vibration;
                 connectedOrbs[j].transform.position += vibration;
             }
-            
         }
     }
     
@@ -228,4 +216,5 @@ public class SoundNet : MonoBehaviour
             yield return null;
         }
     }
+    
 }

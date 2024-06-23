@@ -309,26 +309,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[0].Object1
       value: 
       objectReference: {fileID: 1275491707}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
-      objectReference: {fileID: 305730911}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[1].Object1
-      value: 
-      objectReference: {fileID: 1275491707}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[1].Object2
-      value: 
-      objectReference: {fileID: 1137267704}
+      objectReference: {fileID: 1973001211}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -418,6 +410,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: notConnectedAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
@@ -431,7 +427,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -566,6 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091375864}
   - component: {fileID: 1091375865}
+  - component: {fileID: 1091375866}
   m_Layer: 0
   m_Name: SoundOrbs
   m_TagString: Untagged
@@ -695,6 +691,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1091375866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091375863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26696d662a29e84ea01ddccc7f0f9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectPair:
+  - Object1: {fileID: 1137267704}
+    Object2: {fileID: 305730911}
+  - Object1: {fileID: 1137267704}
+    Object2: {fileID: 1973001211}
+  - Object1: {fileID: 1137267704}
+    Object2: {fileID: 1275491707}
+  nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
 --- !u!4 &1129629557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
@@ -713,18 +729,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[0].Object1
-      value: 
-      objectReference: {fileID: 1973001211}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[0].Object2
-      value: 
-      objectReference: {fileID: 1275491707}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -809,6 +813,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: notConnectedAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
@@ -1212,23 +1220,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[0].Object1
       value: 
       objectReference: {fileID: 1137267704}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 305730911}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[1].Object1
       value: 
       objectReference: {fileID: 1137267704}
-    - target: {fileID: 0}
+    - target: {fileID: -5131954617535346208, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: gameObjectPair.Array.data[1].Object2
       value: 
       objectReference: {fileID: 1973001211}
@@ -1316,6 +1324,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: notConnectedAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
@@ -1516,18 +1528,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1091375864}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[0].Object1
-      value: 
-      objectReference: {fileID: 305730911}
-    - target: {fileID: 0}
-      propertyPath: gameObjectPair.Array.data[0].Object2
-      value: 
-      objectReference: {fileID: 1275491707}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Name
       value: SoundOrbConnected
@@ -1612,6 +1612,10 @@ PrefabInstance:
       propertyPath: vibrationSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: notConnectedAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
     - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
