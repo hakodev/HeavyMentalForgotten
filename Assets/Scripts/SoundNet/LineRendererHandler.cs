@@ -73,7 +73,7 @@ public class LineRendererHandler : MonoBehaviour
                 lineObject.transform.SetParent(transform);
                 lineObject.AddComponent<LineRenderer>();
                 edgeCollider = lineObject.AddComponent<EdgeCollider2D>();
-                lineObject.AddComponent<DestroyOnClick>();
+                lineObject.AddComponent<DestroyOrbHandler>();
                 Drawline(pair.Object1, pair.Object2, lineObject);
                 edgeCollider.edgeRadius = 0.15f;
 
