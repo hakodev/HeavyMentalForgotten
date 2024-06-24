@@ -18,7 +18,7 @@ public class SoundNet : MonoBehaviour
 
     [Header("Audio Source")]
     private AudioSource audioSource;
-    [SerializeField] private AudioClip notConnectedAudio;
+    public AudioClip notConnectedAudio;
     
     [Header("Hover Color Stats, Not Connected")]
     [SerializeField] private Color startColor;
@@ -29,7 +29,7 @@ public class SoundNet : MonoBehaviour
     [Header("Sound Orb Connected Stats")]
     [SerializeField] private Color connectedStartColor;
     [SerializeField] private Color connectedEndColor;
-    [SerializeField] private AudioClip connectedAudioClip;
+    public AudioClip connectedAudioClip;
     [SerializeField] private float ConnectedColorTransitionSpeed;
     [SerializeField] private float ConnectedVibrationIntensity;
     [SerializeField] private float vibrationSpeed;
@@ -100,6 +100,14 @@ public class SoundNet : MonoBehaviour
                 {
                     orbAudioSource.Play();
                 }
+            }
+        }
+        
+        if(this.gameObject.CompareTag("SoundOrbDisconnected"))
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(notConnectedAudio);
             }
         }
     }
