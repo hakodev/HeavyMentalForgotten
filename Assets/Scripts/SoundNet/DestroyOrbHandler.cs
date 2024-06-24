@@ -7,6 +7,7 @@ public class DestroyOrbHandler : MonoBehaviour
 {
     private bool isDragging = false;
     private ParticleSystem lineCuttingParticleSystem;
+    private float particleSystemDuration = 3f;
 
     private void Awake()
     {
@@ -45,7 +46,7 @@ public class DestroyOrbHandler : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         lineCuttingParticleSystem.transform.position = worldPosition;
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(particleSystemDuration);
         
         this.gameObject.SetActive(false);
         lineCuttingParticleSystem.Stop();
