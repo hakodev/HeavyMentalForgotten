@@ -2,6 +2,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
+    public static PlayerMovement Ins { get; private set; }
+
     private Rigidbody2D rigid2d;
     private float horizontalAxis;
     private float moveSpeed;
@@ -10,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     [field: SerializeField] public bool RunMode { get; set; }
 
     private void Awake() {
+        Ins = this;
         rigid2d = GetComponent<Rigidbody2D>();
     }
 
