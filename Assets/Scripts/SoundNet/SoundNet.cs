@@ -15,6 +15,7 @@ public class SoundNet : MonoBehaviour
     private float time;
     private Vector3 targetPosition;
     private SpriteRenderer spriteRenderer;
+    public bool isPlacedOnSnap = false;
 
     [Header("Audio Source")]
     private AudioSource audioSource;
@@ -23,7 +24,7 @@ public class SoundNet : MonoBehaviour
     [Header("Hover Color Stats, Not Connected")]
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
-    private bool isHovering;
+    public bool isHovering;
     private float hoverTime;
     
     [Header("Sound Orb Connected Stats")]
@@ -60,7 +61,7 @@ public class SoundNet : MonoBehaviour
             Connected();
         }
 
-        if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering)
+        if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering && !isPlacedOnSnap)
         {
             StartCoroutine(Notconnected());
         }
@@ -127,8 +128,14 @@ public class SoundNet : MonoBehaviour
     {
         while (time < duration)
         {
+            if (isPlacedOnSnap)
+            {
+                break;
+            }
+            
             if (!followMouse)
             {
+
                 //Fade Effect - Just fading out
                 float alpha = Mathf.Lerp(1, 0, time / duration);
                 Color newColor = spriteRenderer.color;

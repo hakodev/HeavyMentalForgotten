@@ -60,7 +60,7 @@ public class LineRendererHandler : MonoBehaviour
                 tempOrbs.RemoveAt(index);
                 connectedOrbs = tempOrbs.ToArray();
             }
-            orb.SetActive(false); // Destroy and instantiate the nonConnectedOrb later
+            orb.SetActive(false);
             GameObject nonConnectedOrbSpawn = Instantiate(nonConnectedOrb, orb.transform.position, Quaternion.identity);
             nonConnectedOrbSpawn.GetComponent<SoundNet>().notConnectedAudio =
                 orb.GetComponent<SoundNet>().connectedAudioClip;
