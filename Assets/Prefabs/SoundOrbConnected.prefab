@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4004290810576787901}
   - component: {fileID: 8487979208456779282}
   - component: {fileID: 2868967346632635256}
-  - component: {fileID: 8904998200092559080}
+  - component: {fileID: 1183675890503930466}
   m_Layer: 0
   m_Name: SoundOrbConnected
   m_TagString: SoundOrbConnected
@@ -246,7 +246,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8904998200092559080
+--- !u!114 &1183675890503930466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 534228563430708532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 385539a28dd22f04e9257d39ffb0aed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dec9c349b10caa4684c7aa27e5c81cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeCurve:
@@ -282,14 +282,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 20
-  speedOfMovement: 10
-  notConnectedAudio: {fileID: 0}
-  startColor: {r: 1, g: 0, b: 0, a: 1}
-  endColor: {r: 0, g: 0.18613958, b: 1, a: 1}
-  connectedStartColor: {r: 0, g: 0.026330233, b: 1, a: 1}
-  connectedEndColor: {r: 1, g: 0, b: 0.6119466, a: 1}
-  connectedAudioClip: {fileID: 8300000, guid: 62ab57796a7302345b7593a61f1c83b2, type: 3}
+  connectedStartColor: {r: 0, g: 0.18431373, b: 1, a: 1}
+  connectedEndColor: {r: 0, g: 1, b: 0.1719017, a: 1}
+  connectedAudioClip: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
   ConnectedColorTransitionSpeed: 5
-  ConnectedVibrationIntensity: 0.002
-  vibrationSpeed: 200
+  ConnectedVibrationIntensity: 5
+  vibrationSpeed: 0.2
+  connectedOrbs: []

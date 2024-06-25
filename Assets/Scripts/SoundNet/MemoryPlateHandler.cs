@@ -14,15 +14,14 @@ public class MemoryPlateHandler : MonoBehaviour
         {
             snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, transform.position, Time.deltaTime * snapSpeed);
             snappedObject.GetComponent<CircleCollider2D>().enabled = false;
-            snappedObject.GetComponent<SoundNet>().isPlacedOnSnap = true;
+            snappedObject.GetComponent<DisconnectedSoundOrbHandler>().isPlacedOnSnap = true;
         }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SoundOrbDisconnected") && other.GetComponent<SoundNet>().isHovering)
+        if (other.gameObject.CompareTag("SoundOrbDisconnected") && other.GetComponent<DisconnectedSoundOrbHandler>().isHovering)
         {
-            Debug.Log("Object in zone");
             snappedObject = other.gameObject;
             this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }

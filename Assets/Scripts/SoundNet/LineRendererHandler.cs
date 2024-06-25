@@ -24,7 +24,8 @@ public class LineRendererHandler : MonoBehaviour
     private List<GameObject> allgameObjectsPair = new List<GameObject>();
     private GameObject[] connectedOrbs;
     [SerializeField] private GameObject nonConnectedOrb;
-
+    [SerializeField] private GameObject lineContainer;
+    
     private void Awake()
     {
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
@@ -62,8 +63,8 @@ public class LineRendererHandler : MonoBehaviour
             }
             orb.SetActive(false);
             GameObject nonConnectedOrbSpawn = Instantiate(nonConnectedOrb, orb.transform.position, Quaternion.identity);
-            nonConnectedOrbSpawn.GetComponent<SoundNet>().notConnectedAudio =
-                orb.GetComponent<SoundNet>().connectedAudioClip;
+            nonConnectedOrbSpawn.GetComponent<DisconnectedSoundOrbHandler>().notConnectedAudio =
+                orb.GetComponent<ConnectedSoundOrbHandler>().connectedAudioClip;
         }
         
         foreach (var pair in gameObjectPair)
@@ -105,7 +106,9 @@ public class LineRendererHandler : MonoBehaviour
         Vector2 localPos1 = lineObject.transform.InverseTransformPoint(obj1.transform.position);
         Vector2 localPos2 = lineObject.transform.InverseTransformPoint(obj2.transform.position);
 
-        edgeCollider.points = new Vector2[] { localPos1, localPos2 };
+        edgeCollider.points = new Vector2[] { localPos1, localPos2};
+        
+        lineObject.transform.SetParent(lineContainer.transform);
     }
 
     private void Removegameobjectpairs()
@@ -135,5 +138,4 @@ public class LineRendererHandler : MonoBehaviour
 
         gameObjectPair = tempPairs.ToArray();
     }
-    
 }

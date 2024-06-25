@@ -5,7 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundNet : MonoBehaviour
+public class DisconnectedSoundOrbHandler : MonoBehaviour
 {
     [SerializeField] private AnimationCurve fadeCurve;
 
@@ -26,15 +26,7 @@ public class SoundNet : MonoBehaviour
     [SerializeField] private Color endColor;
     public bool isHovering;
     private float hoverTime;
-    
-    [Header("Sound Orb Connected Stats")]
-    [SerializeField] private Color connectedStartColor;
-    [SerializeField] private Color connectedEndColor;
-    public AudioClip connectedAudioClip;
     [SerializeField] private float ConnectedColorTransitionSpeed;
-    [SerializeField] private float ConnectedVibrationIntensity;
-    [SerializeField] private float vibrationSpeed;
-    public GameObject[] connectedOrbs;
     private bool followMouse;
     
 
@@ -44,8 +36,6 @@ public class SoundNet : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         targetPosition = this.gameObject.transform.position;
-
-        connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
     }
 
     private void Update()
@@ -55,16 +45,9 @@ public class SoundNet : MonoBehaviour
         {
             time = 0f;
         }
+        
+        StartCoroutine(Notconnected());
 
-        if (this.gameObject.CompareTag("SoundOrbConnected"))
-        {
-            Connected();
-        }
-
-        if (this.gameObject.CompareTag("SoundOrbDisconnected") && !isHovering && !isPlacedOnSnap)
-        {
-            StartCoroutine(Notconnected());
-        }
 
         //Follow Mouse
         if (followMouse)
@@ -77,12 +60,9 @@ public class SoundNet : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (this.gameObject.CompareTag("SoundOrbDisconnected"))
-        {
-            isHovering = true;
-            followMouse = true;
-            StartCoroutine(Notconnectedhover());
-        }
+        isHovering = true;
+        followMouse = true;
+        StartCoroutine(Notconnectedhover());
     }
 
     private void OnMouseOver()
@@ -90,18 +70,6 @@ public class SoundNet : MonoBehaviour
         if (this.gameObject.CompareTag("SoundOrbConnected"))
         {
             isHovering = true;
-            
-            foreach (GameObject orb in connectedOrbs)
-            {
-                StartCoroutine(Fadeinout(orb, connectedStartColor, connectedEndColor));
-                
-                AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
-                // Debug.Log(orbAudioSource, orbAudioSource.gameObject);
-                if (orbAudioSource != null && !orbAudioSource.isPlaying)
-                {
-                    orbAudioSource.Play();
-                }
-            }
         }
         
         if(this.gameObject.CompareTag("SoundOrbDisconnected"))
@@ -187,21 +155,6 @@ public class SoundNet : MonoBehaviour
                 break;
             }
             yield return null;
-        }
-    }
-
-    private void Connected()
-    {
-        for (int i = 0; i < connectedOrbs.Length; i++)
-        {
-            for (int j = i + 1; j < connectedOrbs.Length; j++)
-            {
-                Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
-                    UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
-
-                connectedOrbs[i].transform.position += vibration;
-                connectedOrbs[j].transform.position += vibration;
-            }
         }
     }
     

@@ -301,6 +301,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 8840219033035234390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343434187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343434188}
+  m_Layer: 0
+  m_Name: lineContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &343434188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343434187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1091375864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &479847418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,10 +360,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_UseWorldSpace
       value: 1
@@ -396,34 +431,6 @@ PrefabInstance:
     - target: {fileID: 8487979208456779282, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Simulated
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: notConnectedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: ConnectedVibrationIntensity
-      value: 0.002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -564,26 +571,6 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
     m_RemovedComponents:
     - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
@@ -626,6 +613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 343434188}
   - {fileID: 1129629557}
   - {fileID: 1780097312}
   - {fileID: 262478631}
@@ -755,6 +743,7 @@ MonoBehaviour:
   - Object1: {fileID: 1137267704}
     Object2: {fileID: 1275491707}
   nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
+  lineContainer: {fileID: 343434187}
 --- !u!4 &1129629557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
@@ -777,10 +766,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_UseWorldSpace
       value: 1
@@ -844,34 +837,6 @@ PrefabInstance:
     - target: {fileID: 8487979208456779282, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Simulated
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: notConnectedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: ConnectedVibrationIntensity
-      value: 0.002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5963,26 +5928,6 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
     m_RemovedComponents:
     - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
@@ -6118,10 +6063,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundOrbConnected
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: connectedAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_UseWorldSpace
       value: 1
@@ -6185,34 +6134,6 @@ PrefabInstance:
     - target: {fileID: 8487979208456779282, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Simulated
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: notConnectedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: ConnectedVibrationIntensity
-      value: 0.002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -6466,7 +6387,7 @@ PrefabInstance:
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_UseWorldSpace
       value: 1
@@ -6530,34 +6451,6 @@ PrefabInstance:
     - target: {fileID: 8487979208456779282, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Simulated
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: totalLines
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: vibrationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: notConnectedAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: connectedAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: edgeColliderObject
-      value: 
-      objectReference: {fileID: 1091375863}
-    - target: {fileID: 8904998200092559080, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: ConnectedVibrationIntensity
-      value: 0.002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
