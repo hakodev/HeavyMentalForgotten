@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MemoryPlateHandler : MonoBehaviour
@@ -25,6 +22,7 @@ public class MemoryPlateHandler : MonoBehaviour
             if(time <= 0 )
             {
                 snappedObject.GetComponent<DisconnectedSoundOrbHandler>().enabled = false;
+                OrbCalculator.Ins.FilledPlates.Add(snappedObject);
             }
         }
     }
