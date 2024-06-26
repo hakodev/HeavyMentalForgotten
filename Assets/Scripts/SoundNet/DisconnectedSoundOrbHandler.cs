@@ -28,6 +28,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     private float hoverTime;
     [SerializeField] private float ConnectedColorTransitionSpeed;
     private bool followMouse;
+
     
 
     // The code is still roughly written and needs to be properly formed once approved
@@ -40,6 +41,8 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
 
     private void Update()
     {
+        
+        
         //Reset fade effect timer
         if (followMouse)
         {
