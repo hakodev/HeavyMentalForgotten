@@ -8,6 +8,7 @@ public class MemoryPlateHandler : MonoBehaviour
     private GameObject snappedObject;
     [SerializeField] private float snapSpeed = 5f;
     private SpriteRenderer spriteRenderer;
+    private float time = 3f;
     
     private void Awake()
     {
@@ -19,27 +20,37 @@ public class MemoryPlateHandler : MonoBehaviour
         if (snappedObject != null)
         {
             snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, transform.position, Time.deltaTime * snapSpeed);
-            // snappedObject.GetComponent<CircleCollider2D>().enabled = false;
-            snappedObject.GetComponent<DisconnectedSoundOrbHandler>().isPlacedOnSnap = true;
-        }
-    }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("SoundOrbDisconnected") && other.GetComponent<DisconnectedSoundOrbHandler>().isHovering)
-        {
-            snappedObject = other.gameObject;
-            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            spriteRenderer.material.color = Color.gray;
+            time -= Time.deltaTime;
+            
+            if(time <= 0 )
+            {
+                snappedObject.GetComponent<DisconnectedSoundOrbHandler>().enabled = false;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
+        DisconnectedSoundOrbHandler disconnectedSoundOrbHandler = other.GetComponent<DisconnectedSoundOrbHandler>();
+        
+        if (other.gameObject.CompareTag("SoundOrbDisconnected") && disconnectedSoundOrbHandler.isHovering)
+        {
+            snappedObject = other.gameObject;
+            spriteRenderer.material.color = Color.gray;
+            disconnectedSoundOrbHandler.isPlacedOnSnap = true;
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        DisconnectedSoundOrbHandler disconnectedSoundOrbHandler = other.GetComponent<DisconnectedSoundOrbHandler>();
         if (other.gameObject.CompareTag("SoundOrbDisconnected"))
         {
-            //Change this to mouse position
+            time = 3f;
+            Debug.Log("Exited");
             snappedObject = null;
+            disconnectedSoundOrbHandler.isPlacedOnSnap = false;
             spriteRenderer.material.color = Color.black;
         }
     }

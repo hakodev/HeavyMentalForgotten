@@ -74,6 +74,8 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
         
         if(this.gameObject.CompareTag("SoundOrbDisconnected"))
         {
+            isHovering = true;
+            
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(notConnectedAudio);
