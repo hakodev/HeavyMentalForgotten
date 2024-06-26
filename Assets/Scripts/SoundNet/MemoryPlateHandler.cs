@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MemoryPlateHandler : MonoBehaviour
@@ -30,6 +27,7 @@ public class MemoryPlateHandler : MonoBehaviour
                 snappedObject.GetComponent<CircleCollider2D>().enabled = false;
                 this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 isSnapped = true;
+                OrbCalculator.Ins.FilledPlates.Add(snappedObject);
             }
         }
     }
