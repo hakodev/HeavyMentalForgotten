@@ -163,13 +163,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21d0be32ee6988d43952a637f5cbd501, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 226
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -272,8 +272,53 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 1
+      time: 0.071775466
+      value: 0.26420972
+      inSlope: 0.066669166
+      outSlope: 0.066669166
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1782651
+      value: 0.2603788
+      inSlope: -0.0060774223
+      outSlope: -0.0060774223
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.14421293
+    - serializedVersion: 3
+      time: 0.2935523
+      value: 0.26462424
+      inSlope: 0.020669006
+      outSlope: 0.020669006
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.42035493
+      value: 0.25930065
+      inSlope: -0.0051260577
+      outSlope: -0.0051260577
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5469487
+      value: 0.2529296
+      inSlope: 0.037248917
+      outSlope: 0.037248917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9918213
+      value: -0.036758423
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -284,7 +329,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   connectedStartColor: {r: 0.8666667, g: 0.8901961, b: 0.9254902, a: 1}
-  connectedEndColor: {r: 0.5330508, g: 0.57492477, b: 0.6377357, a: 1}
+  connectedEndColor: {r: 1, g: 0.6498264, b: 0.2320754, a: 1}
   connectedAudioClip: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
   ConnectedColorTransitionSpeed: 5
   ConnectedVibrationIntensity: 5
