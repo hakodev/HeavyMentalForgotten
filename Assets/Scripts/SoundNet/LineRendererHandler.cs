@@ -54,6 +54,8 @@ public class LineRendererHandler : MonoBehaviour
 
         foreach (var orb in orbsToRemove)
         {
+
+            
             var index = Array.IndexOf(connectedOrbs, orb);
             if (index != -1)
             {

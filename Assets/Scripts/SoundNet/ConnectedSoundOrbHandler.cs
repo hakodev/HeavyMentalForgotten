@@ -19,6 +19,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     private void Awake()
     {
+        
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
 
     }
