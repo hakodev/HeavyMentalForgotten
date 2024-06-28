@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MemoryPlateHandler : MonoBehaviour
@@ -7,7 +8,8 @@ public class MemoryPlateHandler : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float time = 1.5f;
     private bool isSnapped = false;
-    
+    [SerializeField] private List<GameObject> filledPlates;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,7 +29,14 @@ public class MemoryPlateHandler : MonoBehaviour
                 snappedObject.GetComponent<CircleCollider2D>().enabled = false;
                 this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 isSnapped = true;
-                OrbCalculator.Ins.FilledPlates.Add(snappedObject);
+                filledPlates.Add(snappedObject);
+                if(filledPlates.Count == 3) {
+                    foreach(GameObject filledPlate in filledPlates) {
+                        if(filledPlate) {
+
+                        }
+                    }
+                }
             }
         }
     }
