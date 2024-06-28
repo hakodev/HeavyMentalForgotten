@@ -1,12 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MemoryPlateHandler : MonoBehaviour
 {
-    private GameObject snappedObject;
+    public GameObject snappedObject;
     [SerializeField] private float snapSpeed = 5f;
     private SpriteRenderer spriteRenderer;
     private float time = 1.5f;
     private bool isSnapped = false;
+    public static List<GameObject> filledPlates = new List<GameObject>();
     
     private void Awake()
     {
@@ -23,11 +25,20 @@ public class MemoryPlateHandler : MonoBehaviour
             if(time <= 0f)
             {
                 Debug.Log("Snapped");
-                snappedObject.GetComponent<DisconnectedSoundOrbHandler>().enabled = false;
-                snappedObject.GetComponent<CircleCollider2D>().enabled = false;
-                this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                snappedObject.GetComponent<DisconnectedSoundOrbHandler>().enabled = true;
+                // snappedObject.GetComponent<CircleCollider2D>().enabled = false;
+                // this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 isSnapped = true;
-                OrbCalculator.Ins.FilledPlates.Add(snappedObject);
+                filledPlates.Add(snappedObject);
+            }
+        }
+        
+        if (filledPlates.Count == 3)
+        {
+            foreach (GameObject plate in filledPlates)
+            {
+                DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
+                Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
             }
         }
     }
@@ -61,8 +72,10 @@ public class MemoryPlateHandler : MonoBehaviour
         if (other.gameObject.CompareTag("SoundOrbDisconnected"))
         {
             time = 3f;
-            Debug.Log("Exited");
-            snappedObject = null;
+            if (!isSnapped)
+            {
+                snappedObject = null;
+            }
             disconnectedSoundOrbHandler.isPlacedOnSnap = false;
             spriteRenderer.material.color = Color.black;
         }
