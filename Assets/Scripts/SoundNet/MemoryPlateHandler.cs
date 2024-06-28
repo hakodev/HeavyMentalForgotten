@@ -8,7 +8,7 @@ public class MemoryPlateHandler : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float time = 1.5f;
     private bool isSnapped = false;
-    public static List<GameObject> filledPlates = new List<GameObject>();
+    public static List<GameObject> filledPlates = new();
     
     private void Awake()
     {
@@ -39,6 +39,9 @@ public class MemoryPlateHandler : MonoBehaviour
             {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
                 Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
+                //if(disconnectedSoundOrb.MemoryLayer > scene's layer) {
+                //    disconnectedSoundOrb.MemoryLayer = scene's layer;
+                //}
             }
         }
     }
