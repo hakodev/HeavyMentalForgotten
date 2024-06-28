@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class DisconnectedSoundOrbHandler : MonoBehaviour
 {
-    [field: SerializeField] public MemoryLayers MemoryLayer { get; set; }
-
     [SerializeField] private AnimationCurve fadeCurve;
 
     [Header("Not Connected")]

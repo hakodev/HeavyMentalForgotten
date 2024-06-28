@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ConnectedSoundOrbHandler : MonoBehaviour
 {
-    [field: SerializeField] public MemoryLayers MemoryLayer { get; set; }
-
     [Header("Sound Orb Connected Stats")]
     [SerializeField] private AnimationCurve fadeCurve;
     [SerializeField] private Color connectedStartColor;
