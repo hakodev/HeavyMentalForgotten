@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager Ins { get; private set; }
-    public MemoryLayers currentLayer;
+    public MemoryLayers CurrentLayer { get; private set; }
     private Levels currentLevel;
 
     private void Awake() {
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
             case Levels.SCENE3_LAYER_A:
             case Levels.SOUND4_LAYER_A:
             case Levels.Epilogue_LAYER_A:
-                currentLayer = MemoryLayers.A;
+                CurrentLayer = MemoryLayers.A;
                 break;
 
             case Levels.SOUND1_2_LAYER_B:
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
             case Levels.SCENE3_LAYER_B:
             case Levels.SOUND4_LAYER_B:
             case Levels.Epilogue_LAYER_B:
-                currentLayer = MemoryLayers.B;
+                CurrentLayer = MemoryLayers.B;
                 break;
 
             case Levels.SOUND2_LAYER_C:
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
             case Levels.SCENE3_LAYER_C:
             case Levels.SOUND4_LAYER_C:
             case Levels.Epilogue_LAYER_C:
-                currentLayer = MemoryLayers.C;
+                CurrentLayer = MemoryLayers.C;
                 break;
 
             case Levels.SOUND3_2_LAYER_D:
@@ -63,11 +63,11 @@ public class GameManager : MonoBehaviour {
             case Levels.SCENE3_LAYER_D:
             case Levels.SOUND4_LAYER_D:
             case Levels.Epilogue_LAYER_D:
-                currentLayer = MemoryLayers.D;
+                CurrentLayer = MemoryLayers.D;
                 break;
 
             default:
-                currentLayer = MemoryLayers.A;
+                CurrentLayer = MemoryLayers.A;
                 break;
         }
     }

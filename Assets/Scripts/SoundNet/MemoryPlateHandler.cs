@@ -32,16 +32,20 @@ public class MemoryPlateHandler : MonoBehaviour
                 filledPlates.Add(snappedObject);
             }
         }
-        
-        if (filledPlates.Count == 3)
-        {
-            foreach (GameObject plate in filledPlates)
-            {
+
+        CalculateOrbs();
+    }
+
+    private void CalculateOrbs() {
+        if(filledPlates.Count == 3) {
+            foreach(GameObject plate in filledPlates) {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
-                Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
-                //if(disconnectedSoundOrb.MemoryLayer > scene's layer) {
-                //    disconnectedSoundOrb.MemoryLayer = scene's layer;
-                //}
+                //Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
+                if(disconnectedSoundOrb.MemoryLayer > GameManager.Ins.CurrentLayer + 1) {
+                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer + 1;
+                } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentLayer - 1) {
+                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer - 1;
+                }
             }
         }
     }
