@@ -7,6 +7,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 {
     [Header("Sound Orb Connected Stats")]
     [SerializeField] private AnimationCurve fadeCurve;
+    [field: SerializeField] public MemoryLayers MemoryLayer { get; set; }
     [SerializeField] private Color connectedStartColor;
     [SerializeField] private Color connectedEndColor;
     public AudioClip connectedAudioClip;
@@ -16,14 +17,17 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private GameObject nonConnectedOrb;
     [SerializeField] private float delay;
     [SerializeField] private float fadeOutTime;
-    private GameObject[] connectedOrbs;
+    private static GameObject[] connectedOrbs; //changed to static 
     private bool followMouse;
     public bool isHovering;
     private SpriteRenderer spriteRenderer;
     public Collider2D[] colliders;
     private bool hasSpawned = false;
     private float time; //must be same as delay in Net Regen
-    public GameObject childObject;
+    private GameObject childObject;
+    public GameObject nonConnectedOrbReference;
+    public DisconnectedSoundOrbHandler disconnectOrbScript;
+    public List<GameObject> lineRendererGameObject = new();
 
     private void Awake()
     {
@@ -57,6 +61,37 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             Spawner();
         }
 
+        if(disconnectOrbScript != null)
+        {
+            if (disconnectOrbScript.isPlacedOnSnap)
+            {
+                List<GameObject> nonConnectedOrbsList = new List<GameObject>(connectedOrbs);
+
+                nonConnectedOrbsList.Remove(this.gameObject);
+
+                connectedOrbs = nonConnectedOrbsList.ToArray();
+                
+                foreach (var gameObject in lineRendererGameObject)
+                {
+                    Destroy(gameObject);
+                }
+                lineRendererGameObject.Clear();
+
+                Destroy(this.gameObject);
+            }
+        }
+        
+        foreach (var collider in colliders)
+        {
+            if (collider is EdgeCollider2D)
+            {
+                if (!lineRendererGameObject.Contains(collider.gameObject))
+                {
+                    lineRendererGameObject.Add(collider.gameObject);
+
+                }
+            }
+        }
     }
     private void OnMouseOver()
     {
@@ -161,7 +196,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         if (colliders.Length == 1 && !hasSpawned)
         {
             GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
-            nonConnectedOrbSpawner.GetComponent<DisconnectedSoundOrbHandler>().notConnectedAudio = connectedAudioClip;
+            nonConnectedOrbReference = nonConnectedOrbSpawner;
+            disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
+            disconnectOrbScript.notConnectedAudio = connectedAudioClip;
+            disconnectOrbScript.MemoryLayer = MemoryLayer;
             hasSpawned = true;
             time = 4.1f;
             StartCoroutine(EnableAfterDelay());

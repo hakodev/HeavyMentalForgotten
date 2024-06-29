@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class DisconnectedSoundOrbHandler : MonoBehaviour
 {
-    [field: SerializeField] public MemoryLayers MemoryLayer { get; set; }
+    public MemoryLayers MemoryLayer { get; set; }
 
     [SerializeField] private AnimationCurve fadeCurve;
 
@@ -30,10 +30,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     private float hoverTime;
     [SerializeField] private float ConnectedColorTransitionSpeed;
     private bool followMouse;
-
     
-
-    // The code is still roughly written and needs to be properly formed once approved
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -43,10 +40,6 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
 
     private void Update()
     {
-        // Vector3 position = transform.position;
-        // position.z = -2;
-        // transform.position = position;
-        
         //Reset fade effect timer
         if (followMouse)
         {

@@ -381,6 +381,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ba395d2c9cbd0304580d2567b65b096b, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -944,6 +948,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -6096,6 +6104,10 @@ PrefabInstance:
       propertyPath: fadeOutTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -6315,6 +6327,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -6720,6 +6736,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip

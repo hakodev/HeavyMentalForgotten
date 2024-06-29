@@ -27,6 +27,14 @@ public class LineRendererHandler : MonoBehaviour
     
     private void Update()
     {
+        for (int i = gameObjectPair.Count - 1; i >= 0; i--)
+        {
+            if (gameObjectPair[i].Object1 == null || gameObjectPair[i].Object2 == null)
+            {
+                gameObjectPair.RemoveAt(i);
+            }
+        }
+        
         foreach (var pair in gameObjectPair)
         {
             if (!lines.ContainsKey(pair) || lines[pair] == null)

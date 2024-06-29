@@ -15,12 +15,21 @@ public class NetRegeneratorHandler : MonoBehaviour
     
     private IEnumerator EnableAfterDelay(GameObject obj)
     {
-        yield return new WaitForSeconds(lineSpawnDelay);
-        obj.SetActive(true);
+        if (obj != null)
+        {
+            yield return new WaitForSeconds(lineSpawnDelay);
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
     
     public void ActivateAfterDelay(GameObject obj)
     {
-        StartCoroutine(EnableAfterDelay(obj));
+        if (obj != null)
+        {
+            StartCoroutine(EnableAfterDelay(obj));
+        }
     }
 }

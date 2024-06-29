@@ -9,6 +9,7 @@ public class MemoryPlateHandler : MonoBehaviour
     private float time = 1.5f;
     private bool isSnapped = false;
     public static List<GameObject> filledPlates = new();
+    
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
     
     private void Awake()
@@ -25,6 +26,12 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void Update()
     {
+        foreach (GameObject plate in filledPlates)
+        {
+            Debug.Log("Filled Plates:");
+            Debug.Log(this.gameObject.name + plate.name);
+        }
+        
         if (snappedObject != null)
         {
             snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, transform.position, Time.deltaTime * snapSpeed);
@@ -37,7 +44,11 @@ public class MemoryPlateHandler : MonoBehaviour
                 // snappedObject.GetComponent<CircleCollider2D>().enabled = false;
                 // this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 isSnapped = true;
-                filledPlates.Add(snappedObject);
+                
+                if (!filledPlates.Contains(snappedObject))
+                {
+                    filledPlates.Add(snappedObject);
+                }
             }
         }
 
@@ -48,7 +59,7 @@ public class MemoryPlateHandler : MonoBehaviour
         if(filledPlates.Count == 3) {
             foreach(GameObject plate in filledPlates) {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
-                //Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
+                Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
                 if(disconnectedSoundOrb.MemoryLayer > GameManager.Ins.CurrentLayer + 1) {
                     disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer + 1;
                 } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentLayer - 1) {
