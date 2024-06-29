@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4857356818756716834, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
       propertyPath: totalLines
@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.11
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 8386169173135998835, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -888,8 +888,8 @@ MonoBehaviour:
     Object2: {fileID: 305730911}
   - Object1: {fileID: 1137267704}
     Object2: {fileID: 1973001211}
-  - Object1: {fileID: 1275491707}
-    Object2: {fileID: 113331768}
+  - Object1: {fileID: 305730911}
+    Object2: {fileID: 1275491707}
   - Object1: {fileID: 113331768}
     Object2: {fileID: 1137267704}
   lineContainer: {fileID: 343434187}

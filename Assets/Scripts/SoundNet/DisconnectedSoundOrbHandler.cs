@@ -43,7 +43,9 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
 
     private void Update()
     {
-        
+        // Vector3 position = transform.position;
+        // position.z = -2;
+        // transform.position = position;
         
         //Reset fade effect timer
         if (followMouse)
@@ -129,7 +131,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
             {
                 float randomRadius = UnityEngine.Random.Range(1f, 5f);
                 Vector2 randomPosition = UnityEngine.Random.insideUnitCircle * randomRadius;
-                targetPosition = this.gameObject.transform.position + new Vector3(randomPosition.x, randomPosition.y, 0);
+                targetPosition = this.gameObject.transform.position + new Vector3(randomPosition.x, randomPosition.y, -2f);
             }
 
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 

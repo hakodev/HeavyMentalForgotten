@@ -13,21 +13,23 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float ConnectedColorTransitionSpeed;
     [SerializeField] private float ConnectedVibrationIntensity;
     [SerializeField] private float vibrationSpeed;
-    [SerializeField] private float delay;
     [SerializeField] private GameObject nonConnectedOrb;
     public GameObject[] connectedOrbs;
+    [SerializeField] private float delay;
     private bool followMouse;
     private bool isHovering;
     private SpriteRenderer spriteRenderer;
     public Collider2D[] colliders;
     private bool hasSpawned = false;
-    float time = 4f; //must be same as delay in Net Regen
+    private float time; //must be same as delay in Net Regen
+    public GameObject childObject;
 
     private void Awake()
     {
+        time = delay;
         spriteRenderer = GetComponent<SpriteRenderer>();
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
-
+        childObject = this.gameObject.transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -128,6 +130,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         spriteRenderer.enabled = true;
+        childObject.SetActive(true);
     }
 
     private void Spawner()
@@ -140,7 +143,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
         
         Vector2 center = this.gameObject.transform.position;
-        float radius = 0.5f; //radius/diameter of the circle
+        float radius = 0.3f; //radius/diameter of the circle
 
         colliders = Physics2D.OverlapCircleAll(center, radius);
 
@@ -151,6 +154,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             hasSpawned = true;
             time = 4.1f;
             StartCoroutine(EnableAfterDelay());
+            childObject.SetActive(false);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 
