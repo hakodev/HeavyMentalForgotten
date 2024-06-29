@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 [System.Serializable]
 public struct GameObjectPair
 {
@@ -17,58 +17,16 @@ public struct GameObjectPair
 }
 
 public class LineRendererHandler : MonoBehaviour
-{
+{    
     private EdgeCollider2D edgeCollider;
-    [SerializeField] private GameObjectPair[] gameObjectPair;
-    private Dictionary<GameObjectPair, GameObject> lines = new Dictionary<GameObjectPair, GameObject>();
-    private List<GameObject> allgameObjectsPair = new List<GameObject>();
-    private GameObject[] connectedOrbs;
-    [SerializeField] private GameObject nonConnectedOrb;
-    [SerializeField] private GameObject lineContainer;
+    private LineRenderer lineRenderer;
     
-    private void Awake()
-    {
-        connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
-    }
-
-    private void Start()
-    {
-        foreach (var pair in gameObjectPair)
-        {
-            allgameObjectsPair.Add(pair.Object1);
-            allgameObjectsPair.Add(pair.Object2);
-        }
-    }
+    private Dictionary<GameObjectPair, GameObject> lines = new Dictionary<GameObjectPair, GameObject>();
+    [SerializeField] private List<GameObjectPair> gameObjectPair = new List<GameObjectPair>();
+    [SerializeField] private GameObject lineContainer;
     
     private void Update()
     {
-        List<GameObject> orbsToRemove = new List<GameObject>();
-
-        foreach (var orb in connectedOrbs)
-        {
-            if (!allgameObjectsPair.Contains(orb))
-            {
-                orbsToRemove.Add(orb);
-            }
-        }
-
-        foreach (var orb in orbsToRemove)
-        {
-
-            
-            var index = Array.IndexOf(connectedOrbs, orb);
-            if (index != -1)
-            {
-                List<GameObject> tempOrbs = new List<GameObject>(connectedOrbs);
-                tempOrbs.RemoveAt(index);
-                connectedOrbs = tempOrbs.ToArray();
-            }
-            orb.SetActive(false);
-            GameObject nonConnectedOrbSpawn = Instantiate(nonConnectedOrb, orb.transform.position, Quaternion.identity);
-            nonConnectedOrbSpawn.GetComponent<DisconnectedSoundOrbHandler>().notConnectedAudio =
-                orb.GetComponent<ConnectedSoundOrbHandler>().connectedAudioClip;
-        }
-        
         foreach (var pair in gameObjectPair)
         {
             if (!lines.ContainsKey(pair) || lines[pair] == null)
@@ -76,7 +34,7 @@ public class LineRendererHandler : MonoBehaviour
                 GameObject lineObject = new GameObject("Line");
                 lineObject.tag = "CanBeDestroyed";
                 lineObject.transform.SetParent(transform);
-                lineObject.AddComponent<LineRenderer>();
+                lineRenderer = lineObject.AddComponent<LineRenderer>();
                 edgeCollider = lineObject.AddComponent<EdgeCollider2D>();
                 lineObject.AddComponent<DestroyOrbHandler>();
                 Drawline(pair.Object1, pair.Object2, lineObject);
@@ -90,8 +48,6 @@ public class LineRendererHandler : MonoBehaviour
                 Drawline(pair.Object1, pair.Object2, lineObject);
             }
         }
-        
-        Removegameobjectpairs();
     }
 
     private void Drawline(GameObject obj1, GameObject obj2, GameObject lineObject)
@@ -101,7 +57,7 @@ public class LineRendererHandler : MonoBehaviour
 
         lineRenderer.startWidth = 0.20f;
         lineRenderer.endWidth = 0.20f;
-
+        
         lineRenderer.SetPosition(0, obj1.transform.position);
         lineRenderer.SetPosition(1, obj2.transform.position);
 
@@ -113,31 +69,6 @@ public class LineRendererHandler : MonoBehaviour
         lineObject.transform.SetParent(lineContainer.transform);
     }
 
-    private void Removegameobjectpairs()
-    {
-        List<GameObjectPair> pairsToRemove = new List<GameObjectPair>();
-        List<GameObjectPair> tempPairs = new List<GameObjectPair>(gameObjectPair);
 
-        foreach (var pair in gameObjectPair)
-        {
-            GameObject lineObject;
-            if (!lines.TryGetValue(pair, out lineObject) || lineObject == null || !lineObject.activeInHierarchy)
-            {
-                pairsToRemove.Add(pair);
-            }
-            else
-            {
-                Drawline(pair.Object1, pair.Object2, lineObject);
-            }
-        }
 
-        foreach (var pair in pairsToRemove)
-        {
-            allgameObjectsPair.Remove(pair.Object1);
-            allgameObjectsPair.Remove(pair.Object2);
-            tempPairs.Remove(pair);
-        }
-
-        gameObjectPair = tempPairs.ToArray();
-    }
 }

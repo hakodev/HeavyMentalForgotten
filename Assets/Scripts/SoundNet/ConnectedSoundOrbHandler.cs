@@ -13,18 +13,32 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float ConnectedColorTransitionSpeed;
     [SerializeField] private float ConnectedVibrationIntensity;
     [SerializeField] private float vibrationSpeed;
+    [SerializeField] private float delay;
+    [SerializeField] private GameObject nonConnectedOrb;
     public GameObject[] connectedOrbs;
     private bool followMouse;
     private bool isHovering;
+    private SpriteRenderer spriteRenderer;
+    public Collider2D[] colliders;
+    private bool hasSpawned = false;
+    float time = 4f; //must be same as delay in Net Regen
 
     private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
 
     }
+
     void Update()
     {
+        time -= Time.deltaTime;
+        
+        if (spriteRenderer != null && !spriteRenderer.enabled)
+        {
+            StartCoroutine(EnableAfterDelay());
+        }
+        
         Connected();
         
         //Follow Mouse
@@ -34,6 +48,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
         }
+        
+        if(time <= 0)
+        {
+            Spawner();
+        }
+
     }
     private void OnMouseOver()
     {
@@ -104,4 +124,36 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
     }
 
+    private IEnumerator EnableAfterDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        spriteRenderer.enabled = true;
+    }
+
+    private void Spawner()
+    {
+        Debug.Log("Spawner called");
+        
+        if (colliders.Length >= 2)
+        {
+            hasSpawned = false;
+        }
+        
+        Vector2 center = this.gameObject.transform.position;
+        float radius = 0.5f; //radius/diameter of the circle
+
+        colliders = Physics2D.OverlapCircleAll(center, radius);
+
+        if (colliders.Length == 1 && !hasSpawned)
+        {
+            GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
+            nonConnectedOrbSpawner.GetComponent<DisconnectedSoundOrbHandler>().notConnectedAudio = connectedAudioClip;
+            hasSpawned = true;
+            time = 4.1f;
+            StartCoroutine(EnableAfterDelay());
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+    }
+    
 }

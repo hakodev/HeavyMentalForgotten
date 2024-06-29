@@ -8,14 +8,18 @@ public class DestroyOrbHandler : MonoBehaviour
     private bool isDragging = false;
     private ParticleSystem lineCuttingParticleSystem;
     private TrailRenderer trailCutEffect;
-    private float particleSystemDuration = 1f;
+    public float particleSystemDuration = 1f;
     private Vector3 mousePosition;
     private Vector3 worldPosition;
+    private LineRenderer lineRenderer;
+    private EdgeCollider2D edgeCollider;
     
     private void Awake()
     {
         lineCuttingParticleSystem = GameObject.Find("LineCutEffect").GetComponent<ParticleSystem>();
         trailCutEffect = GameObject.Find("CuttingTrail").GetComponent<TrailRenderer>();
+        lineRenderer = this.gameObject.GetComponent<LineRenderer>();
+        edgeCollider = this.gameObject.GetComponent<EdgeCollider2D>();
         trailCutEffect.enabled = false;
         lineCuttingParticleSystem.Stop();
     }
@@ -49,8 +53,8 @@ public class DestroyOrbHandler : MonoBehaviour
         if (isDragging)
         {
             StartCoroutine(PlayParticleEffect());
-            this.gameObject.GetComponent<LineRenderer>().enabled = false; //TODO: find a better way 
-            this.gameObject.GetComponent<EdgeCollider2D>().enabled = false;
+            lineRenderer.enabled = false; //TODO: find a better way 
+            edgeCollider.enabled = false;
         }
     }
     
@@ -59,9 +63,23 @@ public class DestroyOrbHandler : MonoBehaviour
         lineCuttingParticleSystem.Play();
         lineCuttingParticleSystem.transform.position = worldPosition;
         this.gameObject.SetActive(false);
-
+        lineRenderer.enabled = false; //TODO: find a better way 
+        edgeCollider.enabled = false;
         yield return new WaitForSeconds(particleSystemDuration);
-        
+        Debug.Break();
         lineCuttingParticleSystem.Stop();
+    }
+
+    private void OnDisable()
+    {
+        NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
+        isDragging = false;
+    }
+
+    private void OnEnable()
+    {
+        lineRenderer.enabled = true;
+        edgeCollider.enabled = true;
+        isDragging = false;
     }
 }
