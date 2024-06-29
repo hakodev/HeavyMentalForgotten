@@ -7,7 +7,19 @@ public class LevelLoader : MonoBehaviour {
     public static LevelLoader Ins { get; private set; }
     [SerializeField] private Image blackScreen;
     [SerializeField] private float fadeDuration;
+
+    [Header("The set value below is ignored when transitioning from sound\n" +
+            "scene to regular scene due to background calculations")]
     [SerializeField] private Levels nextLevelToLoad;
+
+    public Levels NextLevelToLoad {
+        get {
+            return nextLevelToLoad;
+        }
+        set {
+            nextLevelToLoad = value;
+        }
+    }
 
     private void Awake() {
         Ins = this;

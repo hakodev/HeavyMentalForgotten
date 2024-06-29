@@ -9,10 +9,18 @@ public class MemoryPlateHandler : MonoBehaviour
     private float time = 1.5f;
     private bool isSnapped = false;
     public static List<GameObject> filledPlates = new();
+    private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
     
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start() {
+        layerAOrbCount = 0;
+        layerBOrbCount = 0;
+        layerCOrbCount = 0;
+        layerDOrbCount = 0;
     }
 
     private void Update()
@@ -46,8 +54,54 @@ public class MemoryPlateHandler : MonoBehaviour
                 } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentLayer - 1) {
                     disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer - 1;
                 }
+
+                switch(disconnectedSoundOrb.MemoryLayer) {
+                    case MemoryLayers.A:
+                        layerAOrbCount++;
+                        break;
+                    case MemoryLayers.B:
+                        layerBOrbCount++;
+                        break;
+                    case MemoryLayers.C:
+                        layerCOrbCount++;
+                        break;
+                    case MemoryLayers.D:
+                        layerDOrbCount++;
+                        break;
+                }
             }
+
+            filledPlates.Clear();
+            SelectNextLevel();
         }
+    }
+
+    private void SelectNextLevel() {
+        if(LayerAOrbIsMajority()) {
+            //Load the A layer of the next scene
+        } else if(LayerBOrbIsMajority()) {
+            //Load the B layer of the next scene
+        } else if(LayerCOrbIsMajority()) {
+            //Load the C layer of the next scene
+        } else if(LayerDOrbIsMajority()) {
+            //Load the D layer of the next scene
+        }
+    }
+
+    private bool LayerAOrbIsMajority() {
+        return layerAOrbCount > layerBOrbCount && layerAOrbCount > layerCOrbCount && layerAOrbCount > layerDOrbCount;
+    }
+
+    private bool LayerBOrbIsMajority() {
+        return layerBOrbCount > layerAOrbCount && layerBOrbCount > layerCOrbCount && layerBOrbCount > layerDOrbCount;
+    }
+
+    private bool LayerCOrbIsMajority() {
+        return layerCOrbCount > layerAOrbCount && layerCOrbCount > layerBOrbCount && layerCOrbCount > layerDOrbCount;
+    }
+
+    private bool LayerDOrbIsMajority() {
+        return layerDOrbCount > layerAOrbCount && layerDOrbCount > layerBOrbCount && layerDOrbCount > layerCOrbCount;
     }
 
     private void OnTriggerStay2D(Collider2D other)

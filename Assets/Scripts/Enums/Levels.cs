@@ -1,5 +1,5 @@
 public enum Levels {
-    MainMenu,
+    MainMenu = 0,
     Introduction,
     Tutorial,
 
