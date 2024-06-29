@@ -57,7 +57,7 @@ public class LineRendererHandler : MonoBehaviour
 
         lineRenderer.startWidth = 0.20f;
         lineRenderer.endWidth = 0.20f;
-        
+
         lineRenderer.SetPosition(0, obj1.transform.position);
         lineRenderer.SetPosition(1, obj2.transform.position);
 
@@ -65,7 +65,12 @@ public class LineRendererHandler : MonoBehaviour
         Vector2 localPos2 = lineObject.transform.InverseTransformPoint(obj2.transform.position);
 
         edgeCollider.points = new Vector2[] { localPos1, localPos2};
-        
+
+        // Set the z position of the EdgeCollider2D to 0.103
+        Vector3 colliderPosition = edgeCollider.transform.position;
+        colliderPosition.z = 0.103f;
+        edgeCollider.transform.position = colliderPosition;
+
         lineObject.transform.SetParent(lineContainer.transform);
     }
 

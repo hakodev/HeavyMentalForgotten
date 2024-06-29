@@ -163,7 +163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21d0be32ee6988d43952a637f5cbd501, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.18
+  m_Volume: 0.513
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -335,9 +335,11 @@ MonoBehaviour:
   ConnectedVibrationIntensity: 5
   vibrationSpeed: 0.02
   nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
-  connectedOrbs: []
   delay: 3
+  fadeOutTime: 3
+  isHovering: 0
   colliders: []
+  childObject: {fileID: 0}
 --- !u!1 &8121083196950414096
 GameObject:
   m_ObjectHideFlags: 0

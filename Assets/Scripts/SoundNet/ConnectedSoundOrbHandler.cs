@@ -14,10 +14,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float ConnectedVibrationIntensity;
     [SerializeField] private float vibrationSpeed;
     [SerializeField] private GameObject nonConnectedOrb;
-    public GameObject[] connectedOrbs;
     [SerializeField] private float delay;
+    [SerializeField] private float fadeOutTime;
+    private GameObject[] connectedOrbs;
     private bool followMouse;
-    private bool isHovering;
+    public bool isHovering;
     private SpriteRenderer spriteRenderer;
     public Collider2D[] colliders;
     private bool hasSpawned = false;
@@ -59,6 +60,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     }
     private void OnMouseOver()
     {
+        Debug.Log("Mouse is over orb");
         isHovering = true;
         
         foreach (GameObject orb in connectedOrbs)
@@ -82,6 +84,15 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private void OnMouseExit()
     {
         isHovering = false;
+        
+        foreach (GameObject orb in connectedOrbs)
+        {
+            AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
+            if (orbAudioSource != null)
+            {
+                StartCoroutine(FadeOutVolume(orbAudioSource));
+            }
+        }
     }
 
     private void Connected()
@@ -160,4 +171,18 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     }
     
+    private IEnumerator FadeOutVolume(AudioSource audioSource)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
 }
