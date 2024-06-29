@@ -6,7 +6,7 @@ using UnityEngine;
 public class NetRegeneratorHandler : MonoBehaviour
 {
     public static NetRegeneratorHandler instance;
-    [SerializeField] private float delay = 3f;
+    [SerializeField] private float lineSpawnDelay = 3f;
     
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class NetRegeneratorHandler : MonoBehaviour
     
     private IEnumerator EnableAfterDelay(GameObject obj)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(lineSpawnDelay);
         obj.SetActive(true);
     }
     

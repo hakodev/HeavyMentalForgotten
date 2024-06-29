@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7343901045685093277}
   - component: {fileID: 5598433248981822422}
   - component: {fileID: 4857356818756716834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SoundOrbDisconnected
   m_TagString: SoundOrbDisconnected
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -857346859
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.8282891, b: 0.058490515, a: 1}
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385539a28dd22f04e9257d39ffb0aed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MemoryLayer>k__BackingField: 0
   fadeCurve:
     serializedVersion: 2
     m_Curve:
@@ -301,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588886562427744877}
   - component: {fileID: 493292947837988335}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -66,7 +66,6 @@ public class DestroyOrbHandler : MonoBehaviour
         lineRenderer.enabled = false; //TODO: find a better way 
         edgeCollider.enabled = false;
         yield return new WaitForSeconds(particleSystemDuration);
-        Debug.Break();
         lineCuttingParticleSystem.Stop();
     }
 
