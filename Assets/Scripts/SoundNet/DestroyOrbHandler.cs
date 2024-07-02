@@ -9,10 +9,12 @@ public class DestroyOrbHandler : MonoBehaviour
     private ParticleSystem lineCuttingParticleSystem;
     private TrailRenderer trailCutEffect;
     public float particleSystemDuration = 1f;
+    [SerializeField] private float duration = 15f; //once duration is final change here since this script is not available in scene view
     private Vector3 mousePosition;
     private Vector3 worldPosition;
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
+    private Gradient gradient;
     
     private void Awake()
     {
@@ -74,9 +76,40 @@ public class DestroyOrbHandler : MonoBehaviour
         NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
         isDragging = false;
     }
+    
+    private IEnumerator Fadein(float duration)
+    {
+        Gradient gradient = lineRenderer.colorGradient;
+        GradientAlphaKey[] alphaKeys = gradient.alphaKeys;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            float newAlpha = t / duration;
+
+            for (int i = 0; i < alphaKeys.Length; i++)
+            {
+                alphaKeys[i].alpha = newAlpha;
+            }
+
+            gradient.alphaKeys = alphaKeys;
+
+            lineRenderer.colorGradient = gradient;
+
+            yield return null;
+        }
+
+        for (int i = 0; i < alphaKeys.Length; i++)
+        {
+            alphaKeys[i].alpha = 1f;
+        }
+        gradient.alphaKeys = alphaKeys;
+        lineRenderer.colorGradient = gradient;
+    }
 
     private void OnEnable()
     {
+        StartCoroutine(Fadein(duration));
+
         lineRenderer.enabled = true;
         edgeCollider.enabled = true;
         isDragging = false;
