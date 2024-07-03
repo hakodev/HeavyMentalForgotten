@@ -45,7 +45,14 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         {
             StartCoroutine(EnableAfterDelay());
         }
-        
+
+        if (followMouse)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = transform.position.z;
+            transform.position = mousePosition;
+        }
+
         Connected();
         
         //Follow Mouse
@@ -93,6 +100,36 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator Notconnectedhover()
+    {
+
+
+        while (true)
+        {
+            if (!isHovering)
+            {
+                spriteRenderer.color = connectedStartColor;
+                break;
+            }
+            yield return null;
+        }
+    }
+
+
+    private void OnMouseDown()
+    {
+        isHovering = true;
+        followMouse = true;
+        StartCoroutine(Notconnectedhover());
+    }
+
+    private void OnMouseUp()
+    {
+        isHovering = false;
+        followMouse = false;
+    }
+
     private void OnMouseOver()
     {
         Debug.Log("Mouse is over orb");
