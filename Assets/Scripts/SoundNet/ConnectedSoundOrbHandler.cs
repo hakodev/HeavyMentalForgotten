@@ -19,19 +19,19 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float fadeOutTime;
     private static GameObject[] connectedOrbs; //changed to static 
     private bool followMouse;
-    public bool isHovering;
+    private bool isHovering;
     private SpriteRenderer spriteRenderer;
     public Collider2D[] colliders;
     private bool hasSpawned = false;
-    private float time; //must be same as delay in Net Regen
+    private float time = 1f; //must be same as delay in Net Regen
     private GameObject childObject;
-    public GameObject nonConnectedOrbReference;
-    public DisconnectedSoundOrbHandler disconnectOrbScript;
-    public List<GameObject> lineRendererGameObject = new();
+    private GameObject nonConnectedOrbReference;
+    private DisconnectedSoundOrbHandler disconnectOrbScript;
+    private List<GameObject> lineRendererGameObject = new();
 
     private void Awake()
     {
-        time = delay;
+        // time = delay;
         spriteRenderer = GetComponent<SpriteRenderer>();
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
         childObject = this.gameObject.transform.GetChild(0).gameObject;
@@ -39,12 +39,16 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     void Update()
     {
-        time -= Time.deltaTime;
-        
-        if (spriteRenderer != null && !spriteRenderer.enabled)
+        if (spriteRenderer != null)
         {
-            StartCoroutine(EnableAfterDelay());
+            Debug.Log("SpriteRenderer enabled status: " + spriteRenderer.enabled);
         }
+        else
+        {
+            Debug.Log("SpriteRenderer is null");
+        }
+        
+        // time -= Time.deltaTime;
         
         Connected();
         
@@ -56,10 +60,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             transform.position = mousePosition;
         }
         
-        if(time <= 0)
-        {
-            Spawner();
-        }
+        // if(time <= 0)
+        // {
+        //     Spawner();
+        // }
 
         if(disconnectOrbScript != null)
         {
@@ -88,11 +92,16 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 if (!lineRendererGameObject.Contains(collider.gameObject))
                 {
                     lineRendererGameObject.Add(collider.gameObject);
-
                 }
             }
         }
     }
+
+    private void LateUpdate()
+    {
+        Spawner();
+    }
+
     private void OnMouseOver()
     {
         Debug.Log("Mouse is over orb");
@@ -191,22 +200,29 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Vector2 center = this.gameObject.transform.position;
         float radius = 0.3f; //radius/diameter of the circle
 
-        colliders = Physics2D.OverlapCircleAll(center, radius);
+        int layerToIgnore = 3;
+        LayerMask layerMask = ~(1 << layerToIgnore); 
+        colliders = Physics2D.OverlapCircleAll(center, radius, layerMask); 
 
         if (colliders.Length == 1 && !hasSpawned)
         {
+            StartCoroutine(EnableAfterDelay());
             GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
             nonConnectedOrbReference = nonConnectedOrbSpawner;
             disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
             disconnectOrbScript.notConnectedAudio = connectedAudioClip;
             disconnectOrbScript.MemoryLayer = MemoryLayer;
             hasSpawned = true;
-            time = 4.1f;
-            StartCoroutine(EnableAfterDelay());
+            // time = 4.1f;
             childObject.SetActive(false);
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        }
+            spriteRenderer.enabled = false;
 
+            if (spriteRenderer.enabled)
+            {
+                Debug.Log("nulll");
+                spriteRenderer.enabled = false;
+            }
+        }
     }
     
     private IEnumerator FadeOutVolume(AudioSource audioSource)

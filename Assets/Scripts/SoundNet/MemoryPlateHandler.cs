@@ -18,6 +18,7 @@ public class MemoryPlateHandler : MonoBehaviour
     }
 
     private void Start() {
+        
         layerAOrbCount = 0;
         layerBOrbCount = 0;
         layerCOrbCount = 0;
@@ -26,11 +27,11 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void Update()
     {
-        foreach (GameObject plate in filledPlates)
-        {
-            Debug.Log("Filled Plates:");
-            Debug.Log(this.gameObject.name + plate.name);
-        }
+        // foreach (GameObject plate in filledPlates)
+        // {
+        //     Debug.Log("Filled Plates:");
+        //     Debug.Log(this.gameObject.name + plate.name);
+        // }
         
         if (snappedObject != null)
         {
