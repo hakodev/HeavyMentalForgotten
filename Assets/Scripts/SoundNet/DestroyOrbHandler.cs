@@ -15,6 +15,7 @@ public class DestroyOrbHandler : MonoBehaviour
     private LineRenderer lineRenderer;
     private EdgeCollider2D edgeCollider;
     private Gradient gradient;
+    public bool hasPlayedOnce = false;
     
     private void Awake()
     {
@@ -108,8 +109,11 @@ public class DestroyOrbHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(Fadein(duration));
-
+        if(hasPlayedOnce)
+        {
+            StartCoroutine(Fadein(duration));
+        }
+        hasPlayedOnce = true;
         lineRenderer.enabled = true;
         edgeCollider.enabled = true;
         isDragging = false;

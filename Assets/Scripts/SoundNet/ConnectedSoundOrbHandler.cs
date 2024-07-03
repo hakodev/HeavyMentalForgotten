@@ -184,13 +184,18 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private IEnumerator EnableAfterDelay()
     {
         yield return new WaitForSeconds(delay);
+        
         spriteRenderer.enabled = true;
         childObject.SetActive(true);
     }
 
     private void Spawner()
     {
-        Debug.Log("Spawner called");
+        if (nonConnectedOrbReference != null && !nonConnectedOrbReference.activeInHierarchy)
+        {
+            Debug.Log("coroutine running");
+            StartCoroutine(EnableAfterDelay());
+        }
         
         if (colliders.Length >= 2)
         {
@@ -206,7 +211,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (colliders.Length == 1 && !hasSpawned)
         {
-            StartCoroutine(EnableAfterDelay());
             GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
             nonConnectedOrbReference = nonConnectedOrbSpawner;
             disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
@@ -215,13 +219,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             hasSpawned = true;
             // time = 4.1f;
             childObject.SetActive(false);
+            StopAllCoroutines();
             spriteRenderer.enabled = false;
-
-            if (spriteRenderer.enabled)
-            {
-                Debug.Log("nulll");
-                spriteRenderer.enabled = false;
-            }
         }
     }
     

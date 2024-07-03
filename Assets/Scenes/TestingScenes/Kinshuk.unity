@@ -986,6 +986,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.91
