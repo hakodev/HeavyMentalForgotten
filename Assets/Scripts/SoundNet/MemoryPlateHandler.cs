@@ -61,10 +61,10 @@ public class MemoryPlateHandler : MonoBehaviour
             foreach(GameObject plate in filledPlates) {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
                 Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
-                if(disconnectedSoundOrb.MemoryLayer > GameManager.Ins.CurrentLayer + 1) {
-                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer + 1;
-                } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentLayer - 1) {
-                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentLayer - 1;
+                if(disconnectedSoundOrb.MemoryLayer > GameManager.Ins.CurrentMemoryLayer + 1) {
+                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentMemoryLayer + 1;
+                } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentMemoryLayer - 1) {
+                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentMemoryLayer - 1;
                 }
 
                 switch(disconnectedSoundOrb.MemoryLayer) {
@@ -90,27 +90,27 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void SelectNextLevel() {
         if(LayerAOrbIsMajority()) {
-            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerA);
+            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
         } else if(LayerBOrbIsMajority()) {
-            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerB);
+            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
         } else if(LayerCOrbIsMajority()) {
-            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerC);
+            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
         } else if(LayerDOrbIsMajority()) {
-            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerD);
+            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
         } else {
             //Stay in the current layer and load next scene
-            switch(GameManager.Ins.CurrentLayer) {
+            switch(GameManager.Ins.CurrentMemoryLayer) {
                 case MemoryLayers.A:
-                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerA);
+                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
                     break;
                 case MemoryLayers.B:
-                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerB);
+                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
                     break;
                 case MemoryLayers.C:
-                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerC);
+                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
                     break;
                 case MemoryLayers.D:
-                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerD);
+                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
                     break;
             }
         }

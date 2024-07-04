@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a605b11fb41c4144f8b533f2ab84f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentLayer>k__BackingField: 0
+  runMode: 0
+  <CurrentMemoryLayer>k__BackingField: 0
+  blackScreen: {fileID: 0}
+  fadeDuration: 1.5
+  nextLevelLayerA: 0
+  nextLevelLayerB: 0
+  nextLevelLayerC: 0
+  nextLevelLayerD: 0
