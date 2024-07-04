@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.77
   m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+    m_Center: {x: 0.049300015, y: 0.00080001354, z: 0}
+    m_Extent: {x: 0.9509, y: 1, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 6.8
@@ -505,10 +505,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
+  - {x: -0.40296268, y: -0.49092808, z: 0}
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: -0.1355708, y: 0.49637127, z: 0}
 --- !u!1 &186024524
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &186024525
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -737,7 +737,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -791,7 +791,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.7372549}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -855,7 +855,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 3.96
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1232,7 +1232,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
+    type: 0
     angle: 43.12248
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1315,8 +1315,8 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 1
-    sphericalDirectionAmount: 0
+    randomDirectionAmount: 0.21
+    sphericalDirectionAmount: 0.18
     randomPositionAmount: 4
     radius:
       value: 1
@@ -5663,11 +5663,11 @@ Transform:
   m_GameObject: {fileID: 495897195}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.998195, y: -7.695511, z: -5.236063}
+  m_LocalPosition: {x: -5.4643, y: -2.3814, z: 3.1999998}
   m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1167620596}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &554758206 stripped
 Transform:
@@ -7352,7 +7352,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 495897197}
   - {fileID: 2046263245}
   - {fileID: 176004062}
   - {fileID: 1667831938}
@@ -7586,7 +7585,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7640,7 +7639,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.29411766}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -7703,8 +7702,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1.5
+      minMaxState: 3
+      scalar: 3.96
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7756,7 +7755,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -7809,7 +7808,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -8081,7 +8080,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
+    type: 0
     angle: 43.12248
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -8164,8 +8163,8 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 1
-    sphericalDirectionAmount: 0
+    randomDirectionAmount: 0.21
+    sphericalDirectionAmount: 0.18
     randomPositionAmount: 4
     radius:
       value: 1
@@ -8227,7 +8226,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.85
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -13438,11 +13437,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.77
   m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
-  m_Intensity: 11.21
+  m_Intensity: 5.57
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 4bad20730758ede700000000d5ece5cc
@@ -13459,8 +13458,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+    m_Center: {x: 0.16075003, y: 0.010449976, z: 0}
+    m_Extent: {x: 0.83945, y: 1.00865, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 6.8
@@ -13471,10 +13470,19 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
+  - {x: -0.13086231, y: -0.4578212, z: 0}
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: 0.035477452, y: 0.5191722, z: 0}
+  - {x: -0.045253277, y: 0.42670912, z: 0.0000019073486}
+  - {x: -0.054367937, y: 0.33851716, z: 0.0000019073486}
+  - {x: -0.09994027, y: 0.30017287, z: 0.0000019073486}
+  - {x: -0.11361209, y: 0.19664319, z: 0.0000019073486}
+  - {x: -0.15462738, y: 0.11228569, z: 0.0000019073486}
+  - {x: -0.17057781, y: 0.0049216026, z: 0.0000019073486}
+  - {x: -0.17969237, y: -0.10627692, z: 0.0000019073486}
+  - {x: -0.17285645, y: -0.20597216, z: 0.0000019073486}
+  - {x: -0.16602053, y: -0.3325084, z: 0.0000019073486}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13488,3 +13496,4 @@ SceneRoots:
   - {fileID: 1197125090}
   - {fileID: 1193612733}
   - {fileID: 186024527}
+  - {fileID: 495897197}
