@@ -17,17 +17,28 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private GameObject nonConnectedOrb;
     [SerializeField] private float delay;
     [SerializeField] private float fadeOutTime;
-    private static GameObject[] connectedOrbs; //changed to static 
+    private static GameObject[] connectedOrbs; 
+    
+    [Header("Bool Values")]
     private bool followMouse;
     private bool isHovering;
-    private SpriteRenderer spriteRenderer;
+    public bool isOutsideCircle = false;
+    
+    [Header("Spawner")]
     public Collider2D[] colliders;
     private bool hasSpawned = false;
-    private float time = 1f; //must be same as delay in Net Regen
     private GameObject childObject;
     private GameObject nonConnectedOrbReference;
     private DisconnectedSoundOrbHandler disconnectOrbScript;
     private List<GameObject> lineRendererGameObject = new();
+    
+    [Header("References")]
+    private SpriteRenderer spriteRenderer;
+    
+    [Header("Circle Behaviour Stats")]
+    Vector2 circleCenter = new Vector2(0, 0);
+    [SerializeField] private float circleRadius;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -35,20 +46,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
         childObject = this.gameObject.transform.GetChild(0).gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (spriteRenderer != null)
-        {
-            Debug.Log("SpriteRenderer enabled status: " + spriteRenderer.enabled);
-        }
-        else
-        {
-            Debug.Log("SpriteRenderer is null");
-        }
-        
-        // time -= Time.deltaTime;
+        Circlecalculate();
         
         Connected();
         
@@ -59,11 +62,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
         }
-        
-        // if(time <= 0)
-        // {
-        //     Spawner();
-        // }
 
         if(disconnectOrbScript != null)
         {
@@ -102,6 +100,17 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Spawner();
     }
 
+    private void OnMouseDown()
+    {
+        followMouse = true;
+
+    }
+    
+    private void OnMouseUp()
+    {
+        followMouse = false;
+    }
+
     private void OnMouseOver()
     {
         Debug.Log("Mouse is over orb");
@@ -109,16 +118,20 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         
         foreach (GameObject orb in connectedOrbs)
         {
-            StartCoroutine(Fadeinout(orb, connectedStartColor, connectedEndColor));
-
             AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
-            ConnectedSoundOrbHandler orbHandler = orb.GetComponent<ConnectedSoundOrbHandler>();
-            if (orbAudioSource != null && orbHandler != null)
+            
+            if (!isOutsideCircle)
             {
-                orbAudioSource.clip = orbHandler.connectedAudioClip;
-                if (!orbAudioSource.isPlaying)
+                StartCoroutine(Fadeinout(orb, connectedStartColor, connectedEndColor));
+
+                ConnectedSoundOrbHandler orbHandler = orb.GetComponent<ConnectedSoundOrbHandler>();
+                if (orbAudioSource != null && orbHandler != null)
                 {
+                    orbAudioSource.clip = orbHandler.connectedAudioClip;
+                    if (!orbAudioSource.isPlaying)
+                    {
                         orbAudioSource.Play();
+                    }
                 }
             }
         }
@@ -138,6 +151,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
         }
     }
+    
 
     private void Connected()
     {
@@ -184,6 +198,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private IEnumerator EnableAfterDelay()
     {
         yield return new WaitForSeconds(delay);
+
+        if (!nonConnectedOrbReference.activeInHierarchy)
+        {
+            StopAllCoroutines();
+            StartCoroutine(EnableAfterDelay());
+        }
         
         spriteRenderer.enabled = true;
         childObject.SetActive(true);
@@ -237,5 +257,38 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         audioSource.Stop();
         audioSource.volume = startVolume;
+    }
+    
+    private void Circlecalculate() 
+    {
+        // foreach (GameObject orb in connectedOrbs) 
+        // {
+            Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
+            float distance = Vector2.Distance(circleCenter, orbPosition);
+            ConnectedSoundOrbHandler connectedOrbReference = this.gameObject.GetComponent<ConnectedSoundOrbHandler>();
+
+            if (distance > circleRadius) 
+            {
+                isOutsideCircle = true;
+                
+                if (isHovering)
+                {
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.PlayOneShot(connectedAudioClip);
+                    }
+                }
+            }
+            else
+            {
+                isOutsideCircle = false;
+            }
+        // }
+    }
+
+    void OnDrawGizmos() 
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(circleCenter, circleRadius);
     }
 }
