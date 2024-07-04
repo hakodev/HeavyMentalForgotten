@@ -8,16 +8,34 @@ public class LevelLoader : MonoBehaviour {
     [SerializeField] private Image blackScreen;
     [SerializeField] private float fadeDuration;
 
-    [Header("The set value below is ignored when transitioning from sound\n" +
-            "scene to regular scene due to background calculations")]
-    [SerializeField] private Levels nextLevelToLoad;
+    [Header("Set the next possible levels the player can go to.\n" +
+            "Set to NULL or leave blank if that layer is unreachable.")]
+    [SerializeField] private Levels nextLevelLayerA;
+    [SerializeField] private Levels nextLevelLayerB;
+    [SerializeField] private Levels nextLevelLayerC;
+    [SerializeField] private Levels nextLevelLayerD;
 
-    public Levels NextLevelToLoad {
+    public Levels NextLevelLayerA {
         get {
-            return nextLevelToLoad;
+            return nextLevelLayerA;
         }
-        set {
-            nextLevelToLoad = value;
+    }
+
+    public Levels NextLevelLayerB {
+        get {
+            return nextLevelLayerB;
+        }
+    }
+
+    public Levels NextLevelLayerC {
+        get {
+            return nextLevelLayerC;
+        }
+    }
+
+    public Levels NextLevelLayerD {
+        get {
+            return nextLevelLayerD;
         }
     }
 
@@ -33,8 +51,8 @@ public class LevelLoader : MonoBehaviour {
         this.fadeDuration = fadeDuration;
     }
 
-    public void LoadNextLevel() {
-        blackScreen.DOFade(1f, fadeDuration).OnComplete(() => SceneManager.LoadScene((int)nextLevelToLoad));
+    public void LoadNextLevel(Levels nextLevel) {
+        blackScreen.DOFade(1f, fadeDuration).OnComplete(() => SceneManager.LoadScene((int)nextLevel));
     }
 
     public void QuitGame() {

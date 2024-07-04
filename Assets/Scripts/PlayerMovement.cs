@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
     private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
-    [field: SerializeField] public bool RunMode { get; set; }
 
     private void Awake() {
         Ins = this;
@@ -18,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         horizontalAxis = Input.GetAxisRaw("Horizontal");
-        moveSpeed = RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
+        moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 
     private void FixedUpdate() {

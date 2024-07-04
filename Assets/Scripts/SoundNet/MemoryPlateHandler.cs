@@ -90,13 +90,29 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void SelectNextLevel() {
         if(LayerAOrbIsMajority()) {
-            //Load the A layer of the next scene
+            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerA);
         } else if(LayerBOrbIsMajority()) {
-            //Load the B layer of the next scene
+            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerB);
         } else if(LayerCOrbIsMajority()) {
-            //Load the C layer of the next scene
+            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerC);
         } else if(LayerDOrbIsMajority()) {
-            //Load the D layer of the next scene
+            LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerD);
+        } else {
+            //Stay in the current layer and load next scene
+            switch(GameManager.Ins.CurrentLayer) {
+                case MemoryLayers.A:
+                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerA);
+                    break;
+                case MemoryLayers.B:
+                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerB);
+                    break;
+                case MemoryLayers.C:
+                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerC);
+                    break;
+                case MemoryLayers.D:
+                    LevelLoader.Ins.LoadNextLevel(LevelLoader.Ins.NextLevelLayerD);
+                    break;
+            }
         }
     }
 
