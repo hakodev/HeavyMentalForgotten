@@ -23,6 +23,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private bool followMouse;
     private bool isHovering;
     public bool isOutsideCircle = false;
+    private bool lineRendererCollecter = true;
     
     [Header("Spawner")]
     public Collider2D[] colliders;
@@ -34,15 +35,18 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     [Header("References")]
     private SpriteRenderer spriteRenderer;
-    
-    [Header("Circle Behaviour Stats")]
-    Vector2 circleCenter = new Vector2(0, 0);
-    [SerializeField] private float circleRadius;
+    public List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private AudioSource audioSource;
 
+    [Header("Circle Behaviour Stats")]
+    [SerializeField] private float circleRadius;
+    [SerializeField] private float vibrationAdd;
+    Vector2 circleCenter = new Vector2(0, 0);
+    public Vector3 lengthOfLR;
+    public bool hasIncreased = false;
+    public bool hasDecreased = true;
     private void Awake()
     {
-        // time = delay;
         spriteRenderer = GetComponent<SpriteRenderer>();
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
         childObject = this.gameObject.transform.GetChild(0).gameObject;
@@ -98,6 +102,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private void LateUpdate()
     {
         Spawner();
+
+        // Linerendererstrecher();
     }
 
     private void OnMouseDown()
@@ -155,17 +161,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     private void Connected()
     {
-        for (int i = 0; i < connectedOrbs.Length; i++)
-        {
-            for (int j = i + 1; j < connectedOrbs.Length; j++)
-            {
-                Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
-                    UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
+        Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
+            UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
 
-                connectedOrbs[i].transform.position += vibration;
-                connectedOrbs[j].transform.position += vibration;
-            }
-        }
+        this.gameObject.transform.position += vibration;
+        
     }
 
     private IEnumerator Fadeinout(GameObject orb, Color firstColor, Color lastColor)
@@ -278,15 +278,82 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                         audioSource.PlayOneShot(connectedAudioClip);
                     }
                 }
+
+                if (!hasIncreased)
+                {
+                    ConnectedVibrationIntensity += vibrationAdd;
+                    hasIncreased = true;
+                    hasDecreased = false;
+                }
+
             }
-            else
+            else if(!hasDecreased)
             {
                 isOutsideCircle = false;
+
+                Debug.Log("Orb is inside the circle");
+                ConnectedVibrationIntensity -= vibrationAdd;
+
+                hasDecreased = true;
+                hasIncreased = false;
+  
             }
         // }
     }
 
-    void OnDrawGizmos() 
+    private void Linerendererstrecher()
+    {
+        if (lineRendererCollecter)
+        {
+            if (colliders.Length >= 2)
+            {
+                foreach (var collider in colliders)
+                {
+                    LineRenderer lineRenderer = collider.gameObject.GetComponent<LineRenderer>();
+                    if (lineRenderer != null)
+                    {
+                        lineRenderers.Add(lineRenderer);
+                    }
+                }
+            }
+            lineRendererCollecter = false;
+        }
+
+        lengthOfLR = Vector3.zero;
+
+        // Calculate the length of each LineRenderer
+        foreach (LineRenderer lineRenderer in lineRenderers)
+        {
+            float lineLength = CalculateLineRendererLength(lineRenderer);
+            lengthOfLR += new Vector3(lineLength, 0, 0);
+        }
+        
+        foreach (GameObject orb in connectedOrbs)
+        {
+            ConnectedSoundOrbHandler orbHandler = orb.GetComponent<ConnectedSoundOrbHandler>();
+            if (orbHandler.lengthOfLR.x > 30)
+            {
+                orbHandler.ConnectedVibrationIntensity = vibrationAdd; // Increase vibration intensity
+                orbHandler.Connected(); // Apply increased vibration
+            }
+            else
+            {
+                orbHandler.ConnectedVibrationIntensity -= vibrationAdd;
+            }
+        }
+    }
+    
+    private float CalculateLineRendererLength(LineRenderer lineRenderer)
+    {
+        if (lineRenderer.positionCount != 2)
+        {
+            throw new InvalidOperationException("LineRenderer must have exactly 2 positions.");
+        }
+
+        return Vector3.Distance(lineRenderer.GetPosition(0), lineRenderer.GetPosition(1));
+    }
+    
+    private void OnDrawGizmos() 
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
