@@ -226,7 +226,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
         
         Vector2 center = this.gameObject.transform.position;
-        float radius = 0.3f; //radius/diameter of the circle
+        float radius = 0.5f; //radius/diameter of the circle
 
         int layerToIgnore = 3;
         LayerMask layerMask = ~(1 << layerToIgnore); 
