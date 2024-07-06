@@ -12,6 +12,7 @@ public class EventSystemList : MonoBehaviour
     public bool triggerOnCustomEnter;
     public string customTagTrigger;
     public bool enableReset;
+    public bool enableSetCurrentEvent;
 
 
     [Header("System")]
@@ -134,6 +135,15 @@ public class EventSystemList : MonoBehaviour
         {
             currentEvent = -1;
             Debug.Log("System resetted.");
+        }
+    }
+
+    public void setCurrentEvent(int newCurrentEvent)                    //Reset from any Event / code
+    {
+        if (enableSetCurrentEvent == true)
+        {
+            currentEvent = newCurrentEvent;
+            Debug.Log("CurrentEvent set to " + newCurrentEvent);
         }
     }
 
