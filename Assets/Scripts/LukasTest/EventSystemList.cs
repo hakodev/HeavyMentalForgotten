@@ -11,7 +11,10 @@ public class EventSystemList : MonoBehaviour
     public bool triggerOnEvent;
     public bool triggerOnCustomEnter;
     public string customTagTrigger;
+
+    [Header("Advanced Tools")]
     public bool enableReset;
+    public bool enableLoop;
     public bool enableSetCurrentEvent;
 
 
@@ -135,6 +138,15 @@ public class EventSystemList : MonoBehaviour
         {
             currentEvent = -1;
             Debug.Log("System resetted.");
+        }
+    }
+
+    public void LoopSystem()                    //Reset from any Event / code
+    {
+        if (enableLoop == true)
+        {
+            currentEvent = 0;
+            Debug.Log("System looped back to Start.");
         }
     }
 

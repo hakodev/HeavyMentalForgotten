@@ -12317,6 +12317,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: enableLoop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: triggerOnReset
       value: 1
       objectReference: {fileID: 0}
@@ -12346,7 +12350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].name
-      value: Reset
+      value: Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].name
+      value: StopSound
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[0].exitDelay
@@ -12393,6 +12401,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].enterDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[1].DialogueEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -12410,6 +12422,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].DialogueEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
@@ -12437,6 +12453,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[0].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 573854112}
@@ -12461,6 +12481,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 523917286}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 523917286}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[1].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -12478,6 +12502,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
@@ -12502,7 +12530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetSystem
+      value: LoopSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoopSystem
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[0].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -12526,6 +12558,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EventSystemList, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EventSystemList, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
@@ -12554,6 +12590,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[5].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
+      propertyPath: events.Array.data[6].DialogueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7707544494921096117, guid: 5650535b741a62d42a09e53424d68313, type: 3}
