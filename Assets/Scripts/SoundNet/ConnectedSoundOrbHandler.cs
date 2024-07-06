@@ -39,9 +39,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private AudioSource audioSource;
 
     [Header("Circle Behaviour Stats")]
+    [SerializeField] private float xCircleRadius;
+    [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     [SerializeField] private float vibrationAdd;
-    Vector2 circleCenter = new Vector2(0, 0);
+    private Vector2 circleCenter;
     public Vector3 lengthOfLR;
     public bool hasIncreased = false;
     public bool hasDecreased = true;
@@ -55,6 +57,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     void Update()
     {
+        circleCenter = new Vector2(xCircleRadius, yCircleRadius);
+        
         Circlecalculate();
         
         Connected();
@@ -165,7 +169,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity), 0) * vibrationSpeed * Time.deltaTime;
 
         this.gameObject.transform.position += vibration;
-        
     }
 
     private IEnumerator Fadeinout(GameObject orb, Color firstColor, Color lastColor)
@@ -265,7 +268,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         // {
             Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
             float distance = Vector2.Distance(circleCenter, orbPosition);
-            ConnectedSoundOrbHandler connectedOrbReference = this.gameObject.GetComponent<ConnectedSoundOrbHandler>();
 
             if (distance > circleRadius) 
             {

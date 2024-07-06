@@ -5,11 +5,13 @@ using UnityEngine;
 public class CircleCalculatorHandler : MonoBehaviour
 {
     [Header("Circle Behaviour Stats")]
-    Vector2 circleCenter = new Vector2(0, 0);
+    [SerializeField] private float xCircleRadius;
+    [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     private GameObject[] connectedOrbs;
     private AudioSource audioSource;
-    
+    private Vector2 circleCenter;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -18,6 +20,8 @@ public class CircleCalculatorHandler : MonoBehaviour
 
     void Update() 
     {
+        circleCenter = new Vector2(xCircleRadius, yCircleRadius);
+
         Circlecalculate();
     }
 
