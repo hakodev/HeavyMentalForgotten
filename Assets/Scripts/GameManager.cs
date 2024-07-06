@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private float fadeDuration;
 
     [Header("Set the next possible levels the player can go to.\n" +
-            "Set to NULL or leave blank if that layer is unreachable.")]
+            "Set to NULL if that layer is unreachable.")]
     [SerializeField] private Levels nextLevelLayerA;
     [SerializeField] private Levels nextLevelLayerB;
     [SerializeField] private Levels nextLevelLayerC;
