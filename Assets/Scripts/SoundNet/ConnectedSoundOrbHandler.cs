@@ -43,6 +43,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     [SerializeField] private float vibrationAdd;
+    private float mouseSensivity;
+    [SerializeField] private float mouseSen;
     private Vector2 circleCenter;
     public Vector3 lengthOfLR;
     public bool hasIncreased = false;
@@ -62,13 +64,22 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Circlecalculate();
         
         Connected();
+
+        if (hasIncreased)
+        {
+            mouseSensivity = mouseSen;
+        }
+        else
+        {
+            mouseSensivity = 20f;
+        }
         
         //Follow Mouse
         if (followMouse)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
-            transform.position = mousePosition;
+            transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
         }
 
         if(disconnectOrbScript != null)
@@ -359,8 +370,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             ConnectedSoundOrbHandler orbHandler = orb.GetComponent<ConnectedSoundOrbHandler>();
             if (orbHandler.lengthOfLR.x > 30)
             {
-                orbHandler.ConnectedVibrationIntensity = vibrationAdd; // Increase vibration intensity
-                orbHandler.Connected(); // Apply increased vibration
+                orbHandler.ConnectedVibrationIntensity = vibrationAdd;
+                orbHandler.Connected();
             }
             else
             {

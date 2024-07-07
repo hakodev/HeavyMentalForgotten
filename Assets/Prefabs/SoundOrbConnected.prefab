@@ -328,6 +328,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  <MemoryLayer>k__BackingField: 0
   connectedStartColor: {r: 0.8666667, g: 0.8901961, b: 0.9254902, a: 1}
   connectedEndColor: {r: 1, g: 0.6498264, b: 0.2320754, a: 1}
   connectedAudioClip: {fileID: 8300000, guid: 67919278a25a1174d8b7441d26c439b1, type: 3}
@@ -337,9 +338,17 @@ MonoBehaviour:
   nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   delay: 3
   fadeOutTime: 3
-  isHovering: 0
+  isOutsideCircle: 0
   colliders: []
-  childObject: {fileID: 0}
+  lineRenderers: []
+  xCircleRadius: 0
+  yCircleRadius: 0
+  circleRadius: 0
+  vibrationAdd: 0
+  makeshiftMouse: {fileID: 1419290551999311630, guid: 7aabb6bcabe9a734db5de6cb0129c36c, type: 3}
+  lengthOfLR: {x: 0, y: 0, z: 0}
+  hasIncreased: 0
+  hasDecreased: 1
 --- !u!1 &8121083196950414096
 GameObject:
   m_ObjectHideFlags: 0
