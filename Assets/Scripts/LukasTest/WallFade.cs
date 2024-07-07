@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class WallFade : MonoBehaviour
+public class FogOfWall : MonoBehaviour
 {
 
     [SerializeField] private SpriteRenderer wallSprite;

@@ -23,6 +23,16 @@ public class LighterActivation : MonoBehaviour
     //public AudioClip flameAudioClip;
     //public AudioClip clickAudioClip;
 
+
+    //StoryRelevant
+    [Header("STORY RELEVANT:")]
+    [Header("Bools need to be false")]
+    private bool wentOutside;
+    [SerializeField]
+    private bool burnedPaper;
+    [Header("Put the system in here which is responsible for burning the paper etc")]
+    public GameObject DialogueEventListForBurningPaper;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -49,22 +59,24 @@ public class LighterActivation : MonoBehaviour
         {
             inputTimeLeft -= Time.deltaTime;
         }
-        if (Input.GetMouseButtonDown(2)) //middle mouse button
+        if (Input.GetMouseButtonDown(2)                     //middle mouse button
+            || Input.GetKeyDown(KeyCode.UpArrow))           //ArrowKeys can be used as well, just if there is no mouse (but pshh! - it's rather a secret)
         {
             Debug.Log("Mouse wheel pressed!");
             flameLight.intensity = maxLightIntensity;
             flameParticle.Play();
             audioSource.Play();
-
-            if (Input.GetAxis("Mouse ScrollWheel") < -wheelThreshold)
-            {
-                onFire = true;
-                Debug.Log("Mouse wheel scrolled down!");
-                inputTimeLeft = inputDelayThreshold;
-                flameLight.intensity = maxLightIntensity;
-            }
-        }      
-        else if ((!Input.GetMouseButton(2) || onFire == false) && inputTimeLeft <= 0)
+            inputTimeLeft = inputDelayThreshold;            //InputTimeLeft is set to a value of inputDelayThreshold. While there is still time remaining, the input of mousescroll still work together.
+        }
+        if ((Input.GetAxis("Mouse ScrollWheel") < -wheelThreshold || Input.GetAxis("Mouse ScrollWheel") > wheelThreshold) && inputTimeLeft > 0  // you can theoretically scroll in both directions - for player who don't realise or mix up the direction (happened to me), the feeling is more or less the same
+            || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            onFire = true;
+            Debug.Log("Mouse wheel scrolled down!");
+            flameLight.intensity = maxLightIntensity;
+        }
+        else if (inputTimeLeft <= 0 && (onFire == false || !(Input.GetMouseButton(2)    //if any of these keys/buttons is pressed, the result will be false for all of them together
+            || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))))
                 {
             onFire = false;
         }
@@ -84,6 +96,25 @@ public class LighterActivation : MonoBehaviour
             flameParticle.Stop();
         }
 
+        StoryEvents();
+    }
 
+    public void playerWentOutside()
+    {
+        wentOutside = true;
+    }
+
+    private void StoryEvents()
+    {
+        if (onFire && !wentOutside)
+        {
+            //light the area and free it from The Darkness !
+        }
+        else if (onFire && wentOutside && !burnedPaper)
+        {
+            //start the system which is responsible for the burning of paper. Needs to be allowed in the respective object component.
+            DialogueEventListForBurningPaper.GetComponent<EventSystemList>().StartSystem(); 
+            burnedPaper = true;
+        }
     }
 }
