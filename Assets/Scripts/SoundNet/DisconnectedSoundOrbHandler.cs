@@ -26,6 +26,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     [Header("Hover Color Stats, Not Connected")]
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
+    [SerializeField] private float fadeOutTime;
     public bool isHovering;
     private float hoverTime;
     [SerializeField] private float ConnectedColorTransitionSpeed;
@@ -81,6 +82,8 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
                 audioSource.PlayOneShot(notConnectedAudio);
             }
         }
+        
+        audioSource.volume = 1f;
     }
 
     private void OnMouseUp()
@@ -92,6 +95,11 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     private void OnMouseExit()
     {
         isHovering = false;
+        
+        if (audioSource != null)
+        {
+            StartCoroutine(FadeOutVolume(audioSource));
+        }
     }
     
     private IEnumerator Notconnected()
@@ -186,4 +194,26 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
             yield return null;
         }
     }
+    
+    private IEnumerator FadeOutVolume(AudioSource audioSource)
+    {
+        float startVolume = 1f;
+        Vector3 lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        while (audioSource.volume > 0)
+        {
+            Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
+
+            if (distanceToCurrentFrame > 1f) 
+            {
+                audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+            }
+
+            lastMousePosition = currentMousePosition;
+
+            yield return null;
+        }
+    }
+
 }

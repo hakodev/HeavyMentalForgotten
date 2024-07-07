@@ -113,7 +113,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private void OnMouseDown()
     {
         followMouse = true;
-
     }
     
     private void OnMouseUp()
@@ -146,6 +145,14 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
         }
         
+        foreach (GameObject orb in connectedOrbs)
+        {
+            AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
+            if (orbAudioSource != null)
+            {
+                audioSource.volume = 1f;
+            }
+        }
     }
 
     private void OnMouseExit()
@@ -249,25 +256,26 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private IEnumerator FadeOutVolume(AudioSource audioSource)
     {
-        float startVolume = audioSource.volume;
+        float startVolume = 1f;
         Vector3 lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         while (audioSource.volume > 0)
         {
             Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            float distanceToLastFrame = Vector3.Distance(lastMousePosition, transform.position);
             float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
 
-            if (distanceToCurrentFrame > distanceToLastFrame)
+            if (distanceToCurrentFrame > 8f) 
             {
-                // Mouse is moving away from the GameObject
                 audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
             }
-            // else
-            // {
-            //     // Mouse is moving towards the GameObject
-            //     audioSource.volume += startVolume * Time.deltaTime / fadeOutTime;
-            // }
+            else if (distanceToCurrentFrame <= 1f)
+            {
+                audioSource.volume = 1;
+            }
+            else
+            {
+                audioSource.volume += startVolume * Time.deltaTime / fadeOutTime;
+            }
 
             lastMousePosition = currentMousePosition;
 

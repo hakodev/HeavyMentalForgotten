@@ -259,7 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385539a28dd22f04e9257d39ffb0aed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MemoryLayer>k__BackingField: 0
   fadeCurve:
     serializedVersion: 2
     m_Curve:
@@ -290,6 +289,7 @@ MonoBehaviour:
   notConnectedAudio: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
   startColor: {r: 1, g: 0.827451, b: 0.05882353, a: 1}
   endColor: {r: 1, g: 0.64832205, b: 0, a: 1}
+  fadeOutTime: 2
   isHovering: 0
   ConnectedColorTransitionSpeed: 5
 --- !u!1 &5044411554546723994
