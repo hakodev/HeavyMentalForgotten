@@ -250,10 +250,26 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private IEnumerator FadeOutVolume(AudioSource audioSource)
     {
         float startVolume = audioSource.volume;
+        Vector3 lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+            Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float distanceToLastFrame = Vector3.Distance(lastMousePosition, transform.position);
+            float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
+
+            if (distanceToCurrentFrame > distanceToLastFrame)
+            {
+                // Mouse is moving away from the GameObject
+                audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+            }
+            // else
+            // {
+            //     // Mouse is moving towards the GameObject
+            //     audioSource.volume += startVolume * Time.deltaTime / fadeOutTime;
+            // }
+
+            lastMousePosition = currentMousePosition;
 
             yield return null;
         }

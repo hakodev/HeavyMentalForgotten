@@ -24,6 +24,7 @@ public class LineRendererHandler : MonoBehaviour
     private Dictionary<GameObjectPair, GameObject> lines = new Dictionary<GameObjectPair, GameObject>();
     [SerializeField] private List<GameObjectPair> gameObjectPair = new List<GameObjectPair>();
     [SerializeField] private GameObject lineContainer;
+    [SerializeField] private Material lRMaterial;
     
     private void Update()
     {
@@ -43,6 +44,7 @@ public class LineRendererHandler : MonoBehaviour
                 lineObject.tag = "CanBeDestroyed";
                 lineObject.transform.SetParent(transform);
                 lineRenderer = lineObject.AddComponent<LineRenderer>();
+                lineRenderer.material = lRMaterial;
                 edgeCollider = lineObject.AddComponent<EdgeCollider2D>();
                 lineObject.AddComponent<DestroyOrbHandler>();
                 Drawline(pair.Object1, pair.Object2, lineObject);
