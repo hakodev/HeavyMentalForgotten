@@ -11,7 +11,7 @@ public class LighterActivation : MonoBehaviour
     public float inputDelayThreshold;
     private float inputTimeLeft;
 
-    public float weelThreshold; //between 0 and 1
+    public float wheelThreshold; //between 0 and 1
 
     private float maxLightIntensity;
     public float lightIntensityDivider; //more than 1, smaller values will create weird behaviour or problems
@@ -56,7 +56,7 @@ public class LighterActivation : MonoBehaviour
             flameParticle.Play();
             audioSource.Play();
 
-            if (Input.GetAxis("Mouse ScrollWheel") < -weelThreshold)
+            if (Input.GetAxis("Mouse ScrollWheel") < -wheelThreshold)
             {
                 onFire = true;
                 Debug.Log("Mouse wheel scrolled down!");
