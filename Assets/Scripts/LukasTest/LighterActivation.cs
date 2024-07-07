@@ -23,6 +23,16 @@ public class LighterActivation : MonoBehaviour
     //public AudioClip flameAudioClip;
     //public AudioClip clickAudioClip;
 
+
+    //StoryRelevant
+    [Header("STORY RELEVANT:")]
+    [Header("Bools need to be false")]
+    private bool wentOutside;
+    [SerializeField]
+    private bool burnedPaper;
+    [Header("Put the system in here which is responsible for burning the paper etc")]
+    public GameObject DialogueEventListForBurningPaper;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -86,6 +96,25 @@ public class LighterActivation : MonoBehaviour
             flameParticle.Stop();
         }
 
+        StoryEvents();
+    }
 
+    public void playerWentOutside()
+    {
+        wentOutside = true;
+    }
+
+    private void StoryEvents()
+    {
+        if (onFire && !wentOutside)
+        {
+            //light the area and free it from The Darkness !
+        }
+        else if (onFire && wentOutside && !burnedPaper)
+        {
+            //start the system which is responsible for the burning of paper. Needs to be allowed in the respective object component.
+            DialogueEventListForBurningPaper.GetComponent<EventSystemList>().StartSystem(); 
+            burnedPaper = true;
+        }
     }
 }
