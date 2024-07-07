@@ -8349,6 +8349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1008707972}
     m_Modifications:
+    - target: {fileID: 1237220990627215916, guid: df08b81bf48809f4f95c9bcb27d22503, type: 3}
+      propertyPath: inputDelayThreshold
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2048538888765457458, guid: df08b81bf48809f4f95c9bcb27d22503, type: 3}
       propertyPath: m_Name
       value: LighterObject
@@ -18674,7 +18678,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1358529385}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2054195929707731234, guid: 4e5fdd12b81b96947a2e71cbc0f4f490, type: 3}
       propertyPath: m_Sprite
@@ -28834,7 +28838,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1067623755}
-  - {fileID: 1008707972}
   - {fileID: 902646582}
   - {fileID: 1536047313}
   - {fileID: 17592142}
@@ -45054,6 +45057,7 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1008707971}
   - {fileID: 1358529385}
   - {fileID: 388212818}
   - {fileID: 539130662}
