@@ -43,8 +43,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     [SerializeField] private float vibrationAdd;
-    private float mouseSensivity;
     [SerializeField] private float mouseSen;
+    [SerializeField] private float mouseSensivityDecreaseRate;
+    private float mouseSensivity;
     private Vector2 circleCenter;
     public Vector3 lengthOfLR;
     public bool hasIncreased = false;
@@ -67,10 +68,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (hasIncreased)
         {
-            mouseSensivity = mouseSen;
+            StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
         }
         else
         {
+            StopAllCoroutines();
             mouseSensivity = 20f;
         }
         
@@ -394,5 +396,20 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
+    }
+    
+    private IEnumerator IncreaseMouseSensitivityOverTime(float target, float duration)
+    {
+        float start = mouseSensivity;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            mouseSensivity = Mathf.Lerp(start, target, elapsed / duration);
+            yield return null;
+        }
+
+        mouseSensivity = target;
     }
 }
