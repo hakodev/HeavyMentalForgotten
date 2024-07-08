@@ -47,9 +47,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float mouseSensivityDecreaseRate;
     private float mouseSensivity;
     private Vector2 circleCenter;
-    public Vector3 lengthOfLR;
-    public bool hasIncreased = false;
-    public bool hasDecreased = true;
+    private Coroutine increaseMousesen;
+    private Vector3 lengthOfLR;
+    private bool hasIncreased = false;
+    private bool hasDecreased = true;
+    
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -67,12 +69,16 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Connected();
 
         if (hasIncreased)
-        {
-            StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
+        { 
+            increaseMousesen = StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
         }
         else
         {
-            StopAllCoroutines();
+            if (increaseMousesen != null)
+            {
+                StopCoroutine(increaseMousesen);
+            }
+            
             mouseSensivity = 20f;
         }
         
@@ -230,6 +236,13 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         
         spriteRenderer.enabled = true;
         childObject.SetActive(true);
+        
+        if(!spriteRenderer.enabled || !childObject.activeInHierarchy)
+        {
+            Debug.Log("Enabling sprite renderer and child object");
+            spriteRenderer.enabled = true;
+            childObject.SetActive(true);
+        }
     }
 
     private void Spawner()
@@ -250,20 +263,23 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         int layerToIgnore = 3;
         LayerMask layerMask = ~(1 << layerToIgnore); 
-        colliders = Physics2D.OverlapCircleAll(center, radius, layerMask); 
+        colliders = Physics2D.OverlapCircleAll(center, radius, layerMask);
 
-        if (colliders.Length == 1 && !hasSpawned)
+        if (spriteRenderer.enabled)
         {
-            GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
-            nonConnectedOrbReference = nonConnectedOrbSpawner;
-            disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
-            disconnectOrbScript.notConnectedAudio = connectedAudioClip;
-            disconnectOrbScript.MemoryLayer = MemoryLayer;
-            hasSpawned = true;
-            // time = 4.1f;
-            childObject.SetActive(false);
-            StopAllCoroutines();
-            spriteRenderer.enabled = false;
+            if (colliders.Length == 1 && !hasSpawned)
+            {
+                GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
+                nonConnectedOrbReference = nonConnectedOrbSpawner;
+                disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
+                disconnectOrbScript.notConnectedAudio = connectedAudioClip;
+                disconnectOrbScript.MemoryLayer = MemoryLayer;
+                hasSpawned = true;
+                // time = 4.1f;
+                childObject.SetActive(false);
+                StopAllCoroutines();
+                spriteRenderer.enabled = false;
+            }
         }
     }
     
