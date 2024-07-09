@@ -159,21 +159,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 603b211f0b2f05f4ca42f2a997bf4b3e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -194,13 +214,25 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -286,6 +318,123 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 55208182}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &82018951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1816578256}
+    m_Modifications:
+    - target: {fileID: 2063111658468904009, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_Name
+      value: UI Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063111658468904009, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+--- !u!224 &82018952 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+  m_PrefabInstance: {fileID: 82018951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &82018953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5364572042231220042, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+  m_PrefabInstance: {fileID: 82018951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100007468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,21 +456,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7560ef25b1168db4a9b065570873036e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -342,13 +511,25 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -449,11 +630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4738436
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3023148
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.z
@@ -487,6 +668,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616529578282152382, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_Name
       value: MemoryPlate (2)
@@ -506,6 +699,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 956756298}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &362243513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362243514}
+  - component: {fileID: 362243515}
+  m_Layer: 0
+  m_Name: Dementia Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &362243514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362243513}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12, y: -7, z: 2.236063}
+  m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1167620596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362243515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362243513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 1
+  m_FalloffIntensity: 1
+  m_Color: {r: 0.6291963, g: 1, b: 0, a: 1}
+  m_Intensity: 7.01
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 4bad20730758ede700000000d5ece5cc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 10
+  m_PointLightOuterRadius: 13
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: -0.05902105, y: -0.48117194, z: -0.0000019073486}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &449987511 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
@@ -557,21 +833,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7278f02bf98c7ea4ea8e253d7368c55c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -591,6 +887,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -763,8 +1071,8 @@ Transform:
   m_GameObject: {fileID: 495897195}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.83, y: -6.91, z: -5.236063}
-  m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
+  m_LocalPosition: {x: -0.10000038, y: -5.1200004, z: 3.1999998}
+  m_LocalScale: {x: 55.951935, y: 33.24968, z: 1.283}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1167620596}
@@ -857,6 +1165,7 @@ MonoBehaviour:
   - Object1: {fileID: 1066538848}
     Object2: {fileID: 1420740458}
   lineContainer: {fileID: 1349033774}
+  lRMaterial: {fileID: 0}
 --- !u!82 &592037169
 AudioSource:
   m_ObjectHideFlags: 0
@@ -962,7 +1271,7 @@ Transform:
   m_GameObject: {fileID: 592037167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.66, y: 0.69, z: 0}
+  m_LocalPosition: {x: 11.75, y: 2.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1034,21 +1343,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: d86897f576f1457479a49914c6659020, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1069,13 +1398,25 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.12
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1172,21 +1513,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67567be41b686b14e804912dd41f7189, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1207,13 +1568,25 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.67
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.55
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1300,6 +1673,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 673910444}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &705848303
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1816578256}
+    m_Modifications:
+    - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 82018953}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478632315916105011, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+--- !u!4 &705848304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
+  m_PrefabInstance: {fileID: 705848303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &727656606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1337,21 +1776,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5dd79c6f3dbb7d647ab74b13898214c2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -1371,6 +1830,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1612,12 +2083,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814383360}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12, y: 0, z: -9.712567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1816578256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &814383366
 MonoBehaviour:
@@ -1645,11 +2116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0138435
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2423148
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1682,6 +2153,18 @@ PrefabInstance:
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8616529578282152382, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_Name
@@ -1729,21 +2212,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 66de329947168ec4bb9bce0b769e543d, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: MinDistance
       value: 0.9649987
@@ -1767,6 +2270,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1946,7 +2461,7 @@ Transform:
   m_GameObject: {fileID: 918969415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.83, y: 1.1223149, z: -9.9505625}
+  m_LocalPosition: {x: -14.43, y: 1.1223149, z: -9.9505625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1992,21 +2507,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 947c4eafbdc6d3748a802249d34c0b90, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: MinDistance
       value: 0.9649987
@@ -2030,6 +2565,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2160,21 +2707,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: f84ae3488bad3d248a4db903e56f7521, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -2194,6 +2761,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2324,21 +2903,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: de9602f6900791d48a24ad486e7b807c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -2358,6 +2957,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2451,6 +3062,114 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1066538846}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1125613743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1125613744}
+  - component: {fileID: 1125613745}
+  m_Layer: 0
+  m_Name: Dementia Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1125613744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125613743}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12, y: -7, z: 2.236063}
+  m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1167620596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125613745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125613743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 1
+  m_FalloffIntensity: 0.713
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 4bad20730758ede700000000d5ece5cc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: -0.07640001, y: 0.20035002, z: 0}
+    m_Extent: {x: 0.69990003, y: 1.01735, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 10
+  m_PointLightOuterRadius: 13
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.21227558, y: -0.31663322, z: 0}
+  - {x: -0.0923005, y: -0.29076502, z: -0.0000019073486}
+  - {x: 0.116177246, y: -0.24985762, z: 0}
+  - {x: 0.124228306, y: 0.71739364, z: 0}
+  - {x: -0.063350126, y: 0.55965114, z: 0}
+  - {x: -0.06251324, y: 0.5188136, z: 0}
+  - {x: -0.09180212, y: 0.5202217, z: 0}
+  - {x: -0.09096529, y: 0.48360872, z: 0}
+  - {x: -0.11941736, y: 0.48924148, z: 0}
+  - {x: -0.12109099, y: 0.4484039, z: 0}
+  - {x: -0.14270858, y: 0.43794018, z: 0}
+  - {x: -0.14401378, y: 0.39892176, z: 0}
+  - {x: -0.17284219, y: 0.38814133, z: 0}
+  - {x: -0.15804426, y: 0.33886018, z: 0}
+  - {x: -0.18645564, y: 0.33828187, z: 0}
+  - {x: -0.2130687, y: 0.32837427, z: 0}
+  - {x: -0.18965879, y: 0.27629444, z: 0}
+  - {x: -0.22115764, y: 0.24730799, z: 0}
+  - {x: -0.21608482, y: 0.18196572, z: 0}
+  - {x: -0.25242105, y: 0.16671646, z: 0}
+  - {x: -0.22969824, y: 0.12402099, z: 0}
+  - {x: -0.2481164, y: 0.10380771, z: 0}
+  - {x: -0.22811522, y: 0.07712295, z: 0}
+  - {x: -0.25852665, y: 0.04855806, z: 0}
+  - {x: -0.276144, y: 0.024302112, z: 0}
+  - {x: -0.23850693, y: -0.008039155, z: 0}
+  - {x: -0.27053842, y: -0.037685316, z: 0}
+  - {x: -0.25085944, y: -0.08149406, z: 0}
+  - {x: -0.27053845, y: -0.12527622, z: 0}
+  - {x: -0.22169036, y: -0.13336155, z: 0}
 --- !u!1 &1167620595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,12 +3195,15 @@ Transform:
   m_GameObject: {fileID: 1167620595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.33, y: 5.3141108, z: 8.436063}
+  m_LocalPosition: {x: 0, y: 5.014111, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 495897197}
   - {fileID: 2046263245}
+  - {fileID: 1306146053}
+  - {fileID: 362243514}
+  - {fileID: 1125613744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197125090
@@ -2578,21 +3300,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: e3d8ee06056e04048992fb57472bcf10, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -2612,6 +3354,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2705,6 +3459,74 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1203962063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1241308043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241308046}
+  - component: {fileID: 1241308045}
+  - component: {fileID: 1241308044}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1241308044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241308043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1241308045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241308043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1241308046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241308043}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.598421, y: -3.2259057, z: 0.2874326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816578256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1263795583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2742,21 +3564,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 346026b10eb4e49419456f581ce26726, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -2777,13 +3619,25 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6000001
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.49
+      value: -6.48
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2859,6 +3713,88 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+--- !u!1 &1306146052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1306146053}
+  - component: {fileID: 1306146054}
+  m_Layer: 0
+  m_Name: Light 2D (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1306146053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306146052}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.33, y: -2.09, z: 2.236063}
+  m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1167620596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1306146054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306146052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 1
+  m_FalloffIntensity: 0.293
+  m_Color: {r: 1, g: 0.35809058, b: 0, a: 1}
+  m_Intensity: 0.44
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 4bad20730758ede700000000d5ece5cc
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 16.27
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1349033774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,21 +3877,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 0cb276f095660b74b9cca71281b43b32, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -2975,6 +3931,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3095,21 +4063,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: cc1d0810351f0274e8fcb0d1e0b8cd9b, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -3129,6 +4117,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3236,11 +4236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0138435
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.452315
+      value: 3.37
       objectReference: {fileID: 0}
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3273,6 +4273,18 @@ PrefabInstance:
     - target: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944437308795091283, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8616529578282152382, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_Name
@@ -3325,21 +4337,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 32df5dbd95e8ed145a672ddf160b9081, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -3360,9 +4392,21 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
       objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
+      objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.04
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3462,6 +4506,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1414575957}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1816578255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816578256}
+  m_Layer: 0
+  m_Name: '### Scene ###'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816578256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816578255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.598421, y: 3.2259057, z: -0.2874326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 814383365}
+  - {fileID: 1241308046}
+  - {fileID: 82018952}
+  - {fileID: 705848304}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1866622420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
@@ -3504,21 +4583,41 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
-      value: 8
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: vibrationAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: xCircleRadius
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: yCircleRadius
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationSpeed
-      value: 0.02
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 34f9418127f0de74485c937adc4f5dd2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityDecreaseRate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -3538,6 +4637,18 @@ PrefabInstance:
     - target: {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.26530647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.925254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Color.r
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3657,7 +4768,7 @@ Transform:
   m_GameObject: {fileID: 2046263244}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.05, y: -7.695511, z: -6.2}
+  m_LocalPosition: {x: -0.27999973, y: -7.395511, z: 2.236063}
   m_LocalScale: {x: 43.610237, y: 25.915571, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3717,10 +4828,10 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 814383365}
   - {fileID: 592037170}
   - {fileID: 889065646}
   - {fileID: 918969416}
   - {fileID: 1349033775}
   - {fileID: 1167620596}
   - {fileID: 1197125090}
+  - {fileID: 1816578256}

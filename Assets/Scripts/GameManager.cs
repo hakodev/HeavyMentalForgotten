@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour {
         blackScreen.DOFade(0f, fadeDuration);
     }
 
+    public float GetFadeDuration() {
+        return fadeDuration;
+    }
+
     public void SetFadeDuration(float fadeDuration) {
         this.fadeDuration = fadeDuration;
     }
