@@ -39,13 +39,13 @@ public class DestroyOrbHandler : MonoBehaviour
             trailCutEffect.transform.position = worldPosition;
         }
         
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             isDragging = true;
 
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
         }
