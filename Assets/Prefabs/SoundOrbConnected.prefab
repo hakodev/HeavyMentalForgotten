@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8487979208456779282}
   - component: {fileID: 2868967346632635256}
   - component: {fileID: 1183675890503930466}
+  - component: {fileID: -2574957816707600816}
   m_Layer: 0
   m_Name: SoundOrbConnected
   m_TagString: SoundOrbConnected
@@ -338,6 +339,8 @@ MonoBehaviour:
   nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   delay: 3
   fadeOutTime: 3
+  followMouse: 0
+  isHovering: 0
   isOutsideCircle: 0
   colliders: []
   lineRenderers: []
@@ -345,10 +348,22 @@ MonoBehaviour:
   yCircleRadius: 0
   circleRadius: 0
   vibrationAdd: 0
-  makeshiftMouse: {fileID: 1419290551999311630, guid: 7aabb6bcabe9a734db5de6cb0129c36c, type: 3}
-  lengthOfLR: {x: 0, y: 0, z: 0}
-  hasIncreased: 0
-  hasDecreased: 1
+  mouseSen: 0
+  mouseSensivityDecreaseRate: 0
+  isOutsideOfCircle: 0
+  isInsideTheCircle: 1
+--- !u!114 &-2574957816707600816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534228563430708532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7621ee80058a8a34ba08eab07f2ae1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8121083196950414096
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private static GameObject[] connectedOrbs; 
     
     [Header("Bool Values")]
-    private bool followMouse;
-    private bool isHovering;
+    public bool followMouse;
+    public bool isHovering;
     public bool isOutsideCircle = false;
     private bool lineRendererCollecter = true;
     
@@ -49,8 +49,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private Vector2 circleCenter;
     private Coroutine increaseMousesen;
     private Vector3 lengthOfLR;
-    private bool hasIncreased = false;
-    private bool hasDecreased = true;
+    public bool isOutsideOfCircle = false;
+    public bool isInsideTheCircle = true;
     
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         
         Connected();
 
-        if (hasIncreased)
+        if (isOutsideOfCircle)
         { 
             increaseMousesen = StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
         }
@@ -334,23 +334,23 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                     }
                 }
 
-                if (!hasIncreased)
+                if (!isOutsideOfCircle)
                 {
                     ConnectedVibrationIntensity += vibrationAdd;
-                    hasIncreased = true;
-                    hasDecreased = false;
+                    isOutsideOfCircle = true;
+                    isInsideTheCircle = false;
                 }
 
             }
-            else if(!hasDecreased)
+            else if(!isInsideTheCircle)
             {
                 isOutsideCircle = false;
 
                 Debug.Log("Orb is inside the circle");
                 ConnectedVibrationIntensity -= vibrationAdd;
 
-                hasDecreased = true;
-                hasIncreased = false;
+                isInsideTheCircle = true;
+                isOutsideOfCircle = false;
   
             }
         // }
