@@ -101,33 +101,60 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
 
             if (disconnectOrbScript != null)
+                if (hasIncreased)
+                {
+                    increaseMousesen =
+                        StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
+                }
+                else
+                {
+                    if (increaseMousesen != null)
+                    {
+                        StopCoroutine(increaseMousesen);
+                    }
+
+                    mouseSensivity = 20f;
+                }
+
+            //Follow Mouse
+            if (followMouse)
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.z = transform.position.z;
+                transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
+            }
+
+            if (disconnectOrbScript != null)
             {
                 if (disconnectOrbScript.isPlacedOnSnap)
                 {
-                    List<GameObject> nonConnectedOrbsList = new List<GameObject>(connectedOrbs);
-
-                    nonConnectedOrbsList.Remove(this.gameObject);
-
-                    connectedOrbs = nonConnectedOrbsList.ToArray();
-
-                    foreach (var gameObject in lineRendererGameObject)
+                    if (disconnectOrbScript.isPlacedOnSnap)
                     {
-                        Destroy(gameObject);
+                        List<GameObject> nonConnectedOrbsList = new List<GameObject>(connectedOrbs);
+
+                        nonConnectedOrbsList.Remove(this.gameObject);
+
+                        connectedOrbs = nonConnectedOrbsList.ToArray();
+
+                        foreach (var gameObject in lineRendererGameObject)
+                        {
+                            Destroy(gameObject);
+                        }
+
+                        lineRendererGameObject.Clear();
+
+                        Destroy(this.gameObject);
                     }
-
-                    lineRendererGameObject.Clear();
-
-                    Destroy(this.gameObject);
                 }
-            }
 
-            foreach (var collider in colliders)
-            {
-                if (collider is EdgeCollider2D)
+                foreach (var collider in colliders)
                 {
-                    if (!lineRendererGameObject.Contains(collider.gameObject))
+                    if (collider is EdgeCollider2D)
                     {
-                        lineRendererGameObject.Add(collider.gameObject);
+                        if (!lineRendererGameObject.Contains(collider.gameObject))
+                        {
+                            lineRendererGameObject.Add(collider.gameObject);
+                        }
                     }
                 }
             }
