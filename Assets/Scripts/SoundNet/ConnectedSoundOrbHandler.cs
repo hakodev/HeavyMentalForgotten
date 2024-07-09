@@ -20,8 +20,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private static GameObject[] connectedOrbs; 
     
     [Header("Bool Values")]
-    public bool followMouse;
-    public bool isHovering;
+    private bool followMouse;
+    private bool isHovering;
     public bool isOutsideCircle = false;
     private bool lineRendererCollecter = true;
     
@@ -39,18 +39,20 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private AudioSource audioSource;
 
     [Header("Circle Behaviour Stats")]
+    [SerializeField] private Color outsideHoverColor;
     [SerializeField] private AnimationCurve mouseSensivityCurve;
     [SerializeField] private float xCircleRadius;
     [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     [SerializeField] private float vibrationAdd;
-    private Vector3 lastMousePosition;
+    [SerializeField] private float mouseSen;
+    [SerializeField] private float mouseSensivityDecreaseRate;
     private float mouseSensivity;
     private Vector2 circleCenter;
     private Coroutine increaseMousesen;
     private Vector3 lengthOfLR;
-    public bool isOutsideOfCircle = false;
-    public bool isInsideTheCircle = true;
+    private bool hasIncreased = false;
+    private bool hasDecreased = true;
     
     private void Awake()
     {
@@ -63,63 +65,70 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     void Update()
     {
         circleCenter = new Vector2(xCircleRadius, yCircleRadius);
-        
+
         Circlecalculate();
-        
+
         Connected();
-        
-        //Follow Mouse
-        if (followMouse)
+
+        if (isOutsideCircle && isHovering)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = transform.position.z;
-
-            Vector3 screenBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, transform.position.z));
-            Vector3 screenTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, transform.position.z));
-
-            float buffer = 1f;
-            screenBottomLeft += new Vector3(buffer, buffer, 0);
-            screenTopRight -= new Vector3(buffer, buffer, 0);
-
-            mousePosition.x = Mathf.Clamp(mousePosition.x, screenBottomLeft.x, screenTopRight.x);
-            mousePosition.y = Mathf.Clamp(mousePosition.y, screenBottomLeft.y, screenTopRight.y);
-
-            
-            if (mousePosition != lastMousePosition)
+            spriteRenderer.material.color = outsideHoverColor;
+        }
+        else
+        {
+            spriteRenderer.material.color = connectedStartColor;
+            if (hasIncreased)
             {
+                increaseMousesen =
+                    StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
+            }
+            else
+            {
+                if (increaseMousesen != null)
+                {
+                    StopCoroutine(increaseMousesen);
+                }
+
+                mouseSensivity = 20f;
+            }
+
+            //Follow Mouse
+            if (followMouse)
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.z = transform.position.z;
                 transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
             }
 
-            lastMousePosition = mousePosition;
-        }
-
-        if(disconnectOrbScript != null)
-        {
-            if (disconnectOrbScript.isPlacedOnSnap)
+            if (disconnectOrbScript != null)
             {
-                List<GameObject> nonConnectedOrbsList = new List<GameObject>(connectedOrbs);
-
-                nonConnectedOrbsList.Remove(this.gameObject);
-
-                connectedOrbs = nonConnectedOrbsList.ToArray();
-                
-                foreach (var gameObject in lineRendererGameObject)
+                if (disconnectOrbScript.isPlacedOnSnap)
                 {
-                    Destroy(gameObject);
+                    List<GameObject> nonConnectedOrbsList = new List<GameObject>(connectedOrbs);
+
+                    nonConnectedOrbsList.Remove(this.gameObject);
+
+                    connectedOrbs = nonConnectedOrbsList.ToArray();
+
+                    foreach (var gameObject in lineRendererGameObject)
+                    {
+                        Destroy(gameObject);
+                    }
+
+                    lineRendererGameObject.Clear();
+
+                    Destroy(this.gameObject);
                 }
-                lineRendererGameObject.Clear();
-
-                Destroy(this.gameObject);
             }
-        }
-        
-        foreach (var collider in colliders)
-        {
-            if (collider is EdgeCollider2D)
+
+            foreach (var collider in colliders)
             {
-                if (!lineRendererGameObject.Contains(collider.gameObject))
+                if (collider is EdgeCollider2D)
                 {
-                    lineRendererGameObject.Add(collider.gameObject);
+                    if (!lineRendererGameObject.Contains(collider.gameObject))
+                    {
+                        lineRendererGameObject.Add(collider.gameObject);
+                    }
                 }
             }
         }
@@ -320,45 +329,43 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private void Circlecalculate() 
     {
-        
-        Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
-        float distance = Vector2.Distance(circleCenter, orbPosition);
-        
-        float normalizedDistance = distance / circleRadius;
+        // foreach (GameObject orb in connectedOrbs) 
+        // {
+            Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
+            float distance = Vector2.Distance(circleCenter, orbPosition);
 
-        mouseSensivity = mouseSensivityCurve.Evaluate(normalizedDistance);
-
-        
-        if (distance > circleRadius) 
-        {
-            isOutsideCircle = true;
+            if (distance > circleRadius) 
+            {
+                isOutsideCircle = true;
                 
-            if (isHovering)
-            {
-                if (!audioSource.isPlaying)
+                if (isHovering)
                 {
-                    audioSource.PlayOneShot(connectedAudioClip);
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.PlayOneShot(connectedAudioClip);
+                    }
                 }
-            }
 
-            if (!isOutsideOfCircle)
+                if (!hasIncreased)
+                {
+                    ConnectedVibrationIntensity += vibrationAdd;
+                    hasIncreased = true;
+                    hasDecreased = false;
+                }
+
+            }
+            else if(!hasDecreased)
             {
-                ConnectedVibrationIntensity += vibrationAdd;
-                isOutsideOfCircle = true;
-                isInsideTheCircle = false;
-            }
+                isOutsideCircle = false;
 
-        }
-        else if(!isInsideTheCircle)
-        {
-            isOutsideCircle = false;
+                Debug.Log("Orb is inside the circle");
+                ConnectedVibrationIntensity -= vibrationAdd;
 
-            ConnectedVibrationIntensity -= vibrationAdd;
-
-            isInsideTheCircle = true;
-            isOutsideOfCircle = false;
+                hasDecreased = true;
+                hasIncreased = false;
   
-        }
+            }
+        // }
     }
 
     private void Linerendererstrecher()
@@ -419,7 +426,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
     }
     
-    /*
     private IEnumerator IncreaseMouseSensitivityOverTime(float target, float duration)
     {
         float start = mouseSensivity;
@@ -434,5 +440,4 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         mouseSensivity = target;
     }
-*/
 }

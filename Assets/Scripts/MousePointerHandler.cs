@@ -7,6 +7,7 @@ public class MousePointerHandler : MonoBehaviour
 {
     [SerializeField] private GameObject mousePointer;
     [SerializeField] private bool showCursor = false;
+    [SerializeField] private float cursorSensitivity = 1.0f;
 
     void Update()
     {
