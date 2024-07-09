@@ -74,6 +74,17 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
 
+            Vector3 screenBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, transform.position.z));
+            Vector3 screenTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, transform.position.z));
+
+            float buffer = 1f;
+            screenBottomLeft += new Vector3(buffer, buffer, 0);
+            screenTopRight -= new Vector3(buffer, buffer, 0);
+
+            mousePosition.x = Mathf.Clamp(mousePosition.x, screenBottomLeft.x, screenTopRight.x);
+            mousePosition.y = Mathf.Clamp(mousePosition.y, screenBottomLeft.y, screenTopRight.y);
+
+            
             if (mousePosition != lastMousePosition)
             {
                 transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
