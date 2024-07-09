@@ -44,7 +44,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float yCircleRadius;
     [SerializeField] private float circleRadius;
     [SerializeField] private float vibrationAdd;
-
+    private Vector3 lastMousePosition;
     private float mouseSensivity;
     private Vector2 circleCenter;
     private Coroutine increaseMousesen;
@@ -67,28 +67,19 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Circlecalculate();
         
         Connected();
-
-        /*if (isOutsideOfCircle)
-        { 
-            increaseMousesen = StartCoroutine(IncreaseMouseSensitivityOverTime(mouseSen, mouseSensivityDecreaseRate));
-        }
-        else
-        {
-            if (increaseMousesen != null)
-            {
-                StopCoroutine(increaseMousesen);
-            }
-            
-            mouseSensivity = 20f;
-        }*/
         
         //Follow Mouse
         if (followMouse)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
-            // transform.position = mousePosition;
-            transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
+
+            if (mousePosition != lastMousePosition)
+            {
+                transform.position = Vector3.Lerp(transform.position, mousePosition, mouseSensivity * Time.deltaTime);
+            }
+
+            lastMousePosition = mousePosition;
         }
 
         if(disconnectOrbScript != null)
