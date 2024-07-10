@@ -25,7 +25,27 @@ public class LineRendererHandler : MonoBehaviour
     [SerializeField] private List<GameObjectPair> gameObjectPair = new List<GameObjectPair>();
     [SerializeField] private GameObject lineContainer;
     [SerializeField] private Material lRMaterial;
+    [SerializeField] private bool connectLists = false;
+    private OnValidateScript onValidateScript;
+
+    private void Awake()
+    {
+        if (connectLists)
+        {
+            onValidateScript = GetComponent<OnValidateScript>();
+        }
+    }
     
+    private void Start()
+    {
+        if (connectLists)
+        {
+            gameObjectPair.Clear();
+            gameObjectPair = new List<GameObjectPair>(onValidateScript.gameObjectPair);
+        }
+    }
+
+
     private void Update()
     {
         for (int i = gameObjectPair.Count - 1; i >= 0; i--)

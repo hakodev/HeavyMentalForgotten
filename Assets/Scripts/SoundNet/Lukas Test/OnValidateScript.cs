@@ -6,7 +6,7 @@ using UnityEngine;
 public class OnValidateScript : MonoBehaviour
 {
     private EdgeCollider2D edgeCollider;
-    [SerializeField] private GameObjectPair[] gameObjectPair;
+    public GameObjectPair[] gameObjectPair;
     private Dictionary<GameObjectPair, GameObject> lines = new Dictionary<GameObjectPair, GameObject>();
     private List<GameObject> allgameObjectsPair = new List<GameObject>();
     private GameObject[] connectedOrbs;
