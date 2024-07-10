@@ -1062,6 +1062,7 @@ MonoBehaviour:
     Object2: {fileID: 1420740458}
   lineContainer: {fileID: 1349033774}
   lRMaterial: {fileID: 2100000, guid: 4b1d27ba99baf194f9908ac7bdbc2d19, type: 2}
+  connectLists: 0
 --- !u!82 &592037169
 AudioSource:
   m_ObjectHideFlags: 0

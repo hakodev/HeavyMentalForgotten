@@ -124,7 +124,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.65
 --- !u!50 &8487979208456779282
 Rigidbody2D:
   serializedVersion: 4
@@ -344,12 +344,17 @@ MonoBehaviour:
   isOutsideCircle: 0
   colliders: []
   lineRenderers: []
+  outsideHoverColor: {r: 0, g: 0, b: 0, a: 0}
+  mouseSensivityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   xCircleRadius: 0
   yCircleRadius: 0
   circleRadius: 0
   vibrationAdd: 0
-  mouseSen: 0
-  mouseSensivityDecreaseRate: 0
   isOutsideOfCircle: 0
   isInsideTheCircle: 1
 --- !u!114 &-2574957816707600816
@@ -390,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 8121083196950414096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.419}
   m_LocalScale: {x: 1.61, y: 1.61, z: 1.61}
   m_ConstrainProportionsScale: 1
   m_Children: []
