@@ -7,6 +7,7 @@ TagManager:
   - SoundOrbConnected
   - SoundOrbDisconnected
   - CanBeDestroyed
+  - Ground
   layers:
   - Default
   - TransparentFX

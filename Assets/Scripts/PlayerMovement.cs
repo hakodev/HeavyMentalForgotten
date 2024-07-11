@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void ProcessInput() {
         if(GameManager.Ins.LockMovement) {
+            horizontalAxis = 0f;
             return;
         }
 
