@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
     public static GameManager Ins { get; private set; }
+    [Header("Enable if the player should not be able to move")]
+    [SerializeField] private bool lockMovement;
     [Header("Enable if the player should be running")]
     [SerializeField] private bool runMode;
     [field: SerializeField] public MemoryLayers CurrentMemoryLayer { get; private set; } // Set this in the inspector
@@ -21,6 +23,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private Levels nextLevelLayerB;
     [SerializeField] private Levels nextLevelLayerC;
     [SerializeField] private Levels nextLevelLayerD;
+
+    public bool LockMovement {
+        get {
+            return lockMovement;
+        }
+        set {
+            lockMovement = value;
+        }
+    }
 
     public bool RunMode {
         get {
