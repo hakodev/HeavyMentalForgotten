@@ -16,11 +16,19 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        horizontalAxis = Input.GetAxisRaw("Horizontal");
-        moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
+        ProcessInput();
     }
 
     private void FixedUpdate() {
         rigid2d.velocity = new Vector2(horizontalAxis * moveSpeed, rigid2d.velocity.y);
+    }
+
+    private void ProcessInput() {
+        if(GameManager.Ins.LockMovement) {
+            return;
+        }
+
+        horizontalAxis = Input.GetAxisRaw("Horizontal");
+        moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 }

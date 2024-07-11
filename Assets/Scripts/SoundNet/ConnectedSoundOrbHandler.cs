@@ -34,6 +34,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private List<GameObject> lineRendererGameObject = new();
     
     [Header("References")]
+    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private ParticleSystem mouseParticleSystem;
+    [SerializeField] private GameObject mouseFollower;
     private SpriteRenderer spriteRenderer;
     public List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private AudioSource audioSource;
@@ -59,6 +62,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
         childObject = this.gameObject.transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
+        mouseParticleSystem = this.gameObject.transform.GetChild(2).GetComponent<ParticleSystem>();
+        
+        particleSystem.gameObject.SetActive(false);
+        mouseParticleSystem.gameObject.SetActive(false);
     }
 
     void Update()
@@ -83,7 +90,18 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
-
+            
+            Vector3 direction = (mousePosition - transform.position).normalized;
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            particleSystem.transform.rotation = rotation;
+            particleSystem.gameObject.SetActive(true);
+            
+            mouseParticleSystem.transform.position = mouseFollower.transform.position;
+            Vector3 mouseParticle = (transform.position - mousePosition).normalized;
+            Quaternion mouseRotation = Quaternion.LookRotation(mouseParticle);
+            mouseParticleSystem.transform.rotation = mouseRotation;
+            mouseParticleSystem.gameObject.SetActive(true);
+            
             Vector3 screenBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, transform.position.z));
             Vector3 screenTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, transform.position.z));
 
@@ -102,6 +120,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
             lastMousePosition = mousePosition;
         }
+        else
+        {
+            particleSystem.gameObject.SetActive(false);
+            mouseParticleSystem.gameObject.SetActive(false);
+        }
+        
 
         if(disconnectOrbScript != null)
         {
@@ -154,7 +178,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Mouse is over orb");
         isHovering = true;
         
         foreach (GameObject orb in connectedOrbs)
@@ -201,7 +224,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
     }
     
-
     private void Connected()
     {
         Vector3 vibration = new Vector3(UnityEngine.Random.Range(-ConnectedVibrationIntensity, ConnectedVibrationIntensity),
@@ -371,56 +393,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
     }
 
-    private void Linerendererstrecher()
+    private void Particlesystemplayer()
     {
-        if (lineRendererCollecter)
-        {
-            if (colliders.Length >= 2)
-            {
-                foreach (var collider in colliders)
-                {
-                    LineRenderer lineRenderer = collider.gameObject.GetComponent<LineRenderer>();
-                    if (lineRenderer != null)
-                    {
-                        lineRenderers.Add(lineRenderer);
-                    }
-                }
-            }
-            lineRendererCollecter = false;
-        }
-
-        lengthOfLR = Vector3.zero;
-
-        // Calculate the length of each LineRenderer
-        foreach (LineRenderer lineRenderer in lineRenderers)
-        {
-            float lineLength = CalculateLineRendererLength(lineRenderer);
-            lengthOfLR += new Vector3(lineLength, 0, 0);
-        }
         
-        foreach (GameObject orb in connectedOrbs)
-        {
-            ConnectedSoundOrbHandler orbHandler = orb.GetComponent<ConnectedSoundOrbHandler>();
-            if (orbHandler.lengthOfLR.x > 30)
-            {
-                orbHandler.ConnectedVibrationIntensity = vibrationAdd;
-                orbHandler.Connected();
-            }
-            else
-            {
-                orbHandler.ConnectedVibrationIntensity -= vibrationAdd;
-            }
-        }
-    }
-    
-    private float CalculateLineRendererLength(LineRenderer lineRenderer)
-    {
-        if (lineRenderer.positionCount != 2)
-        {
-            throw new InvalidOperationException("LineRenderer must have exactly 2 positions.");
-        }
-
-        return Vector3.Distance(lineRenderer.GetPosition(0), lineRenderer.GetPosition(1));
     }
     
     private void OnDrawGizmos() 
@@ -429,20 +404,4 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
     }
     
-    /*
-    private IEnumerator IncreaseMouseSensitivityOverTime(float target, float duration)
-    {
-        float start = mouseSensivity;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            mouseSensivity = Mathf.Lerp(start, target, elapsed / duration);
-            yield return null;
-        }
-
-        mouseSensivity = target;
-    }
-*/
 }

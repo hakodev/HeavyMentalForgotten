@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DestroyOrbHandler : MonoBehaviour
 {
-    private bool isDragging = false;
+    public bool isDraggingReady = false;
     private ParticleSystem lineCuttingParticleSystem;
     private TrailRenderer trailCutEffect;
     public float particleSystemDuration = 1f;
@@ -16,15 +17,28 @@ public class DestroyOrbHandler : MonoBehaviour
     private EdgeCollider2D edgeCollider;
     private Gradient gradient;
     public bool hasPlayedOnce = false;
+
+    [Header("Charge Settings")] 
+    [SerializeField] private float chargeThreshold = 3f;
+    [SerializeField] private float maxLightIntensity = 4f;
+
+    private static float charge;
+    private Light2D light2D;
+    private AudioSource audioSource;
     
     private void Awake()
     {
+        GameObject mouseFollowerGameObject = GameObject.Find("MouseFollower");
+        audioSource = mouseFollowerGameObject.GetComponent<AudioSource>();
+        light2D = mouseFollowerGameObject.GetComponent<Light2D>();
         lineCuttingParticleSystem = GameObject.Find("LineCutEffect").GetComponent<ParticleSystem>();
         trailCutEffect = GameObject.Find("CuttingTrail").GetComponent<TrailRenderer>();
+        
         lineRenderer = this.gameObject.GetComponent<LineRenderer>();
         edgeCollider = this.gameObject.GetComponent<EdgeCollider2D>();
         trailCutEffect.enabled = false;
         lineCuttingParticleSystem.Stop();
+        light2D.intensity = 0f;
     }
 
     private void Update()
@@ -34,26 +48,29 @@ public class DestroyOrbHandler : MonoBehaviour
         mousePosition.z = Camera.main.nearClipPlane;
         worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         
-        if (isDragging)
+        light2D.transform.position = worldPosition;
+        
+        if (isDraggingReady)
         {
             trailCutEffect.transform.position = worldPosition;
         }
         
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            isDragging = true;
-
+            Charger();
         }
-
-        if (Input.GetMouseButtonUp(1))
+        else
         {
-            isDragging = false;
+            isDraggingReady = false;
+            audioSource.Stop();
+            light2D.intensity = 0f;
+            charge = 0f;
         }
     }
 
     private void OnMouseOver()
     {
-        if (isDragging)
+        if (isDraggingReady)
         {
             StartCoroutine(PlayParticleEffect());
             lineRenderer.enabled = false; //TODO: find a better way 
@@ -70,12 +87,6 @@ public class DestroyOrbHandler : MonoBehaviour
         edgeCollider.enabled = false;
         yield return new WaitForSeconds(particleSystemDuration);
         lineCuttingParticleSystem.Stop();
-    }
-
-    private void OnDisable()
-    {
-        NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
-        isDragging = false;
     }
     
     private IEnumerator Fadein(float duration)
@@ -106,7 +117,30 @@ public class DestroyOrbHandler : MonoBehaviour
         gradient.alphaKeys = alphaKeys;
         lineRenderer.colorGradient = gradient;
     }
-
+    
+    private void Charger()
+    {
+        charge += Time.deltaTime;
+        light2D.intensity = Mathf.Clamp(charge / chargeThreshold, 0f, maxLightIntensity);
+        
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        
+        if (charge >= chargeThreshold)
+        {
+            isDraggingReady = true;
+            //Stop the previous audio and play a new thing instead here
+        }
+    }
+    
+    private void OnDisable()
+    {
+        NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
+        isDraggingReady = false;
+    }
+    
     private void OnEnable()
     {
         if(hasPlayedOnce)
@@ -116,6 +150,6 @@ public class DestroyOrbHandler : MonoBehaviour
         hasPlayedOnce = true;
         lineRenderer.enabled = true;
         edgeCollider.enabled = true;
-        isDragging = false;
+        isDraggingReady = false;
     }
 }

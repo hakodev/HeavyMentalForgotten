@@ -175,6 +175,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -190,6 +194,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 603b211f0b2f05f4ca42f2a997bf4b3e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -215,28 +223,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -391,6 +407,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -406,6 +426,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7560ef25b1168db4a9b065570873036e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 1929579570}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -431,28 +455,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -709,6 +741,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -724,6 +760,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7278f02bf98c7ea4ea8e253d7368c55c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -749,28 +789,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -1256,6 +1304,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -1271,6 +1323,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: d86897f576f1457479a49914c6659020, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -1296,28 +1352,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -1462,6 +1526,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -1477,6 +1545,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67567be41b686b14e804912dd41f7189, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -1502,28 +1574,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -1695,6 +1775,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -1710,6 +1794,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5dd79c6f3dbb7d647ab74b13898214c2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -1735,28 +1823,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -2155,6 +2251,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -2170,6 +2270,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 66de329947168ec4bb9bce0b769e543d, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -2195,28 +2299,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -2486,6 +2598,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -2501,6 +2617,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 947c4eafbdc6d3748a802249d34c0b90, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -2526,28 +2646,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -2722,6 +2850,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -2737,6 +2869,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: f84ae3488bad3d248a4db903e56f7521, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -2762,28 +2898,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -2891,6 +3035,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+--- !u!1 &961674061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+  m_PrefabInstance: {fileID: 682067472018168453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1020375885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
@@ -2954,6 +3103,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -2969,6 +3122,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: de9602f6900791d48a24ad486e7b807c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -2994,28 +3151,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -3276,6 +3441,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -3291,6 +3460,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: e3d8ee06056e04048992fb57472bcf10, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -3316,28 +3489,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -3508,6 +3689,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -3523,6 +3708,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 346026b10eb4e49419456f581ce26726, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -3548,28 +3737,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -3761,6 +3958,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -3776,6 +3977,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 0cb276f095660b74b9cca71281b43b32, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -3801,28 +4006,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -3983,6 +4196,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -3998,6 +4215,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: cc1d0810351f0274e8fcb0d1e0b8cd9b, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -4023,28 +4244,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -4281,6 +4510,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -4296,6 +4529,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 32df5dbd95e8ed145a672ddf160b9081, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -4321,28 +4558,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -4475,6 +4720,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5438180345826268291, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
   m_PrefabInstance: {fileID: 196654214}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1929579570 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 679960288215351867, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+  m_PrefabInstance: {fileID: 100007468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2010632464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4528,6 +4778,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 961674061}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: makeshiftMouse
       value: 
       objectReference: {fileID: 0}
@@ -4543,6 +4797,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 34f9418127f0de74485c937adc4f5dd2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseParticleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.a
       value: 1
@@ -4568,28 +4826,36 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].time
+      value: 0.027557373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.9466553
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].value
+      value: 0.90722656
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.9327812
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
-      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[0].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseSensivityCurve.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2868967346632635256, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Volume
@@ -4789,14 +5055,81 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1001 &682067472018168453
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3957003545910322286, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Name
+      value: MouseParticleSyste
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.419
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Name
+      value: MouseFollower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3957003545910322286, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 814383365}
   - {fileID: 592037170}
-  - {fileID: 889065646}
   - {fileID: 918969416}
   - {fileID: 1349033775}
   - {fileID: 1167620596}
   - {fileID: 1197125090}
+  - {fileID: 889065646}
+  - {fileID: 682067472018168453}
