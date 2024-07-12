@@ -4421,7 +4421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce743e317352164ca913422f3de8c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFlickering: 1
+  isFlickering: 0
+  isFlickeringCoroutineRunning: 0
   flickerSpeed: 1
   lightIntensity: 3
 --- !u!114 &1508732089

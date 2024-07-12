@@ -10,11 +10,14 @@ public class LightManuipliaterHandler : MonoBehaviour
 
     [Header("Flicker Settings")] 
     [SerializeField] private bool isFlickering;
-    [SerializeField] private bool isFlickeringCoroutineRunning;
+    private bool isFlickeringCoroutineRunning;
     [SerializeField] private float flickerSpeed;
     
     [Header("Other Various Settings")]
     [SerializeField] private float lightIntensity;
+    [SerializeField] private float innerRadius;
+    [SerializeField] private float outerRadius;
+    
     private void Awake()
     {
         light2d = GetComponent<Light2D>();
@@ -28,7 +31,8 @@ public class LightManuipliaterHandler : MonoBehaviour
     void Update()
     {
         light2d.intensity = lightIntensity;
-        
+        light2d.pointLightInnerRadius = innerRadius;
+        light2d.pointLightOuterRadius = outerRadius;
         
         if (isFlickering && !isFlickeringCoroutineRunning)
         {
