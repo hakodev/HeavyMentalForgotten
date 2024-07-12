@@ -19,9 +19,11 @@ public class DestroyOrbHandler : MonoBehaviour
     public bool hasPlayedOnce = false;
 
     [Header("Charge Settings")] 
-    [SerializeField] private float chargeThreshold = 3f;
+    [SerializeField] private float chargeThreshold = 4f;
     [SerializeField] private float maxLightIntensity = 4f;
-
+    [SerializeField] private float chargeCircleRadius = 1f;
+    private static Collider2D[] lineRenderersColliders;
+    
     private static float charge;
     private Light2D light2D;
     private AudioSource audioSource;
@@ -54,6 +56,27 @@ public class DestroyOrbHandler : MonoBehaviour
         {
             trailCutEffect.transform.position = worldPosition;
         }
+
+        if (Input.GetMouseButtonUp(1) && charge >= chargeThreshold)
+        {
+            StartCoroutine(PlayParticleEffect());
+            
+            foreach (var collider in lineRenderersColliders)
+            {
+                LineRenderer lineRenderer = collider.GetComponent<LineRenderer>();
+                EdgeCollider2D edgeCollider = collider.GetComponent<EdgeCollider2D>();
+
+                if (lineRenderer != null)
+                {
+                    lineRenderer.enabled = false;
+                }
+
+                if (edgeCollider != null)
+                {
+                    edgeCollider.enabled = false;
+                }
+            }
+        }
         
         if (Input.GetMouseButton(1))
         {
@@ -68,15 +91,15 @@ public class DestroyOrbHandler : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
-    {
-        if (isDraggingReady)
-        {
-            StartCoroutine(PlayParticleEffect());
-            lineRenderer.enabled = false; //TODO: find a better way 
-            edgeCollider.enabled = false;
-        }
-    }
+    // private void OnMouseOver()
+    // {
+    //     if (isDraggingReady)
+    //     {
+    //         StartCoroutine(PlayParticleEffect());
+    //         lineRenderer.enabled = false; //TODO: find a better way 
+    //         edgeCollider.enabled = false;
+    //     }
+    // }
     
     private IEnumerator PlayParticleEffect()
     {
@@ -131,10 +154,19 @@ public class DestroyOrbHandler : MonoBehaviour
         if (charge >= chargeThreshold)
         {
             isDraggingReady = true;
+            int layerToIgnore = 7;
+            LayerMask layerMask = ~(1 << layerToIgnore);
+            lineRenderersColliders = Physics2D.OverlapCircleAll(worldPosition, chargeCircleRadius, layerMask);
             //Stop the previous audio and play a new thing instead here
         }
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(worldPosition, chargeCircleRadius);
+    }
+
     private void OnDisable()
     {
         NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);

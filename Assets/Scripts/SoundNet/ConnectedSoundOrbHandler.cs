@@ -392,11 +392,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
   
         }
     }
-
-    private void Particlesystemplayer()
-    {
-        
-    }
     
     private void OnDrawGizmos() 
     {

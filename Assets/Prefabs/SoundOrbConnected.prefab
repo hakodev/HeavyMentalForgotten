@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2868967346632635256}
   - component: {fileID: 1183675890503930466}
   - component: {fileID: -2574957816707600816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SoundOrbConnected
   m_TagString: SoundOrbConnected
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 5504964247346774045}
   - component: {fileID: 125338164900251430}
   - component: {fileID: 8762159071251945854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5214,7 +5214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3206707270704882080}
   - component: {fileID: 3912399205038628995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5297,7 +5297,7 @@ GameObject:
   - component: {fileID: 6742544762695185202}
   - component: {fileID: 5140862005918773133}
   - component: {fileID: 679960288215351867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MouseParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
