@@ -23,7 +23,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     public bool followMouse;
     public bool isHovering;
     public bool isOutsideCircle = false;
-    private bool lineRendererCollecter = true;
     
     [Header("Spawner")]
     public Collider2D[] colliders;
@@ -34,7 +33,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private List<GameObject> lineRendererGameObject = new();
     
     [Header("References")]
-    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private ParticleSystem particleSystemm;
     [SerializeField] private ParticleSystem mouseParticleSystem;
     [SerializeField] private GameObject mouseFollower;
     private SpriteRenderer spriteRenderer;
@@ -62,9 +61,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         connectedOrbs = GameObject.FindGameObjectsWithTag("SoundOrbConnected");
         childObject = this.gameObject.transform.GetChild(0).gameObject;
         audioSource = GetComponent<AudioSource>();
+        particleSystemm = this.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
         mouseParticleSystem = this.gameObject.transform.GetChild(2).GetComponent<ParticleSystem>();
         
-        particleSystem.gameObject.SetActive(false);
+        particleSystemm.gameObject.SetActive(false);
         mouseParticleSystem.gameObject.SetActive(false);
     }
 
@@ -93,8 +93,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             
             Vector3 direction = (mousePosition - transform.position).normalized;
             Quaternion rotation = Quaternion.LookRotation(direction);
-            particleSystem.transform.rotation = rotation;
-            particleSystem.gameObject.SetActive(true);
+            particleSystemm.transform.rotation = rotation;
+            particleSystemm.gameObject.SetActive(true);
             
             mouseParticleSystem.transform.position = mouseFollower.transform.position;
             Vector3 mouseParticle = (transform.position - mousePosition).normalized;
@@ -122,7 +122,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         }
         else
         {
-            particleSystem.gameObject.SetActive(false);
+            particleSystemm.gameObject.SetActive(false);
             mouseParticleSystem.gameObject.SetActive(false);
         }
         
