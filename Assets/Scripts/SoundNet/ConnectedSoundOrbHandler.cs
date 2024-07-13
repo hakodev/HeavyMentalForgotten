@@ -18,6 +18,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float delay;
     [SerializeField] private float fadeOutTime;
     private static GameObject[] connectedOrbs; 
+    [SerializeField] private float particleSysFollowSpeed;
     
     [Header("Bool Values")]
     public bool followMouse;
@@ -92,8 +93,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             mousePosition.z = transform.position.z;
             
             Vector3 direction = (mousePosition - transform.position).normalized;
-            Quaternion rotation = Quaternion.LookRotation(direction);
-            particleSystemm.transform.rotation = rotation;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            particleSystemm.transform.rotation = Quaternion.Slerp(particleSystemm.transform.rotation, targetRotation, particleSysFollowSpeed);
             particleSystemm.gameObject.SetActive(true);
             
             mouseParticleSystem.transform.position = mouseFollower.transform.position;
