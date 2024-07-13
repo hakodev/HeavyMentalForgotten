@@ -10,30 +10,24 @@ public class LightManuipliaterHandler : MonoBehaviour
 
     [Header("Flicker Settings")] 
     [SerializeField] private bool isFlickering;
-    private bool isFlickeringCoroutineRunning;
+    [SerializeField] private bool isRandomFlickering;
     [SerializeField] private float flickerSpeed;
     
-    [Header("Other Various Settings")]
-    [SerializeField] private float lightIntensity;
-    [SerializeField] private float innerRadius;
-    [SerializeField] private float outerRadius;
+    [Header("Random Flicker Settings")]
+    [SerializeField] private float minRangeFlickering;
+    [SerializeField] private float maxRangeFlickering;
+    [SerializeField] private float minRangeIntensityFlicker;
+    [SerializeField] private float maxRangeIntensityFlicker;
+    
+    private bool isFlickeringCoroutineRunning;
     
     private void Awake()
     {
         light2d = GetComponent<Light2D>();
     }
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        light2d.intensity = lightIntensity;
-        light2d.pointLightInnerRadius = innerRadius;
-        light2d.pointLightOuterRadius = outerRadius;
-        
         if (isFlickering && !isFlickeringCoroutineRunning)
         {
             StartCoroutine(FlickerLight());
@@ -47,6 +41,15 @@ public class LightManuipliaterHandler : MonoBehaviour
         float originalIntensity = light2d.intensity;
         float elapsedTime = 0f;
 
+        if (isRandomFlickering)
+        {
+            float randomFlickerSpeed = Random.Range(minRangeFlickering, maxRangeFlickering);
+            float randomIntensity = Random.Range(minRangeIntensityFlicker, maxRangeIntensityFlicker);
+
+            originalIntensity = randomIntensity;
+            flickerSpeed = randomFlickerSpeed;
+        }
+        
         while (elapsedTime < flickerSpeed)
         {
             float newIntensity = Mathf.Lerp(originalIntensity, 0f, elapsedTime / flickerSpeed);
