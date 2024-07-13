@@ -285,7 +285,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     {
         if (nonConnectedOrbReference != null && !nonConnectedOrbReference.activeInHierarchy)
         {
-            Debug.Log("coroutine running");
             StartCoroutine(EnableAfterDelay());
         }
         
@@ -328,8 +327,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         {
             Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
-
-            if (distanceToCurrentFrame > 8f) 
+            
+            if (distanceToCurrentFrame > 3f) 
             {
                 audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
             }
@@ -339,7 +338,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
             else
             {
-                audioSource.volume += startVolume * Time.deltaTime / fadeOutTime;
+                audioSource.volume += startVolume;
             }
 
             lastMousePosition = currentMousePosition;

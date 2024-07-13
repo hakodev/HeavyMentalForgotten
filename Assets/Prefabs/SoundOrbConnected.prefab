@@ -126,7 +126,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 1
 --- !u!50 &8487979208456779282
 Rigidbody2D:
   serializedVersion: 4
@@ -341,11 +341,12 @@ MonoBehaviour:
   nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
   delay: 3
   fadeOutTime: 3
+  particleSysFollowSpeed: 0
   followMouse: 0
   isHovering: 0
   isOutsideCircle: 0
   colliders: []
-  particleSystem: {fileID: 8762159071251945854}
+  particleSystemm: {fileID: 0}
   mouseParticleSystem: {fileID: 679960288215351867}
   mouseFollower: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
   lineRenderers: []
