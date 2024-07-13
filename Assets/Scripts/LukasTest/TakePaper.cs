@@ -36,6 +36,8 @@ public class TakePaper : MonoBehaviour
             if ((transform.position - player.position).magnitude < maxRange)
             {
                 itemBehaviourScript.PlayerTakesItem();
+                //start event system which will activate the window
+                EventSystem.GetComponent<EventSystemList>().StartSystem();
             }
             else
             {
