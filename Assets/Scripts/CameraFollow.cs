@@ -22,12 +22,19 @@ public class CameraFollow : MonoBehaviour {
     }
 
     private void StartCameraInBoundaries() {
+        // Set up the position
         this.followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
 
         this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, cameraDeadzoneLeft, cameraDeadzoneRight), this.transform.position.y, this.transform.position.z);
     }
 
     private void FollowTarget() {
+        if(PlayerMovement.Ins.HorizontalAxis < 0) {
+            this.followTarget.localPosition = new Vector3(-distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+        } else if(PlayerMovement.Ins.HorizontalAxis > 0) {
+            this.followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+        }
+
         float clampedPositionX = Mathf.Clamp(followTarget.position.x, cameraDeadzoneLeft, cameraDeadzoneRight);
         //float clampedPositionY = Mathf.Clamp(playerTransform.position.y, cameraDeadzoneBottom, cameraDeadzoneTop);
 
