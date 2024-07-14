@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
-    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform followTarget;
+    [SerializeField] private float distanceFromPlayer;
     [SerializeField] private float cameraDeadzoneLeft;
     [SerializeField] private float cameraDeadzoneRight;
 
@@ -17,10 +18,13 @@ public class CameraFollow : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        FollowPlayer();
+        ProcessFollowTargetPosition();
+        FollowTarget();
     }
 
     private void StartCameraInBoundaries() {
+        followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+
         if(this.transform.position.x < cameraDeadzoneLeft) {
             this.transform.position = new Vector3(cameraDeadzoneLeft, this.transform.position.y, this.transform.position.z);
         }
@@ -29,8 +33,16 @@ public class CameraFollow : MonoBehaviour {
         }
     }
 
-    private void FollowPlayer() {
-        float clampedPositionX = Mathf.Clamp(playerTransform.position.x, cameraDeadzoneLeft, cameraDeadzoneRight);
+    private void ProcessFollowTargetPosition() {
+        if(PlayerMovement.Ins.HorizontalAxis > 0) {
+            followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+        } else if(PlayerMovement.Ins.HorizontalAxis < 0) {
+            followTarget.localPosition = new Vector3(-distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+        }
+    }
+
+    private void FollowTarget() {
+        float clampedPositionX = Mathf.Clamp(followTarget.position.x, cameraDeadzoneLeft, cameraDeadzoneRight);
         //float clampedPositionY = Mathf.Clamp(playerTransform.position.y, cameraDeadzoneBottom, cameraDeadzoneTop);
 
         Vector3 targetPosition = new(clampedPositionX, this.transform.position.y, this.transform.position.z);
