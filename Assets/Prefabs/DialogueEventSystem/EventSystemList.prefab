@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5632735597095537314}
   m_Layer: 0
   m_Name: EventSystemList
-  m_TagString: Untagged
+  m_TagString: EventSystemList
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,9 @@ MonoBehaviour:
   triggerOnEvent: 0
   triggerOnCustomEnter: 0
   customTagTrigger: Player
+  enableReset: 0
+  enableLoop: 0
+  enableSetCurrentEvent: 0
   currentEvent: -1
   events:
   - name: 
