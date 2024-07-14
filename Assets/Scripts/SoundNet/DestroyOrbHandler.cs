@@ -22,7 +22,7 @@ public class DestroyOrbHandler : MonoBehaviour
     [SerializeField] private float chargeThreshold = 4f;
     [SerializeField] private float maxLightIntensity = 4f;
     [SerializeField] private float chargeCircleRadius = 1f;
-    private static Collider2D[] lineRenderersColliders;
+    public Collider2D[] lineRenderersColliders;
     
     private static float charge;
     private Light2D light2D;
@@ -63,9 +63,15 @@ public class DestroyOrbHandler : MonoBehaviour
             
             foreach (var collider in lineRenderersColliders)
             {
+                if(lineRenderersColliders == null)
+                {
+                    Debug.Log("No colliders found");
+                    return;
+                }
+                
                 LineRenderer lineRenderer = collider.GetComponent<LineRenderer>();
                 EdgeCollider2D edgeCollider = collider.GetComponent<EdgeCollider2D>();
-
+                lineRenderer.gameObject.SetActive(false);
                 if (lineRenderer != null)
                 {
                     lineRenderer.enabled = false;
@@ -90,24 +96,14 @@ public class DestroyOrbHandler : MonoBehaviour
             charge = 0f;
         }
     }
-
-    // private void OnMouseOver()
-    // {
-    //     if (isDraggingReady)
-    //     {
-    //         StartCoroutine(PlayParticleEffect());
-    //         lineRenderer.enabled = false; //TODO: find a better way 
-    //         edgeCollider.enabled = false;
-    //     }
-    // }
     
     private IEnumerator PlayParticleEffect()
     {
         lineCuttingParticleSystem.Play();
         lineCuttingParticleSystem.transform.position = worldPosition;
-        this.gameObject.SetActive(false);
-        lineRenderer.enabled = false; //TODO: find a better way 
-        edgeCollider.enabled = false;
+        // this.gameObject.SetActive(false);
+        // lineRenderer.enabled = false; //TODO: find a better way 
+        // edgeCollider.enabled = false;
         yield return new WaitForSeconds(particleSystemDuration);
         lineCuttingParticleSystem.Stop();
     }
@@ -154,8 +150,9 @@ public class DestroyOrbHandler : MonoBehaviour
         if (charge >= chargeThreshold)
         {
             isDraggingReady = true;
-            int layerToIgnore = 7;
-            LayerMask layerMask = ~(1 << layerToIgnore);
+            int layerToIgnore1 = 3;
+            int layerToIgnore2 = 7;
+            LayerMask layerMask = ~((1 << layerToIgnore1) | (1 << layerToIgnore2));
             lineRenderersColliders = Physics2D.OverlapCircleAll(worldPosition, chargeCircleRadius, layerMask);
             //Stop the previous audio and play a new thing instead here
         }
@@ -183,5 +180,12 @@ public class DestroyOrbHandler : MonoBehaviour
         lineRenderer.enabled = true;
         edgeCollider.enabled = true;
         isDraggingReady = false;
+        
+        if(!lineRenderer.enabled || !edgeCollider.enabled)
+        {
+            Debug.Log("LineRenderer and EdgeCollider are disabled. Enabling them again.");
+            lineRenderer.enabled = true;
+            edgeCollider.enabled = true;
+        }
     }
 }

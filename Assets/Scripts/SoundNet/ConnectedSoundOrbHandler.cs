@@ -24,6 +24,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     public bool followMouse;
     public bool isHovering;
     public bool isOutsideCircle = false;
+    public bool stopPlayingAudio = false;
     
     [Header("Spawner")]
     public Collider2D[] colliders;
@@ -144,6 +145,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 }
                 lineRendererGameObject.Clear();
 
+                stopPlayingAudio = true;
                 Destroy(this.gameObject);
             }
         }
@@ -218,7 +220,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         foreach (GameObject orb in connectedOrbs)
         {
             AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
-            if (orbAudioSource != null)
+            if (orbAudioSource != null && !stopPlayingAudio)
             {
                 StartCoroutine(FadeOutVolume(orbAudioSource));
             }
@@ -296,13 +298,14 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         Vector2 center = this.gameObject.transform.position;
         float radius = 0.5f; //radius/diameter of the circle
 
-        int layerToIgnore = 3;
-        LayerMask layerMask = ~(1 << layerToIgnore); 
+        int layerToIgnore1 = 3;
+        int layerToIgnore2 = 7;
+        LayerMask layerMask = ~((1 << layerToIgnore1) | (1 << layerToIgnore2));
         colliders = Physics2D.OverlapCircleAll(center, radius, layerMask);
 
         if (spriteRenderer.enabled)
         {
-            if (colliders.Length == 1 && !hasSpawned)
+            if (colliders.Length == 0 && !hasSpawned)
             {
                 GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
@@ -323,31 +326,34 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         float startVolume = 1f;
         Vector3 lastMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        while (audioSource.volume > 0)
+        if (audioSource != null)
         {
-            Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
+            while (audioSource.volume > 0)
+            {
+                Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
             
-            if (distanceToCurrentFrame > 3f) 
-            {
-                audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
-            }
-            else if (distanceToCurrentFrame <= 1f)
-            {
-                audioSource.volume = 1;
-            }
-            else
-            {
-                audioSource.volume += startVolume;
+                if (distanceToCurrentFrame > 3f) 
+                {
+                    audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+                }
+                else if (distanceToCurrentFrame <= 1f)
+                {
+                    audioSource.volume = 1;
+                }
+                else
+                {
+                    audioSource.volume += startVolume;
+                }
+
+                lastMousePosition = currentMousePosition;
+
+                yield return null;
             }
 
-            lastMousePosition = currentMousePosition;
-
-            yield return null;
+            audioSource.Stop();
+            audioSource.volume = startVolume;
         }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
     }
     
     private void Circlecalculate() 

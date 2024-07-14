@@ -40,7 +40,6 @@ public class MemoryPlateHandler : MonoBehaviour
             
             if(time <= 0f)
             {
-                Debug.Log("Snapped");
                 snappedObject.GetComponent<DisconnectedSoundOrbHandler>().enabled = true;
                 // snappedObject.GetComponent<CircleCollider2D>().enabled = false;
                 // this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -148,8 +147,7 @@ public class MemoryPlateHandler : MonoBehaviour
             disconnectedSoundOrbHandler.isPlacedOnSnap = true;
         }
     }
-
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (isSnapped)
