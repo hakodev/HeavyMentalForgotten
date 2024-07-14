@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f442c5eca361b434fab30bd97abf40c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  followTarget: {fileID: 0}
+  distanceFromPlayer: 4.25
   cameraDeadzoneLeft: -16
   cameraDeadzoneRight: 16
   followSpeed: 0.075

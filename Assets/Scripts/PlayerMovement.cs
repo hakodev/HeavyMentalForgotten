@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour {
     public static PlayerMovement Ins { get; private set; }
 
     private Rigidbody2D rigid2d;
-    private float horizontalAxis;
+    public float HorizontalAxis { get; private set; }
     private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -20,16 +20,16 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        rigid2d.velocity = new Vector2(horizontalAxis * moveSpeed, rigid2d.velocity.y);
+        rigid2d.velocity = new Vector2(HorizontalAxis * moveSpeed, rigid2d.velocity.y);
     }
 
     private void ProcessInput() {
         if(GameManager.Ins.LockMovement) {
-            horizontalAxis = 0f;
+            HorizontalAxis = 0f;
             return;
         }
 
-        horizontalAxis = Input.GetAxisRaw("Horizontal");
+        HorizontalAxis = Input.GetAxisRaw("Horizontal");
         moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 }
