@@ -5,14 +5,18 @@ public class PlayerMovement : MonoBehaviour {
     public static PlayerMovement Ins { get; private set; }
 
     private Rigidbody2D rigid2d;
-    private float horizontalAxis;
+    private Animator animator;
+    public float HorizontalAxis { get; private set; }
     private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
 
+    private const string PLAYER_IS_WALKING = "isWalking";
+
     private void Awake() {
         Ins = this;
         rigid2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -20,16 +24,24 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        rigid2d.velocity = new Vector2(horizontalAxis * moveSpeed, rigid2d.velocity.y);
+        rigid2d.velocity = new Vector2(HorizontalAxis * moveSpeed, rigid2d.velocity.y);
     }
 
     private void ProcessInput() {
         if(GameManager.Ins.LockMovement) {
-            horizontalAxis = 0f;
+            HorizontalAxis = 0;
             return;
         }
 
-        horizontalAxis = Input.GetAxisRaw("Horizontal");
+        HorizontalAxis = Input.GetAxisRaw("Horizontal");
+
+        if(HorizontalAxis < 0) {
+            this.transform.eulerAngles = new Vector3(0, 180, 0);
+        } else if(HorizontalAxis > 0) {
+            this.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+        animator.SetBool(PLAYER_IS_WALKING, HorizontalAxis != 0);
         moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 }
