@@ -18,27 +18,13 @@ public class CameraFollow : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        ProcessFollowTargetPosition();
         FollowTarget();
     }
 
     private void StartCameraInBoundaries() {
-        followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
+        this.followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
 
-        if(this.transform.position.x < cameraDeadzoneLeft) {
-            this.transform.position = new Vector3(cameraDeadzoneLeft, this.transform.position.y, this.transform.position.z);
-        }
-        if(this.transform.position.x > cameraDeadzoneRight) {
-            this.transform.position = new Vector3(cameraDeadzoneRight, this.transform.position.y, this.transform.position.z);
-        }
-    }
-
-    private void ProcessFollowTargetPosition() {
-        if(PlayerMovement.Ins.HorizontalAxis > 0) {
-            followTarget.localPosition = new Vector3(distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
-        } else if(PlayerMovement.Ins.HorizontalAxis < 0) {
-            followTarget.localPosition = new Vector3(-distanceFromPlayer, followTarget.transform.localPosition.y, followTarget.transform.localPosition.z);
-        }
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, cameraDeadzoneLeft, cameraDeadzoneRight), this.transform.position.y, this.transform.position.z);
     }
 
     private void FollowTarget() {
@@ -46,6 +32,6 @@ public class CameraFollow : MonoBehaviour {
         //float clampedPositionY = Mathf.Clamp(playerTransform.position.y, cameraDeadzoneBottom, cameraDeadzoneTop);
 
         Vector3 targetPosition = new(clampedPositionX, this.transform.position.y, this.transform.position.z);
-        this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, followSpeed);
+        this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, followSpeed * Time.fixedDeltaTime);
     }
 }

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
-  distanceFromPlayer: 5
+  distanceFromPlayer: 6
   cameraDeadzoneLeft: -16
   cameraDeadzoneRight: 16
-  followSpeed: 0.075
+  followSpeed: 3
