@@ -6,7 +6,12 @@ using UnityEngine.Rendering.Universal;
 public class LighterActivation : MonoBehaviour
 {
     [SerializeField]
-    private bool onFire;
+    public bool onFire { get; private set; }
+    
+    // will be set to true if the mouse wheel is pressed, will be set to false if the lighter is properly activated or the inputDelay is 0 again.
+    public bool isEmmittingSpark { get; private set; } 
+
+    //-------------------------------------------------------
 
     public float inputDelayThreshold;
     private float inputTimeLeft;
@@ -67,10 +72,12 @@ public class LighterActivation : MonoBehaviour
             flameParticle.Play();
             audioSource.Play();
             inputTimeLeft = inputDelayThreshold;            //InputTimeLeft is set to a value of inputDelayThreshold. While there is still time remaining, the input of mousescroll still work together.
+            isEmmittingSpark = true;
         }
         if ((Input.GetAxis("Mouse ScrollWheel") < -wheelThreshold || Input.GetAxis("Mouse ScrollWheel") > wheelThreshold) && inputTimeLeft > 0  // you can theoretically scroll in both directions - for player who don't realise or mix up the direction (happened to me), the feeling is more or less the same
             || Input.GetKeyDown(KeyCode.DownArrow))
         {
+            isEmmittingSpark = false;
             onFire = true;
             Debug.Log("Mouse wheel scrolled down!");
             flameLight.intensity = maxLightIntensity;
@@ -78,6 +85,7 @@ public class LighterActivation : MonoBehaviour
         else if (inputTimeLeft <= 0 && (onFire == false || !(Input.GetMouseButton(2)    //if any of these keys/buttons is pressed, the result will be false for all of them together
             || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))))
                 {
+            isEmmittingSpark = false;
             onFire = false;
         }
 
@@ -104,6 +112,8 @@ public class LighterActivation : MonoBehaviour
         wentOutside = true;
     }
 
+
+    //Story related
     private void StoryEvents()
     {
         if (onFire && !wentOutside)
