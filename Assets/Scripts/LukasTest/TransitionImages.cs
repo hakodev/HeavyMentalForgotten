@@ -39,7 +39,7 @@ public class TransitionImages : MonoBehaviour
     {
         for (int i = 0; i < Images.Length; i++)
         {
-            Images[i].timeInTotal = Images[i].fadeInTime + Images[i].timeBetweenFades + Images[i].fadeOutTime;
+            Images[i].timeInTotal = Images[i].fadeInTime + Images[i].timeBetweenFades + Images[i].fadeOutTime - Images[i].earlierTransitionInSec;
 
             if (Images[i].earlierTransitionInSec < 0)
             {
@@ -74,8 +74,9 @@ public class TransitionImages : MonoBehaviour
             }
 
             float imageTotalTime = Images[currentImage].timeBetweenFades + Images[currentImage].fadeInTime + Images[currentImage].fadeOutTime;
-            float timeToFadeIn = Images[currentImage].fadeInTime;
-            float timeToFadeOut = Images[currentImage].timeBetweenFades + Images[currentImage].fadeInTime;
+            float timeOfFadeIn = Images[currentImage].fadeInTime;
+            float timeOfFadeOut = Images[currentImage].fadeOutTime;
+            float timeUntilFadeOut = Images[currentImage].timeBetweenFades + Images[currentImage].fadeInTime;
 
             timeSinceLastImage += Time.deltaTime;
 
@@ -87,17 +88,19 @@ public class TransitionImages : MonoBehaviour
             }*/
 
 
-            if (timeSinceLastImage > timeToFadeIn && timeSinceLastImage < timeToFadeOut)
+            if (timeSinceLastImage > timeOfFadeIn && timeSinceLastImage < timeUntilFadeOut)
             {
                 fading = false;
             }
-            else if (timeSinceLastImage >= timeToFadeOut)
+            else if (timeSinceLastImage >= timeUntilFadeOut && fading == false)
             {
-                Images[currentImage].ImageSprite.DOFade(0f, timeToFadeIn);
+                Images[currentImage].ImageSprite.DOFade(0f, timeOfFadeOut);
+                fading = true;
             }
-            else if (timeSinceLastImage <= timeToFadeIn)
+            else if (timeSinceLastImage <= timeOfFadeIn && fading == false)
             {
-                Images[currentImage].ImageSprite.DOFade(1f, timeToFadeIn);
+                Images[currentImage].ImageSprite.DOFade(1f, timeOfFadeIn);
+                fading = true;
             }
 
             
