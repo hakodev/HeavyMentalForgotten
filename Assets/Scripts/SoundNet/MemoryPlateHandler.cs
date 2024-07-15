@@ -11,6 +11,8 @@ public class MemoryPlateHandler : MonoBehaviour
     public static List<GameObject> filledPlates = new();
     
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
+
+
     
     private void Awake()
     {
@@ -27,12 +29,6 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void Update()
     {
-        // foreach (GameObject plate in filledPlates)
-        // {
-        //     Debug.Log("Filled Plates:");
-        //     Debug.Log(this.gameObject.name + plate.name);
-        // }
-        
         if (snappedObject != null)
         {
             snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, transform.position, Time.deltaTime * snapSpeed);
@@ -51,8 +47,9 @@ public class MemoryPlateHandler : MonoBehaviour
                 }
             }
         }
-
+        
         CalculateOrbs();
+        
     }
 
     private void CalculateOrbs() {
@@ -82,7 +79,7 @@ public class MemoryPlateHandler : MonoBehaviour
                 }
             }
 
-            filledPlates.Clear();
+            // filledPlates.Clear();
             SelectNextLevel();
         }
     }
@@ -167,4 +164,6 @@ public class MemoryPlateHandler : MonoBehaviour
             spriteRenderer.material.color = Color.black;
         }
     }
+
+
 }

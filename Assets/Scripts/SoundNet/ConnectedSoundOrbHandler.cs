@@ -24,7 +24,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     public bool followMouse;
     public bool isHovering;
     public bool isOutsideCircle = false;
-    public bool stopPlayingAudio = false;
+    // public bool stopPlayingAudio = false;
     
     [Header("Spawner")]
     public Collider2D[] colliders;
@@ -145,8 +145,17 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 }
                 lineRendererGameObject.Clear();
 
-                stopPlayingAudio = true;
+                // stopPlayingAudio = true;
                 Destroy(this.gameObject);
+
+                // if (stopPlayingAudio)
+                // {
+                //     Destroy(this.gameObject);
+                // }
+                // else
+                // {
+                //     stopPlayingAudio = true;
+                // }
             }
         }
         
@@ -220,7 +229,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         foreach (GameObject orb in connectedOrbs)
         {
             AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
-            if (orbAudioSource != null && !stopPlayingAudio)
+            if (orbAudioSource != null /*&& !stopPlayingAudio*/)
             {
                 StartCoroutine(FadeOutVolume(orbAudioSource));
             }
@@ -328,7 +337,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (audioSource != null)
         {
-            while (audioSource.volume > 0)
+            while (audioSource != null && audioSource.volume > 0)
             {
                 Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 float distanceToCurrentFrame = Vector3.Distance(currentMousePosition, transform.position);
@@ -349,6 +358,11 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 lastMousePosition = currentMousePosition;
 
                 yield return null;
+                
+                if (audioSource == null)
+                {
+                    yield break;
+                }
             }
 
             audioSource.Stop();
