@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1519262363643873108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6579892784541254421}
+  - component: {fileID: 799610216518179025}
+  - component: {fileID: 4184741540635338878}
+  - component: {fileID: 2557048649707729628}
+  m_Layer: 0
+  m_Name: SoundOrbContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6579892784541254421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519262363643873108}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799610216518179025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519262363643873108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26696d662a29e84ea01ddccc7f0f9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectPair: []
+  lineContainer: {fileID: 0}
+  lRMaterial: {fileID: 2100000, guid: 4b1d27ba99baf194f9908ac7bdbc2d19, type: 2}
+  connectLists: 1
+--- !u!114 &4184741540635338878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519262363643873108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8a224c986ff844a8130d7779a2aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineSpawnDelay: 3
+--- !u!114 &2557048649707729628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519262363643873108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c3d08a303dace4b98dfc6e7bae92f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectPair: []
+  nonConnectedOrb: {fileID: 4770641512802317560, guid: 0e31ecc989d57444783bd294bdaad3b4, type: 3}
+  lineContainer: {fileID: 0}
