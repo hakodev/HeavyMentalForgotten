@@ -717,7 +717,7 @@ Transform:
   m_GameObject: {fileID: 541040210}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11.5}
+  m_LocalPosition: {x: 0, y: 0, z: 8.6}
   m_LocalScale: {x: 23.368288, y: 23.368288, z: 23.368288}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1142,8 +1142,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1931521355
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -1365,11 +1365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: waitingTimeAfterFinishing
-      value: 91.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[0].fadeInTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[1].fadeInTime
@@ -1381,11 +1381,11 @@ PrefabInstance:
       objectReference: {fileID: 541040211}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[0].fadeOutTime
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[0].timeInTotal
-      value: 10
+      value: 2.0999985
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[1].ImageSprite
@@ -1401,7 +1401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[0].timeBetweenFades
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[1].timeBetweenFades
@@ -1409,7 +1409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[0].earlierTransitionInSec
-      value: -0.1
+      value: 99.9
       objectReference: {fileID: 0}
     - target: {fileID: 7485859618821113870, guid: 6f2a1bec2bdeb66419524b5e97adaaf3, type: 3}
       propertyPath: Images.Array.data[1].earlierTransitionInSec
@@ -1953,7 +1953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063111658468904009, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5364572042231220042, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_Color.a
@@ -2204,7 +2204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a4e852b9a4850e2439c42c421d365484, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
