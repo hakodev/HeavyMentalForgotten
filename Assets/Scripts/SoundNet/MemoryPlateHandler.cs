@@ -12,7 +12,7 @@ public class MemoryPlateHandler : MonoBehaviour
     
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
 
-
+    [SerializeField] private int memoryPlatesFillRequired;
     
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class MemoryPlateHandler : MonoBehaviour
     }
 
     private void CalculateOrbs() {
-        if(filledPlates.Count == 3) {
+        if(filledPlates.Count == memoryPlatesFillRequired) {
             foreach(GameObject plate in filledPlates) {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
                 Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
