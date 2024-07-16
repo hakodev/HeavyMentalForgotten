@@ -372,7 +372,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private void Circlecalculate() 
     {
-        
         Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
         float distance = Vector2.Distance(circleCenter, orbPosition);
         
