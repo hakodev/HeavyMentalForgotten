@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7343901045685093277}
   - component: {fileID: 5598433248981822422}
   - component: {fileID: 4857356818756716834}
+  - component: {fileID: 8404351725201288522}
   m_Layer: 3
   m_Name: SoundOrbDisconnected
   m_TagString: SoundOrbDisconnected
@@ -292,6 +293,18 @@ MonoBehaviour:
   fadeOutTime: 2
   isHovering: 0
   ConnectedColorTransitionSpeed: 5
+--- !u!114 &8404351725201288522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770641512802317560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99293dfc8bccd194db1fab410c19c16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5044411554546723994
 GameObject:
   m_ObjectHideFlags: 0

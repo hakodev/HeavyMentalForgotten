@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         animator.SetBool(PLAYER_IS_WALKING, HorizontalAxis != 0);
+        //Debug.Log(animator.GetBool(PLAYER_IS_WALKING));
         moveSpeed = GameManager.Ins.RunMode ? runSpeed : walkSpeed; // Run speed if run mode, otherwise walk speed
     }
 }

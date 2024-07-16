@@ -98,9 +98,8 @@ public class LineRendererHandler : MonoBehaviour
 
         edgeCollider.points = new Vector2[] { localPos1, localPos2};
 
-        // Set the z position of the EdgeCollider2D to 0.103
         Vector3 colliderPosition = edgeCollider.transform.position;
-        colliderPosition.z = 0.103f;
+        colliderPosition.z = 0.3f;
         edgeCollider.transform.position = colliderPosition;
 
         lineObject.transform.SetParent(lineContainer.transform);

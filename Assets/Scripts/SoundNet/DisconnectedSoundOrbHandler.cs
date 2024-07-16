@@ -30,7 +30,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     public bool isHovering;
     private float hoverTime;
     [SerializeField] private float ConnectedColorTransitionSpeed;
-    private bool followMouse;
+    public bool followMouse;
     
     private void Awake()
     {
