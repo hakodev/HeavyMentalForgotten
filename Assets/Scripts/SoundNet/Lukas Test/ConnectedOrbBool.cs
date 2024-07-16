@@ -8,6 +8,12 @@ public class ConnectedOrbBool : MonoBehaviour
     [Header("References")]
     private ConnectedSoundOrbHandler connectedSoundOrbHandler;
 
+    [SerializeField]
+    private bool textStarted;
+
+    [SerializeField]
+    private GameObject objectToActivate;
+
     private void Awake()
     {
         connectedSoundOrbHandler = GetComponent<ConnectedSoundOrbHandler>();
@@ -25,6 +31,14 @@ public class ConnectedOrbBool : MonoBehaviour
 
     void Update()
     {
-        
+        if (connectedSoundOrbHandler.isHovering && textStarted == false)
+        {
+            objectToActivate.SetActive(true);
+            textStarted = true;
+        } 
+        else if (objectToActivate.activeInHierarchy == false && textStarted == true)
+        {
+            textStarted = false;
+        }
     }
 }
