@@ -6,7 +6,7 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
 {
     [Header("References")]
     private ConnectedSoundOrbHandler connectedSoundOrbHandler;
-    public DisconnectedSoundOrbHandler disconnectedSoundOrbHandler;
+    //public DisconnectedSoundOrbHandler disconnectedSoundOrbHandler;
 
     [SerializeField]
     private bool activatedDisconnectedHover;
@@ -24,14 +24,14 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        disconnectedSoundOrbHandler = connectedSoundOrbHandler.nonConnectedOrbReference.gameObject.GetComponent<DisconnectedSoundOrbHandler>();
+        //disconnectedSoundOrbHandler = connectedSoundOrbHandler.nonConnectedOrbReference.gameObject.GetComponent<DisconnectedSoundOrbHandler>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (disconnectedSoundOrbHandler.isHovering && activatedDisconnectedHover == false)
+        /*if (disconnectedSoundOrbHandler.isHovering && activatedDisconnectedHover == false)
         {
             objectToActivate.SetActive(true);
             activatedDisconnectedHover = true;
@@ -39,7 +39,7 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
         else if (objectToActivate.activeInHierarchy == false && activatedDisconnectedHover == true)
         {
             activatedDisconnectedHover = false;
-        }
+        }*/
     }
 }
 
