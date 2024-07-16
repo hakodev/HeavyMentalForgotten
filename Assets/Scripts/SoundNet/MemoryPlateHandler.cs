@@ -9,6 +9,10 @@ public class MemoryPlateHandler : MonoBehaviour
     private float time = 1.5f;
     private bool isSnapped = false;
     public static List<GameObject> filledPlates = new();
+    [SerializeField] private AudioClip audioA;
+    [SerializeField] private AudioClip audioB;
+    [SerializeField] private AudioClip audioC;
+    [SerializeField] private AudioClip audioD;
     
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
 
@@ -56,11 +60,11 @@ public class MemoryPlateHandler : MonoBehaviour
         if(filledPlates.Count == memoryPlatesFillRequired) {
             foreach(GameObject plate in filledPlates) {
                 DisconnectedSoundOrbHandler disconnectedSoundOrb = plate.GetComponent<DisconnectedSoundOrbHandler>();
-                Debug.Log(disconnectedSoundOrb.isPlacedOnSnap + " check if its getting called or not");
+                
                 if(disconnectedSoundOrb.MemoryLayer > GameManager.Ins.CurrentMemoryLayer + 1) {
                     disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentMemoryLayer + 1;
                 } else if(disconnectedSoundOrb.MemoryLayer < GameManager.Ins.CurrentMemoryLayer - 1) {
-                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentMemoryLayer - 1;
+                    disconnectedSoundOrb.MemoryLayer = GameManager.Ins.CurrentMemoryLayer - 1; 
                 }
 
                 switch(disconnectedSoundOrb.MemoryLayer) {
@@ -86,6 +90,7 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void SelectNextLevel() {
         if(LayerAOrbIsMajority()) {
+            //result A
             GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
         } else if(LayerBOrbIsMajority()) {
             GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
