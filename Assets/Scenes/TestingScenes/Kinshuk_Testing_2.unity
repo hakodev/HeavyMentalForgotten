@@ -384,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063111658468904009, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_Pivot.x
@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &111736959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -812,21 +812,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1816578256}
     m_Modifications:
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Color.r
+      value: 0.00019741058
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_Intensity
+      value: 12.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786120949111807970, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3957003545910322286, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_Name
       value: MouseParticleSyste
       objectReference: {fileID: 0}
     - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.148422
+      value: 12.95
       objectReference: {fileID: 0}
     - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04590559
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7064326
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4176947656267277194, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1178,7 +1202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &422289106
 Transform:
   m_ObjectHideFlags: 0
@@ -1524,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &495897196
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2076,7 +2100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &627980686
 Transform:
   m_ObjectHideFlags: 0
@@ -3953,7 +3977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &973251427
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9041,7 +9065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1117215581
 Transform:
   m_ObjectHideFlags: 0
@@ -14627,7 +14651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1306146053
 Transform:
   m_ObjectHideFlags: 0
@@ -15375,7 +15399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1590800249
 Transform:
   m_ObjectHideFlags: 0
@@ -20760,7 +20784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1973015465
 ParticleSystemRenderer:
   serializedVersion: 6

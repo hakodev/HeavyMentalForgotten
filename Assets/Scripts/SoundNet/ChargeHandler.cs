@@ -36,7 +36,6 @@ public class ChargeHandler : MonoBehaviour
         light2D = mouseFollowerGameObject.GetComponent<Light2D>();
         light2D.intensity = 0f;
         lineCuttingParticleSystem.Stop();
-
     }
 
     void Update()

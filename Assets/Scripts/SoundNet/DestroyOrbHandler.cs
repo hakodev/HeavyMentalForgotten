@@ -13,27 +13,19 @@ public class DestroyOrbHandler : MonoBehaviour
     private EdgeCollider2D edgeCollider;
     private Gradient gradient;
     public bool hasPlayedOnce = false;
-
-
     
     private void Awake()
     {
-
-        
         lineRenderer = this.gameObject.GetComponent<LineRenderer>();
         edgeCollider = this.gameObject.GetComponent<EdgeCollider2D>();
     }
 
     private void Update()
     {
-        
         mousePosition = Input.mousePosition;
         mousePosition.z = Camera.main.nearClipPlane;
         worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        
-
     }
-    
     
     private IEnumerator Fadein(float duration)
     {
@@ -81,7 +73,6 @@ public class DestroyOrbHandler : MonoBehaviour
         
         if(!lineRenderer.enabled || !edgeCollider.enabled)
         {
-            Debug.Log("LineRenderer and EdgeCollider are disabled. Enabling them again.");
             lineRenderer.enabled = true;
             edgeCollider.enabled = true;
         }
