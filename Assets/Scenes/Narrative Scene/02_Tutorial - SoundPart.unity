@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
+  activatedConnectHover: 0
   objectToActivate: {fileID: 2089026761}
 --- !u!1001 &696107691
 PrefabInstance:
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activated: 0
+  activatedConnectHover: 0
   objectToActivate: {fileID: 2089026761}
 --- !u!1001 &870296303
 PrefabInstance:
@@ -3535,7 +3535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[2].enterDelay
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5446770971580034083, guid: 5650535b741a62d42a09e53424d68313, type: 3}
       propertyPath: events.Array.data[3].enterDelay
