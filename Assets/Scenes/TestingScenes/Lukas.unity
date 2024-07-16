@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -152,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -193,6 +197,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -358,7 +366,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 55208191}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &55208183 stripped
 GameObject:
@@ -370,6 +381,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 55208182}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &55208191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55208183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &82018951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -502,6 +527,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 592037170}
     m_Modifications:
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -512,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -553,6 +582,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -719,7 +752,10 @@ PrefabInstance:
     - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 100007477}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &100007469 stripped
 GameObject:
@@ -731,6 +767,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 100007468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &100007477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100007469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &111736958
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +999,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5842752779747642066, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6eceb76031a69ae43b8aedac057a8958, type: 3}
+    - target: {fileID: 5842752779747642066, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
       propertyPath: m_Name
       value: MouseFollower
@@ -1143,6 +1201,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 956756298}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &349203726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349203718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &362243513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,6 +1391,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 607142578}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &449987519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449987511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &453982733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1347,6 +1433,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[1].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -1394,6 +1484,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -1560,7 +1654,10 @@ PrefabInstance:
     - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453982742}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &453982734 stripped
 GameObject:
@@ -1572,6 +1669,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 453982733}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &453982742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453982734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &485756910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &485756911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1605,10 +1716,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 82018952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 152.9}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -169.69, y: 0}
+  m_SizeDelta: {x: 677.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485756912
 MonoBehaviour:
@@ -1630,7 +1741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asdadsadas
+  m_text: Drag memories out of the fog to listen to them and cut the net.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1657,8 +1768,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 45.9
+  m_fontSizeBase: 45.9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1720,7 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextDurationUntilFade: 4
-  fadeOutDuration: 2
+  fadeOutDuration: 10
   fadeInDuration: 2
 --- !u!1 &495897195
 GameObject:
@@ -2056,6 +2167,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -2066,7 +2181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -2107,6 +2222,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -2272,7 +2391,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 449987519}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &627980685
 GameObject:
@@ -2364,6 +2486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 592037170}
     m_Modifications:
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -2411,6 +2537,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -2577,7 +2707,10 @@ PrefabInstance:
     - {fileID: 3764261535624864759, guid: abc8a514863c5494891c50091e529ae9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673910453}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &673910445 stripped
 GameObject:
@@ -2589,6 +2722,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 673910444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &673910453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673910445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &705848303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2675,6 +2822,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -2685,7 +2836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -2726,6 +2877,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -2891,7 +3046,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 727656615}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &727656607 stripped
 Transform:
@@ -2903,6 +3061,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 727656606}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &727656615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727656608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &814383360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,6 +3343,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -3181,7 +3357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -3222,6 +3398,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -3391,7 +3571,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 864149956}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &864149948 stripped
 Transform:
@@ -3403,6 +3586,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 864149947}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &864149956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864149949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &889065646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3523,6 +3720,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -3533,7 +3734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -3574,6 +3775,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -3743,7 +3948,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 921867872}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &921867864 stripped
 Transform:
@@ -3755,6 +3963,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 921867863}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &921867872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921867865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &956756298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3775,6 +3997,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -3785,7 +4011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -3826,6 +4052,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -3991,7 +4221,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 349203726}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &973251426
 GameObject:
@@ -8833,6 +9066,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1263795583}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1020375893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020375885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1001 &1066538846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8853,6 +9100,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -8863,7 +9114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -8904,6 +9155,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -9069,7 +9324,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1066538855}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &1066538847 stripped
 Transform:
@@ -9081,6 +9339,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1066538846}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1066538855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066538848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &1117215580
 GameObject:
   m_ObjectHideFlags: 0
@@ -14134,6 +14406,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -14144,7 +14420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -14185,6 +14461,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -14350,7 +14630,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1203962072}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &1203962064 stripped
 Transform:
@@ -14362,6 +14645,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1203962063}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1203962072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203962065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &1241308043
 GameObject:
   m_ObjectHideFlags: 0
@@ -14450,6 +14747,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -14460,7 +14761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -14501,6 +14802,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -14666,7 +14971,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1020375893}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1 &1306146052
 GameObject:
@@ -14760,6 +15068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349033775}
   - component: {fileID: 1349033776}
+  - component: {fileID: 1349033777}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -14795,6 +15104,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newMaterial: {fileID: 2100000, guid: 4b1d27ba99baf194f9908ac7bdbc2d19, type: 2}
+--- !u!114 &1349033777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349033774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4366ee6797e3f6b47a2b60e006751ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemDuration: 1
+  isDraggingReady: 0
+  chargeThreshold: 1
+  maxLightIntensity: 4
+  chargeCircleRadius: 1
+  lineRenderersColliders: []
+  chargeTester: 0
 --- !u!1001 &1414575957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14815,6 +15143,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -14825,7 +15157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -14866,6 +15198,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -15031,7 +15367,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1757221672}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!1001 &1420740456
 PrefabInstance:
@@ -15053,6 +15392,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -15063,7 +15406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -15104,6 +15447,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -15269,7 +15616,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1420740465}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &1420740457 stripped
 Transform:
@@ -15281,6 +15631,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1420740456}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420740465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420740458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!4 &1554104841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1408026552910940148, guid: 4ed4df1a9bcf2c042b76bf6cb2702062, type: 3}
@@ -20222,6 +20586,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -20232,7 +20600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -20273,6 +20641,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -20438,7 +20810,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1715613574}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &1715613566 stripped
 Transform:
@@ -20450,6 +20825,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1715613565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715613574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715613567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &1736482111
 GameObject:
   m_ObjectHideFlags: 0
@@ -20496,6 +20885,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946971452676086909, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 1414575957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1757221672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757221664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1 &1816578255
 GameObject:
   m_ObjectHideFlags: 0
@@ -25445,6 +25848,10 @@ PrefabInstance:
       propertyPath: gameObjectPair.Array.data[0].Object2
       value: 
       objectReference: {fileID: 100007469}
+    - target: {fileID: -2574957816707600816, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Icon
       value: 
@@ -25455,7 +25862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: delay
@@ -25496,6 +25903,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: <MemoryLayer>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityCurve.m_Curve.Array.size
@@ -25661,7 +26072,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010632473}
   m_SourcePrefab: {fileID: 100100000, guid: abc8a514863c5494891c50091e529ae9, type: 3}
 --- !u!4 &2010632465 stripped
 Transform:
@@ -25673,6 +26087,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534228563430708532, guid: abc8a514863c5494891c50091e529ae9, type: 3}
   m_PrefabInstance: {fileID: 2010632464}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2010632473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010632466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404502d1838d21c4db2ce0846a30af72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedConnectHover: 0
+  objectToActivate: {fileID: 485756910}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
