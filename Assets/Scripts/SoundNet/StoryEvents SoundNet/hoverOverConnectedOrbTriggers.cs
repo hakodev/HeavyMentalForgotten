@@ -9,7 +9,7 @@ public class hoverOverConnectedOrbTriggers : MonoBehaviour
     private ConnectedSoundOrbHandler connectedSoundOrbHandler;
 
     [SerializeField]
-    private bool activated;
+    private bool activatedConnectHover;
     [SerializeField]
     private GameObject objectToActivate;
 
@@ -30,14 +30,14 @@ public class hoverOverConnectedOrbTriggers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connectedSoundOrbHandler.isHovering && activated == false)
+        if (connectedSoundOrbHandler.isHovering && activatedConnectHover == false)
         {
             objectToActivate.SetActive(true);
-            activated = true;
+            activatedConnectHover = true;
         }
-        else if (objectToActivate.activeInHierarchy == false && activated == true)
+        else if (objectToActivate.activeInHierarchy == false && activatedConnectHover == true)
         {
-            activated = false;
+            activatedConnectHover = false;
         }
     }
 }
