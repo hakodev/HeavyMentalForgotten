@@ -175,6 +175,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -190,6 +194,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 603b211f0b2f05f4ca42f2a997bf4b3e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -524,6 +532,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -539,6 +551,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7560ef25b1168db4a9b065570873036e, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -1336,6 +1352,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -1351,6 +1371,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7278f02bf98c7ea4ea8e253d7368c55c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -1899,6 +1923,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -1914,6 +1942,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: d86897f576f1457479a49914c6659020, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -2203,6 +2235,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -2218,6 +2254,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 67567be41b686b14e804912dd41f7189, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -2518,6 +2558,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -2533,6 +2577,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 5dd79c6f3dbb7d647ab74b13898214c2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -3043,6 +3091,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -3058,6 +3110,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 66de329947168ec4bb9bce0b769e543d, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -3523,6 +3579,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -3538,6 +3598,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 947c4eafbdc6d3748a802249d34c0b90, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -3775,6 +3839,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -3790,6 +3858,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: f84ae3488bad3d248a4db903e56f7521, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -3977,7 +4049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &973251427
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8853,6 +8925,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -8868,6 +8944,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: de9602f6900791d48a24ad486e7b807c, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -14134,6 +14214,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -14149,6 +14233,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: e3d8ee06056e04048992fb57472bcf10, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -14450,6 +14538,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -14465,6 +14557,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 346026b10eb4e49419456f581ce26726, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -14835,6 +14931,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -14850,6 +14950,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 0cb276f095660b74b9cca71281b43b32, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -15073,6 +15177,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -15088,6 +15196,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: cc1d0810351f0274e8fcb0d1e0b8cd9b, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -20485,6 +20597,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -20500,6 +20616,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 32df5dbd95e8ed145a672ddf160b9081, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
@@ -20784,7 +20904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1973015465
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -25655,6 +25775,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2006759886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+  m_PrefabInstance: {fileID: 128670918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2010632464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25708,6 +25833,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: mouseFollower
+      value: 
+      objectReference: {fileID: 2006759886}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: xCircleRadius
       value: 12
       objectReference: {fileID: 0}
@@ -25723,6 +25852,10 @@ PrefabInstance:
       propertyPath: connectedAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 34f9418127f0de74485c937adc4f5dd2, type: 3}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: particleSysFollowSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseSensivityDecreaseRate
       value: 0.3
