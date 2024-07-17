@@ -14871,6 +14871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4366ee6797e3f6b47a2b60e006751ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineCuttingParticleSystem: {fileID: 1554104844}
   particleSystemDuration: 1
   isDraggingReady: 0
   chargeThreshold: 1
@@ -15492,6 +15493,11 @@ LineRenderer:
 --- !u!4 &1554104841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1408026552910940148, guid: 4ed4df1a9bcf2c042b76bf6cb2702062, type: 3}
+  m_PrefabInstance: {fileID: 889065646}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1554104844 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4815843052559076580, guid: 4ed4df1a9bcf2c042b76bf6cb2702062, type: 3}
   m_PrefabInstance: {fileID: 889065646}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1590800248

@@ -9,17 +9,20 @@ public class MemoryPlateHandler : MonoBehaviour
     private float time = 1.5f;
     private bool isSnapped = false;
     public static List<GameObject> filledPlates = new();
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioA;
     [SerializeField] private AudioClip audioB;
     [SerializeField] private AudioClip audioC;
     [SerializeField] private AudioClip audioD;
-    
+    private static bool audioPlayed = false;
+
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
 
     [SerializeField] private int memoryPlatesFillRequired;
     
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -33,6 +36,15 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void Update()
     {
+        if(audioSource.isPlaying)
+        {
+            Debug.Log("AudioSource is currently playing.");
+        }
+        else
+        {
+            Debug.Log("AudioSource is not playing any audio.");
+        }
+        
         if (snappedObject != null)
         {
             snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, transform.position, Time.deltaTime * snapSpeed);
@@ -89,32 +101,46 @@ public class MemoryPlateHandler : MonoBehaviour
     }
 
     private void SelectNextLevel() {
-        if(LayerAOrbIsMajority()) {
-            //result A
-            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
-        } else if(LayerBOrbIsMajority()) {
-            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
-        } else if(LayerCOrbIsMajority()) {
-            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
-        } else if(LayerDOrbIsMajority()) {
-            GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
-        } else {
-            //Stay in the current layer and load next scene
-            switch(GameManager.Ins.CurrentMemoryLayer) {
-                case MemoryLayers.A:
-                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
-                    break;
-                case MemoryLayers.B:
-                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
-                    break;
-                case MemoryLayers.C:
-                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
-                    break;
-                case MemoryLayers.D:
-                    GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
-                    break;
+
+        if (!audioPlayed)
+        {
+            if(LayerAOrbIsMajority()) {
+                //result A
+                audioSource.PlayOneShot(audioA, 1f);
+                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
+            } else if(LayerBOrbIsMajority()) {
+                audioSource.PlayOneShot(audioB, 1f);
+                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
+            } else if(LayerCOrbIsMajority()) {
+                audioSource.PlayOneShot(audioC, 1f);
+                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
+            } else if(LayerDOrbIsMajority()) {
+                audioSource.PlayOneShot(audioD, 1f);
+                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
+            } else {
+                //Stay in the current layer and load next scene
+                switch(GameManager.Ins.CurrentMemoryLayer) {
+                    case MemoryLayers.A:
+                        audioSource.PlayOneShot(audioA, 1f);
+                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
+                        break;
+                    case MemoryLayers.B:
+                        audioSource.PlayOneShot(audioB, 1f);
+                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
+                        break;
+                    case MemoryLayers.C:
+                        audioSource.PlayOneShot(audioC, 1f);
+                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
+                        break;
+                    case MemoryLayers.D:
+                        audioSource.PlayOneShot(audioD, 1f);
+                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
+                        break;
+                }
             }
+            audioPlayed = true;
         }
+
     }
 
     private bool LayerAOrbIsMajority() {
