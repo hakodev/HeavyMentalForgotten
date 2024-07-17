@@ -19,12 +19,13 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float fadeOutTime;
     private static GameObject[] connectedOrbs; 
     [SerializeField] private float particleSysFollowSpeed;
+    private Vector3 mousePosition;
     
     [Header("Bool Values")]
     public bool followMouse;
     public bool isHovering;
     public bool isOutsideCircle = false;
-    // public bool stopPlayingAudio = false;
+    public bool isMouseInsideTheCircle;
     
     [Header("Spawner")]
     public Collider2D[] colliders;
@@ -38,6 +39,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystemm;
     [SerializeField] private ParticleSystem mouseParticleSystem;
     [SerializeField] private GameObject mouseFollower;
+    [SerializeField] private ChargeHandler chargeHandler;
     private SpriteRenderer spriteRenderer;
     public List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private AudioSource audioSource;
@@ -73,7 +75,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     void Update()
     {
         circleCenter = new Vector2(xCircleRadius, yCircleRadius);
-        
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         Circlecalculate();
         
         Connected();
@@ -90,7 +93,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         //Follow Mouse
         if (followMouse)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
             
             Vector3 direction = (mousePosition - transform.position).normalized;
@@ -168,6 +170,15 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                     lineRendererGameObject.Add(collider.gameObject);
                 }
             }
+        }
+
+        if (isInsideTheCircle)
+        {
+            chargeHandler.insideCircle = true;
+        }
+        else
+        {
+            chargeHandler.insideCircle = false;
         }
     }
 
@@ -372,18 +383,18 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private void Circlecalculate() 
     {
-        Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
-        float distance = Vector2.Distance(circleCenter, orbPosition);
-        
+        Vector2 mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+        float distance = Vector2.Distance(circleCenter, mousePosition2D);
+
         float normalizedDistance = distance / circleRadius;
 
         mouseSensivity = mouseSensivityCurve.Evaluate(normalizedDistance);
 
-        
-        if (distance > circleRadius) 
+        if (distance > circleRadius)
         {
             isOutsideCircle = true;
-                
+            isMouseInsideTheCircle = false;
+
             if (isHovering)
             {
                 if (!audioSource.isPlaying)
@@ -403,12 +414,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         else if(!isInsideTheCircle)
         {
             isOutsideCircle = false;
+            isMouseInsideTheCircle = true;
 
             ConnectedVibrationIntensity -= vibrationAdd;
 
             isInsideTheCircle = true;
             isOutsideOfCircle = false;
-  
         }
     }
     
