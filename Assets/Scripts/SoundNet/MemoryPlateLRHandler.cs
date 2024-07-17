@@ -17,6 +17,7 @@ public class MemoryPlateLRHandler : MonoBehaviour
     [SerializeField] private LineRendererPair[] linePointsPairs;
     private LineRenderer lineRenderer;
     private List <GameObject> memoryPlateFilledPlates;
+    [SerializeField] private int memoryPlateFillRequired;
     
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class MemoryPlateLRHandler : MonoBehaviour
     
     private void LineRendererHandler()
     {
-        if(memoryPlateFilledPlates.Count == 3)
+        if(memoryPlateFilledPlates.Count == memoryPlateFillRequired)
         {
             lineRenderer.positionCount = 4;
             lineRenderer.SetPosition(0, memoryPlateFilledPlates[0].transform.position);
