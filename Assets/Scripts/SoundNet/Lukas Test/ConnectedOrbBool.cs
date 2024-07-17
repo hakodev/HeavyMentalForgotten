@@ -31,14 +31,14 @@ public class ConnectedOrbBool : MonoBehaviour
 
     void Update()
     {
-        if (connectedSoundOrbHandler.isHovering && textStarted == false)
-        {
-            objectToActivate.SetActive(true);
-            textStarted = true;
-        } 
-        else if (objectToActivate.activeInHierarchy == false && textStarted == true)
-        {
-            textStarted = false;
-        }
+        // if (connectedSoundOrbHandler.isHovering && textStarted == false)
+        // {
+        //     objectToActivate.SetActive(true);
+        //     textStarted = true;
+        // } 
+        // else if (objectToActivate.activeInHierarchy == false && textStarted == true)
+        // {
+        //     textStarted = false;
+        // }
     }
 }

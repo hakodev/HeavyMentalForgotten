@@ -12,7 +12,6 @@ public class ChargeHandler : MonoBehaviour
     public float particleSystemDuration = 1f;
     public bool isDraggingReady = false;
     private TrailRenderer trailCutEffect;
-
     
     [Header("Charge Settings")] 
     [SerializeField] private float chargeThreshold = 4f;
