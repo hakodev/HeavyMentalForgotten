@@ -14740,9 +14740,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4366ee6797e3f6b47a2b60e006751ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineCuttingParticleSystem: {fileID: 0}
   particleSystemDuration: 1
   isDraggingReady: 0
-  chargeThreshold: 4
+  chargeThreshold: 1
   maxLightIntensity: 4
   chargeCircleRadius: 1
   lineRenderersColliders: []
