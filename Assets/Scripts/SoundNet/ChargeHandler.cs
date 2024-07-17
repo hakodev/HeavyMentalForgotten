@@ -8,7 +8,7 @@ public class ChargeHandler : MonoBehaviour
 {
     private Vector3 mousePosition;
     private Vector3 worldPosition;
-    private ParticleSystem lineCuttingParticleSystem;
+    [SerializeField] private ParticleSystem lineCuttingParticleSystem;
     public float particleSystemDuration = 1f;
     public bool isDraggingReady = false;
     private TrailRenderer trailCutEffect;
@@ -31,7 +31,7 @@ public class ChargeHandler : MonoBehaviour
         trailCutEffect.enabled = false;
 
         GameObject mouseFollowerGameObject = GameObject.Find("MouseFollower");
-        lineCuttingParticleSystem = GameObject.Find("LineCutEffect").GetComponent<ParticleSystem>();
+        //lineCuttingParticleSystem = GameObject.Find("LineCutEffect").GetComponent<ParticleSystem>();
         audioSource = mouseFollowerGameObject.GetComponent<AudioSource>();
         light2D = mouseFollowerGameObject.GetComponent<Light2D>();
         light2D.intensity = 0f;
