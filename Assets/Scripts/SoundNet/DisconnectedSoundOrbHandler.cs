@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -32,8 +33,14 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private float ConnectedColorTransitionSpeed;
     public bool followMouse;
     
+    [Header("Subtitles")]
+    [SerializeField] private TextMeshProUGUI subtitleText;
+    public string subtitle;
+    
     private void Awake()
     {
+        subtitleText = GameObject.Find("SubtitleText").GetComponent<TextMeshProUGUI>();
+        subtitleText.enabled = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         targetPosition = this.gameObject.transform.position;
@@ -48,7 +55,6 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
         }
         
         StartCoroutine(Notconnected());
-
 
         //Follow Mouse
         if (followMouse)
@@ -79,6 +85,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
             
             if (!audioSource.isPlaying)
             {
+                StartCoroutine(Subtitles());
                 audioSource.PlayOneShot(notConnectedAudio);
             }
         }
@@ -113,7 +120,6 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
             
             if (!followMouse)
             {
-
                 //Fade Effect - Just fading out
                 float alpha = Mathf.Lerp(1, 0, time / duration);
                 Color newColor = spriteRenderer.color;
@@ -152,6 +158,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
+            StartCoroutine(Subtitles());
             audioSource.PlayOneShot(notConnectedAudio);
         }
         
@@ -216,4 +223,16 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
         }
     }
 
+    private IEnumerator Subtitles()
+    {
+        subtitleText.enabled = true;
+        subtitleText.text = subtitle;
+        yield return new WaitForSeconds(notConnectedAudio.length);
+        subtitleText.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        subtitleText.enabled = false;
+    }
 }

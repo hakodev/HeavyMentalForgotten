@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ConnectedSoundOrbHandler : MonoBehaviour
@@ -58,6 +59,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private Vector3 lengthOfLR;
     public bool isOutsideOfCircle = false;
     public bool isInsideTheCircle = true;
+    
+    [Header("Subtitles")]
+    [SerializeField] private string subtitles;
+    [SerializeField] private TextMeshProUGUI subtitleText;
     
     private void Awake()
     {
@@ -223,6 +228,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
         }
         
+        if (isOutsideOfCircle)
+        {
+            Debug.Log("Outside of circle");
+            StartCoroutine(Subtitles());
+        }
+        
         foreach (GameObject orb in connectedOrbs)
         {
             AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
@@ -325,12 +336,14 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (spriteRenderer.enabled)
         {
-            if (colliders.Length == 0 && !hasSpawned)
+            if (colliders.Length == 0/* && !hasSpawned*/)
             {
                 GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
                 disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
-                disconnectOrbScript.notConnectedAudio = connectedAudioClip;
+                disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
+                disconnectOrbScript.subtitle = subtitles;
+                //Add the text for the disconnectedOrb here
                 disconnectOrbScript.MemoryLayer = MemoryLayer;
                 hasSpawned = true;
                 // time = 4.1f;
@@ -383,6 +396,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private void Circlecalculate() 
     {
+        Vector2 mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+        float distances = Vector2.Distance(circleCenter, mousePosition2D);
+        
         Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
         
         float distance = Vector2.Distance(circleCenter, orbPosition);
@@ -391,7 +407,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         mouseSensivity = mouseSensivityCurve.Evaluate(normalizedDistance);
 
-        if (distance > circleRadius)
+        if (distance > circleRadius || distances > circleRadius)
         {
             isOutsideCircle = true;
             isMouseInsideTheCircle = false;
@@ -428,6 +444,15 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
+    }
+    
+    private IEnumerator Subtitles()
+    {
+        float audioLength = connectedAudioClip.length;
+        subtitleText.enabled = true;
+        subtitleText.text = subtitles;
+        yield return new WaitForSeconds(audioLength);
+        subtitleText.enabled = false;
     }
     
 }
