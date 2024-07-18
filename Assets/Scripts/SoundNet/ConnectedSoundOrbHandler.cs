@@ -325,12 +325,13 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (spriteRenderer.enabled)
         {
-            if (colliders.Length == 0 && !hasSpawned)
+            if (colliders.Length == 0/* && !hasSpawned*/)
             {
                 GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
                 disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
-                disconnectOrbScript.notConnectedAudio = connectedAudioClip;
+                disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
+                //Add the text for the disconnectedOrb here
                 disconnectOrbScript.MemoryLayer = MemoryLayer;
                 hasSpawned = true;
                 // time = 4.1f;
