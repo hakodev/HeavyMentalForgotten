@@ -56,7 +56,6 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
         
         StartCoroutine(Notconnected());
 
-
         //Follow Mouse
         if (followMouse)
         {
@@ -86,7 +85,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
             
             if (!audioSource.isPlaying)
             {
-                StartCoroutine(Subtitiles());
+                StartCoroutine(Subtitles());
                 audioSource.PlayOneShot(notConnectedAudio);
             }
         }
@@ -159,7 +158,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
-            StartCoroutine(Subtitiles());
+            StartCoroutine(Subtitles());
             audioSource.PlayOneShot(notConnectedAudio);
         }
         
@@ -224,7 +223,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
         }
     }
 
-    private IEnumerator Subtitiles()
+    private IEnumerator Subtitles()
     {
         subtitleText.enabled = true;
         subtitleText.text = subtitle;
