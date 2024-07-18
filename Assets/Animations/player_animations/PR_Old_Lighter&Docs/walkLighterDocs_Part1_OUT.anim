@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: walkLighterDocs_Part1
+  m_Name: walkLighterDocs_Part1_OUT
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -1246,17 +1246,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 3
         value: {x: 6.885, y: -0.071, z: 14.953}
-        inSlope: {x: 0, y: 0, z: -37.450005}
-        outSlope: {x: 0, y: 0, z: -37.450005}
+        inSlope: {x: 0, y: 0, z: -66.658005}
+        outSlope: {x: 0, y: 0, z: -66.658005}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 3.5
-        value: {x: 6.885, y: -0.071, z: 2.256}
-        inSlope: {x: 0, y: 0, z: -98.29936}
-        outSlope: {x: 0, y: 0, z: -98.29936}
+        value: {x: 6.885, y: -0.071, z: -26.952}
+        inSlope: {x: 0, y: 0, z: -299.62646}
+        outSlope: {x: 0, y: 0, z: -299.62646}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -2655,6 +2655,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.5
         value: {x: 2.030974, y: 0.0000024437904, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.5
+        value: {x: 1.7334905, y: -0.3374238, z: -0.041112002}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -9683,6 +9692,15 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 3.5
+        value: 1.7334905
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 3.5166667
         value: 1.8686712
         inSlope: 0
@@ -9731,6 +9749,15 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 3.5
+        value: -0.3374238
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 3.5166667
         value: -0.0327093
         inSlope: 0
@@ -9772,6 +9799,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.5
         value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.5
+        value: -0.041112002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -10042,17 +10078,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 3
         value: 14.953
-        inSlope: -37.450005
-        outSlope: -37.450005
+        inSlope: -66.658005
+        outSlope: -66.658005
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.5
-        value: 2.256
-        inSlope: -98.29936
-        outSlope: -98.29936
+        value: -26.952
+        inSlope: -299.62646
+        outSlope: -299.62646
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -15549,7 +15585,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
+    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
+      2/thumb_lighter 3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -15561,7 +15598,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
+    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
+      2/thumb_lighter 3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -15573,7 +15611,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
+    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
+      2/thumb_lighter 3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -15981,8 +16020,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
-      2/thumb_lighter 3
+    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -15994,8 +16032,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
-      2/thumb_lighter 3
+    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -16007,8 +16044,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: lighter/arm_lighter/arm_lighter 2/hand_lighter/thumb_lighter/thumb_lighter
-      2/thumb_lighter 3
+    path: Spine Base/Spine/Shoulder L/Arm L/Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
