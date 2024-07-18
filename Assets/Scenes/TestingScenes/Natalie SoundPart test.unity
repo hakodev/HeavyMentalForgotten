@@ -378,6 +378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1816578256}
     m_Modifications:
+    - target: {fileID: 1899097186468779538, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2063111658468904009, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -14743,6 +14747,7 @@ MonoBehaviour:
   lineCuttingParticleSystem: {fileID: 0}
   particleSystemDuration: 1
   isDraggingReady: 0
+  insideCircle: 0
   chargeThreshold: 1
   maxLightIntensity: 4
   chargeCircleRadius: 1
@@ -25425,6 +25430,10 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: circleRadius
       value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: fghjk
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
