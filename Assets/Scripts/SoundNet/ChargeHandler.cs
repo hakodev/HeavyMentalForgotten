@@ -11,6 +11,7 @@ public class ChargeHandler : MonoBehaviour
     [SerializeField] private ParticleSystem lineCuttingParticleSystem;
     public float particleSystemDuration = 1f;
     public bool isDraggingReady = false;
+    public bool insideCircle;
     private TrailRenderer trailCutEffect;
     
     [Header("Charge Settings")] 
@@ -39,6 +40,13 @@ public class ChargeHandler : MonoBehaviour
 
     void Update()
     {
+        if (insideCircle)
+        {
+            light2D.intensity = 0f;
+            charge = 0f;
+            return;
+        }
+        
         trailCutEffect.enabled = true;
         mousePosition = Input.mousePosition;
         mousePosition.z = Camera.main.nearClipPlane;

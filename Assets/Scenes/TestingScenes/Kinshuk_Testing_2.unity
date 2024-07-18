@@ -259,6 +259,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -615,6 +619,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -1436,6 +1444,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -2007,6 +2019,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -2318,6 +2334,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -2641,6 +2661,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -3175,6 +3199,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -3664,6 +3692,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -3923,6 +3955,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -9009,6 +9045,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -14299,6 +14339,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -14622,6 +14666,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -14959,6 +15007,7 @@ MonoBehaviour:
   lineCuttingParticleSystem: {fileID: 1554104844}
   particleSystemDuration: 1
   isDraggingReady: 0
+  insideCircle: 0
   chargeThreshold: 1
   maxLightIntensity: 4
   chargeCircleRadius: 1
@@ -15016,6 +15065,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -15262,6 +15315,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
@@ -20688,6 +20745,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 2006759886}
@@ -25923,6 +25984,10 @@ PrefabInstance:
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: chargeHandler
+      value: 
+      objectReference: {fileID: 1349033777}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: mouseFollower
       value: 
