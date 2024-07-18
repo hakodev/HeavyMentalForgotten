@@ -383,6 +383,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     
     private void Circlecalculate() 
     {
+        Vector2 mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
+        float distances = Vector2.Distance(circleCenter, mousePosition2D);
+        
         Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
         
         float distance = Vector2.Distance(circleCenter, orbPosition);
@@ -391,7 +394,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         mouseSensivity = mouseSensivityCurve.Evaluate(normalizedDistance);
 
-        if (distance > circleRadius)
+        if (distance > circleRadius || distances > circleRadius)
         {
             isOutsideCircle = true;
             isMouseInsideTheCircle = false;
