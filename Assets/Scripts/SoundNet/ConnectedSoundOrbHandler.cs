@@ -61,7 +61,8 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     public bool isInsideTheCircle = true;
     
     [Header("Subtitles")]
-    [SerializeField] private string subtitleText;
+    [SerializeField] private string subtitles;
+    [SerializeField] private TextMeshProUGUI subtitleText;
     
     private void Awake()
     {
@@ -227,6 +228,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
             }
         }
         
+        if (isOutsideOfCircle)
+        {
+            Debug.Log("Outside of circle");
+            StartCoroutine(Subtitles());
+        }
+        
         foreach (GameObject orb in connectedOrbs)
         {
             AudioSource orbAudioSource = orb.GetComponent<AudioSource>();
@@ -335,7 +342,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
                 disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
                 disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
-                disconnectOrbScript.subtitle = subtitleText;
+                disconnectOrbScript.subtitle = subtitles;
                 //Add the text for the disconnectedOrb here
                 disconnectOrbScript.MemoryLayer = MemoryLayer;
                 hasSpawned = true;
@@ -437,6 +444,15 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(circleCenter, circleRadius);
+    }
+    
+    private IEnumerator Subtitles()
+    {
+        float audioLength = connectedAudioClip.length;
+        subtitleText.enabled = true;
+        subtitleText.text = subtitles;
+        yield return new WaitForSeconds(audioLength);
+        subtitleText.enabled = false;
     }
     
 }
