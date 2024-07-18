@@ -3,6 +3,7 @@ public enum Levels {
     MainMenu = 0,
     Introduction,
     Tutorial,
+    Prologue_Asylum,
 
     SOUND1_1_LAYER_A,
 
@@ -14,7 +15,6 @@ public enum Levels {
 
     SOUND2_LAYER_A,
     SOUND2_LAYER_B,
-    SOUND2_LAYER_C,
 
     SCENE2_LAYER_A,
     SCENE2_LAYER_B,

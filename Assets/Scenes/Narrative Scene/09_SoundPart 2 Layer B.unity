@@ -22608,7 +22608,7 @@ PrefabInstance:
       objectReference: {fileID: 488890606}
     - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: nextLevelLayerA
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: nextLevelLayerB
@@ -22616,7 +22616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: nextLevelLayerC
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: m_LocalPosition.x

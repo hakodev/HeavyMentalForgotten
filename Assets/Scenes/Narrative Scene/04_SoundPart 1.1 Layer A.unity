@@ -5886,11 +5886,11 @@ PrefabInstance:
       objectReference: {fileID: 1008479003}
     - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: nextLevelLayerA
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2489567956921510802, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: nextLevelLayerB
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4117061628921074766, guid: e3ef130caa8d77e4b9516028bd9dce13, type: 3}
       propertyPath: m_LocalPosition.x
