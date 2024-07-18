@@ -175,6 +175,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
@@ -611,6 +615,10 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
@@ -6028,6 +6036,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
@@ -6345,6 +6357,10 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
@@ -11837,6 +11853,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
   m_PrefabInstance: {fileID: 656408753}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &656408756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7088037815512511159, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
+  m_PrefabInstance: {fileID: 656408753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &672106663
 GameObject:
   m_ObjectHideFlags: 0
@@ -22301,6 +22328,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
@@ -27683,6 +27714,10 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
@@ -34075,6 +34110,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
       objectReference: {fileID: 0}
@@ -34405,6 +34444,10 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
@@ -35012,6 +35055,10 @@ PrefabInstance:
       propertyPath: circleRadius
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 656408756}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: vibrationAdd
       value: 1
