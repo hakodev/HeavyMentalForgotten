@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ConnectedSoundOrbHandler : MonoBehaviour
@@ -58,6 +59,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private Vector3 lengthOfLR;
     public bool isOutsideOfCircle = false;
     public bool isInsideTheCircle = true;
+    
+    [Header("Subtitles")]
+    [SerializeField] private string subtitleText;
     
     private void Awake()
     {
@@ -325,12 +329,14 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (spriteRenderer.enabled)
         {
-            if (colliders.Length == 0 && !hasSpawned)
+            if (colliders.Length == 0/* && !hasSpawned*/)
             {
                 GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
                 disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
-                disconnectOrbScript.notConnectedAudio = connectedAudioClip;
+                disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
+                disconnectOrbScript.subtitle = subtitleText;
+                //Add the text for the disconnectedOrb here
                 disconnectOrbScript.MemoryLayer = MemoryLayer;
                 hasSpawned = true;
                 // time = 4.1f;
@@ -384,13 +390,17 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private void Circlecalculate() 
     {
         Vector2 mousePosition2D = new Vector2(mousePosition.x, mousePosition.y);
-        float distance = Vector2.Distance(circleCenter, mousePosition2D);
+        float distances = Vector2.Distance(circleCenter, mousePosition2D);
+        
+        Vector2 orbPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
+        
+        float distance = Vector2.Distance(circleCenter, orbPosition);
 
         float normalizedDistance = distance / circleRadius;
 
         mouseSensivity = mouseSensivityCurve.Evaluate(normalizedDistance);
 
-        if (distance > circleRadius)
+        if (distance > circleRadius || distances > circleRadius)
         {
             isOutsideCircle = true;
             isMouseInsideTheCircle = false;
