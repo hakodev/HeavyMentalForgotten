@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ConnectedSoundOrbHandler : MonoBehaviour
@@ -58,6 +59,9 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private Vector3 lengthOfLR;
     public bool isOutsideOfCircle = false;
     public bool isInsideTheCircle = true;
+    
+    [Header("Subtitles")]
+    [SerializeField] private string subtitleText;
     
     private void Awake()
     {
@@ -331,6 +335,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 nonConnectedOrbReference = nonConnectedOrbSpawner;
                 disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
                 disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
+                disconnectOrbScript.subtitle = subtitleText;
                 //Add the text for the disconnectedOrb here
                 disconnectOrbScript.MemoryLayer = MemoryLayer;
                 hasSpawned = true;

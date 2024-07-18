@@ -35,6 +35,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     
     [Header("Subtitles")]
     [SerializeField] private TextMeshProUGUI subtitleText;
+    public string subtitle;
     
     private void Awake()
     {
@@ -226,7 +227,7 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     private IEnumerator Subtitiles()
     {
         subtitleText.enabled = true;
-        subtitleText.text = "I'm not connected to anything...";
+        subtitleText.text = subtitle;
         yield return new WaitForSeconds(notConnectedAudio.length);
         subtitleText.enabled = false;
     }
