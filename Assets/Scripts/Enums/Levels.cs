@@ -24,6 +24,8 @@ public enum Levels {
     SOUND3_1_LAYER_B,
     SOUND3_1_LAYER_C,
 
+    TransitionPaper,
+
     SOUND3_2_LAYER_D,
 
     SOUND3_3_LAYER_C,
