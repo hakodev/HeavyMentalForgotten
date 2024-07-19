@@ -14,7 +14,6 @@ public class LayingDown : MonoBehaviour
     [SerializeField] private bool mousePressed;
 
     [SerializeField] private int currentAnimation = 0;
-    //[SerializeField] private float firstAnimationDuration;
 
     [Header("Put player in here!")]
     [SerializeField] private Animator animator;
@@ -22,8 +21,15 @@ public class LayingDown : MonoBehaviour
     private float animatorIsLayingTimeLamp;
 
     [SerializeField] private Transform player;
+    [Header("(!)Range is calculated from the pivot of the object")]
     [SerializeField] private float maxRange;
-   
+
+    [Header("Level Progression: ")]
+    [SerializeField] private float timeAfterAnimToEnd;
+    public float timeSinceAnim;
+    public bool animationFinished = false;
+
+
 
 
 
@@ -64,25 +70,41 @@ public class LayingDown : MonoBehaviour
             {
                 mousePressed = false;
                 timeMousePressed = 0;
-                animator.SetFloat("isLayingTime_Lamp", timeMousePressed);
+            }
+        }
+        CheckForLevelProgression();
+    }
+
+    private void CheckForLevelProgression()
+    {
+        if (animationFinished)
+        {
+            timeSinceAnim += Time.deltaTime;
+            if (timeSinceAnim >= timeAfterAnimToEnd)
+            {
+                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
             }
         }
     }
 
-    
+
+
     private void LayDown(int pCurrentAnimation)
     {
         if (pCurrentAnimation == 0)
         {
-            animator.SetBool("isLaying_Lamp", true);
-            timeMousePressed = 0; //so player need to press again or hold longer for second animation
+            animator.SetFloat("layingAnimationNumber", currentAnimation + 1.1f);
+            //animator.SetBool("isLaying_Lamp", true);
         }
         else if (pCurrentAnimation >= 1)
         {
-            //here let us increase the time to trigger the second animation
-            animator.SetFloat("isLayingTime_Lamp", timeMousePressed);
-            animator.SetBool("isDown_Lamp", true);
+            animator.SetFloat("layingAnimationNumber", currentAnimation + 1.1f);
+            //animator.SetBool("isDown_Lamp", true);
+
+            animationFinished = true;
+
         }
+        timeMousePressed = 0; //so player need to press again or hold longer for second animation
         return;
 
     }
