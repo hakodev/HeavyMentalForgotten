@@ -1433,9 +1433,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 641877142}
     m_Modifications:
+    - target: {fileID: 644931028650268558, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 644931028650268558, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1911671368815221092, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: m_Radius
       value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211387361511162334, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211387361511162334, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.67
       objectReference: {fileID: 0}
     - target: {fileID: 3266591454992034439, guid: 161b2f45dd5f0ed44afaaf8314adab20, type: 3}
       propertyPath: memoryPlatesFillRequired

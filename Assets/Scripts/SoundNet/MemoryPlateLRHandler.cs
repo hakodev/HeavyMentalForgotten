@@ -39,7 +39,7 @@ public class MemoryPlateLRHandler : MonoBehaviour
 
             if (memoryPlateFilledPlates.Count >= 3)
             {
-                lineRenderer.positionCount = 5;
+                lineRenderer.positionCount = 4;
                 lineRenderer.SetPosition(0, memoryPlateFilledPlates[0].transform.position);
                 lineRenderer.SetPosition(1, memoryPlateFilledPlates[1].transform.position);
                 lineRenderer.SetPosition(2, memoryPlateFilledPlates[2].transform.position);

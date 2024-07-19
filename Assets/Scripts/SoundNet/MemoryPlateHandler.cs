@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -14,6 +15,7 @@ public class MemoryPlateHandler : MonoBehaviour
     [SerializeField] private AudioClip audioB;
     [SerializeField] private AudioClip audioC;
     [SerializeField] private AudioClip audioD;
+
     private static bool audioPlayed = false;
 
     private int layerAOrbCount, layerBOrbCount, layerCOrbCount, layerDOrbCount;
@@ -97,13 +99,10 @@ public class MemoryPlateHandler : MonoBehaviour
                         break;
                 }
             }
-
-            // filledPlates.Clear();
-            SelectNextLevel();
         }
     }
 
-    private void SelectNextLevel() {
+    public void SelectNextLevel() {
 
         if (!audioPlayed)
         {
@@ -199,6 +198,5 @@ public class MemoryPlateHandler : MonoBehaviour
             spriteRenderer.material.color = Color.black;
         }
     }
-
-
+    
 }
