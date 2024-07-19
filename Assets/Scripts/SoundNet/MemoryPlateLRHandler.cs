@@ -27,6 +27,7 @@ public class MemoryPlateLRHandler : MonoBehaviour
     private void Update()
     {
         memoryPlateFilledPlates = MemoryPlateHandler.filledPlates;
+
         LineRendererHandler();
         
     }
@@ -35,12 +36,16 @@ public class MemoryPlateLRHandler : MonoBehaviour
     {
         if(memoryPlateFilledPlates.Count == memoryPlateFillRequired)
         {
-            lineRenderer.positionCount = 4;
-            lineRenderer.SetPosition(0, memoryPlateFilledPlates[0].transform.position);
-            lineRenderer.SetPosition(1, memoryPlateFilledPlates[1].transform.position);
-            lineRenderer.SetPosition(2, memoryPlateFilledPlates[2].transform.position);
-            lineRenderer.SetPosition(3, memoryPlateFilledPlates[0].transform.position);
-            
+
+            if (memoryPlateFilledPlates.Count >= 3)
+            {
+                lineRenderer.positionCount = 5;
+                lineRenderer.SetPosition(0, memoryPlateFilledPlates[0].transform.position);
+                lineRenderer.SetPosition(1, memoryPlateFilledPlates[1].transform.position);
+                lineRenderer.SetPosition(2, memoryPlateFilledPlates[2].transform.position);
+                lineRenderer.SetPosition(3, memoryPlateFilledPlates[0].transform.position);
+            }
+
             foreach (var pair in linePointsPairs)
             {
                 LineRenderer lr = pair.Object1.GetComponent<LineRenderer>();

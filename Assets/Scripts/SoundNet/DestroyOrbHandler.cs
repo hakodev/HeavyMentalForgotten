@@ -58,7 +58,10 @@ public class DestroyOrbHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
+        if (this.gameObject.activeInHierarchy)
+        {
+            NetRegeneratorHandler.instance.ActivateAfterDelay(this.gameObject);
+        }
     }
     
     private void OnEnable()
