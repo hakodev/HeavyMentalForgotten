@@ -93,12 +93,12 @@ public class LayingDown : MonoBehaviour
     {
         if (pCurrentAnimation == 0)
         {
-            animator.SetFloat("layingAnimationNumber", currentAnimation + 1.1f);
+            animator.SetFloat("layingAnimationNumber", currentAnimation + 1f);
             //animator.SetBool("isLaying_Lamp", true);
         }
         else if (pCurrentAnimation >= 1)
         {
-            animator.SetFloat("layingAnimationNumber", currentAnimation + 1.1f);
+            animator.SetFloat("layingAnimationNumber", currentAnimation + 1f);
             //animator.SetBool("isDown_Lamp", true);
 
             animationFinished = true;
