@@ -1118,7 +1118,7 @@ MonoBehaviour:
   - memoryPlate: {fileID: 696107695}
     Object1: {fileID: 696107694}
     Object2: {fileID: 696107693}
-  memoryPlateFillRequired: 0
+  memoryPlateFillRequired: 1
 --- !u!1001 &668057793
 PrefabInstance:
   m_ObjectHideFlags: 0

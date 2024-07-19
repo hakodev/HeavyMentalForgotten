@@ -22,6 +22,8 @@ public class MemoryPlateHandler : MonoBehaviour
     
     private void Awake()
     {
+        audioPlayed = false;
+        filledPlates.Clear();
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -58,8 +60,9 @@ public class MemoryPlateHandler : MonoBehaviour
                 isSnapped = true;
                 
                 if (!filledPlates.Contains(snappedObject))
-                {
+                { ;
                     filledPlates.Add(snappedObject);
+                    Debug.Log(filledPlates.Count + " filled plates");
                 }
             }
         }
@@ -104,6 +107,7 @@ public class MemoryPlateHandler : MonoBehaviour
 
         if (!audioPlayed)
         {
+            Debug.Log("Selecting next level.");
             if(LayerAOrbIsMajority()) {
                 //result A
                 audioSource.PlayOneShot(audioA, 1f);

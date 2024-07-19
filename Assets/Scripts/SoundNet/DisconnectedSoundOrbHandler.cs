@@ -233,6 +233,9 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        subtitleText.enabled = false;
+        if (subtitleText != null)
+        {
+            subtitleText.enabled = false;
+        }
     }
 }
