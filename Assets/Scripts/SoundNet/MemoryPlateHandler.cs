@@ -110,15 +110,16 @@ public class MemoryPlateHandler : MonoBehaviour
             if(LayerAOrbIsMajority()) {
                 //result A
                 audioSource.PlayOneShot(audioA, 1f);
+                StartCoroutine(PlayAudio(audioA));
                 GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
             } else if(LayerBOrbIsMajority()) {
-                audioSource.PlayOneShot(audioB, 1f);
+                StartCoroutine(PlayAudio(audioB));
                 GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
             } else if(LayerCOrbIsMajority()) {
-                audioSource.PlayOneShot(audioC, 1f);
+                StartCoroutine(PlayAudio(audioC));
                 GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
             } else if(LayerDOrbIsMajority()) {
-                audioSource.PlayOneShot(audioD, 1f);
+                StartCoroutine(PlayAudio(audioD));
                 GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
             } else {
                 //Stay in the current layer and load next scene
@@ -199,4 +200,9 @@ public class MemoryPlateHandler : MonoBehaviour
         }
     }
     
+    private IEnumerator PlayAudio(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip, 1f);
+        yield return new WaitForSeconds(audioClip.length);
+    }
 }
