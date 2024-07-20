@@ -13,6 +13,9 @@ public enum Levels {
     SCENE1_LAYER_A,
     SCENE1_LAYER_B,
 
+    Transition_LAYER_A,
+    Transition_LAYER_B,
+
     SOUND2_LAYER_A,
     SOUND2_LAYER_B,
 

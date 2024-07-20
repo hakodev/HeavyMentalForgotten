@@ -1158,6 +1158,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 13c99c1c72ccb1846bb2535c20dcd155, type: 3}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: particleSysFollowSpeed
       value: 0.1
       objectReference: {fileID: 0}
@@ -1236,7 +1248,7 @@ PrefabInstance:
     - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+      objectReference: {fileID: 21300000, guid: d82935d0cd7d3ae47be1084a2b29c75c, type: 3}
     - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -2186,6 +2198,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 7915e1decf63d234a86e2b9200d89bfc, type: 3}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: outsideHoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: particleSysFollowSpeed
       value: 0.1
       objectReference: {fileID: 0}
@@ -2264,7 +2288,7 @@ PrefabInstance:
     - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+      objectReference: {fileID: 21300000, guid: d82935d0cd7d3ae47be1084a2b29c75c, type: 3}
     - target: {fileID: 4526360891551805924, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: m_Color.b
       value: 1
