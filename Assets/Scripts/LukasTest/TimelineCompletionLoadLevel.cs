@@ -7,16 +7,28 @@ public class TimelineCompletionLoadLevel : MonoBehaviour
 {
     private PlayableDirector timeline;
 
+    private float elapsedTime;
+    [SerializeField] private float minimalTimeBeforeProgression;
+
     private void Awake()
     {
         timeline = GetComponent<PlayableDirector>();
     }
-    
+
+    private void Start()
+    {
+        if (timeline.state != PlayState.Playing)
+        {
+            timeline.Play();
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (timeline.state != PlayState.Playing)
+        elapsedTime += Time.deltaTime;
+        if (timeline.state != PlayState.Playing && elapsedTime >= minimalTimeBeforeProgression)
         {
             GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
         }
