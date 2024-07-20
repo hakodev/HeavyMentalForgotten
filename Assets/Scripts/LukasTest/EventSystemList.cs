@@ -122,7 +122,18 @@ public class EventSystemList : MonoBehaviour
         }
     }
 
-
+    public float GetExitDelay(int eventIndex)
+    {
+        if (eventIndex >= 0 && eventIndex < events.Length)
+        {
+            return events[eventIndex].exitDelay;
+        }
+        else
+        {
+            Debug.LogError("Invalid event index");
+            return -1;
+        }
+    }
 
 
     /*
