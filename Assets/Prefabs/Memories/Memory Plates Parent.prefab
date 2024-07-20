@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6322114508839842314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.429999, y: 1.1223149, z: -9.9505625}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips: []
   memoryPlateHandler: []
-  maxIntensity: 0
+  maxIntensity: 10
   light2D: {fileID: 0}
 --- !u!120 &6573889145866077928
 LineRenderer:
