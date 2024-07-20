@@ -19,6 +19,7 @@ public class TimelineCompletionLoadLevel : MonoBehaviour
     {
         if (timeline.state != PlayState.Playing)
         {
+            Debug.Log("Timeline is not playing. Playing now.");
             timeline.Play();
         }
     }
