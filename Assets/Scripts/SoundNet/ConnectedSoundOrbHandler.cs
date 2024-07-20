@@ -64,6 +64,10 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     [SerializeField] private string subtitles;
     [SerializeField] private TextMeshProUGUI subtitleText;
     
+    [Header("Special Memory")]
+    [SerializeField] private bool specialMemory = false;
+    [SerializeField] private GameObject specialMemoryObject;
+    
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -338,18 +342,30 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         {
             if (colliders.Length == 0/* && !hasSpawned*/)
             {
-                GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
-                nonConnectedOrbReference = nonConnectedOrbSpawner;
-                disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
-                disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
-                disconnectOrbScript.subtitle = subtitles;
-                //Add the text for the disconnectedOrb here
-                disconnectOrbScript.MemoryLayer = MemoryLayer;
-                hasSpawned = true;
-                // time = 4.1f;
-                childObject.SetActive(false);
-                StopAllCoroutines();
-                spriteRenderer.enabled = false;
+                if (!specialMemory)
+                {
+                    GameObject nonConnectedOrbSpawner = Instantiate(nonConnectedOrb, this.gameObject.transform.position, Quaternion.identity);
+                    nonConnectedOrbReference = nonConnectedOrbSpawner;
+                    disconnectOrbScript = nonConnectedOrbReference.GetComponent<DisconnectedSoundOrbHandler>();
+                    disconnectOrbScript.notConnectedAudio = connectedAudioClip; 
+                    disconnectOrbScript.subtitle = subtitles;
+                    //Add the text for the disconnectedOrb here
+                    disconnectOrbScript.MemoryLayer = MemoryLayer;
+                    hasSpawned = true;
+                    // time = 4.1f;
+                    childObject.SetActive(false);
+                    StopAllCoroutines();
+                    spriteRenderer.enabled = false;
+                }
+                else
+                {
+                    //Special memory
+                    GameObject specialMemoryOrb = Instantiate(specialMemoryObject, this.gameObject.transform.position, Quaternion.identity);
+                    childObject.SetActive(false);
+                    StopAllCoroutines();
+                    spriteRenderer.enabled = false;
+                }
+
             }
         }
     }

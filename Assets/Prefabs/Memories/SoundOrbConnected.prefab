@@ -345,10 +345,12 @@ MonoBehaviour:
   followMouse: 0
   isHovering: 0
   isOutsideCircle: 0
+  isMouseInsideTheCircle: 0
   colliders: []
   particleSystemm: {fileID: 8762159071251945854}
   mouseParticleSystem: {fileID: 679960288215351867}
   mouseFollower: {fileID: 7913124903253356293, guid: fa97d7043a530914fb972fff20ccf651, type: 3}
+  chargeHandler: {fileID: 0}
   lineRenderers: []
   outsideHoverColor: {r: 0, g: 0, b: 0, a: 0}
   mouseSensivityCurve:
@@ -399,6 +401,10 @@ MonoBehaviour:
   vibrationAdd: 0
   isOutsideOfCircle: 0
   isInsideTheCircle: 1
+  subtitles: 
+  subtitleText: {fileID: 0}
+  specialMemory: 0
+  specialMemoryObject: {fileID: 4371315593707656419, guid: 1d3ced41388fcfb47bf85e16acb90987, type: 3}
 --- !u!114 &-2574957816707600816
 MonoBehaviour:
   m_ObjectHideFlags: 0

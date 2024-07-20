@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class MemoryPlateEndAnimationHandler : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class MemoryPlateEndAnimationHandler : MonoBehaviour
     [SerializeField] MemoryPlateHandler[] memoryPlateHandler;
     private List<DisconnectedSoundOrbHandler> disconnectedSoundOrbHandlers = new List<DisconnectedSoundOrbHandler>();
 
-
+    [Header("Glow Effect")]
+    [SerializeField] private float maxIntensity;
+    [SerializeField] private Light2D light2D;
+    
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -65,13 +69,39 @@ public class MemoryPlateEndAnimationHandler : MonoBehaviour
     
     private IEnumerator PlayAudioClips()
     {
+        int arrayElement = 0;
         foreach (AudioClip clip in audioClips)
         {
+            light2D = memoryPlateHandler[arrayElement].snappedObject.GetComponentInChildren<Light2D>();
+            StartCoroutine(ChangeLightIntensity(light2D, 0.8f, maxIntensity, clip.length));
+
             audioSource.clip = clip;
             audioSource.Play();
             yield return new WaitForSeconds(clip.length);
+            arrayElement++;
+        }
+        
+        memoryPlateHandler[0].SelectNextLevel();
+    }
+    
+    private IEnumerator ChangeLightIntensity(Light2D light, float originalIntensity, float maxIntensity, float duration)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration / 2)
+        {
+            light.intensity = Mathf.Lerp(originalIntensity, maxIntensity, elapsedTime / (duration / 2));
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
-        memoryPlateHandler[0].SelectNextLevel();
+        while (elapsedTime < duration)
+        {
+            light.intensity = Mathf.Lerp(maxIntensity, originalIntensity, (elapsedTime - duration / 2) / (duration / 2));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        light.intensity = originalIntensity;
     }
 }
