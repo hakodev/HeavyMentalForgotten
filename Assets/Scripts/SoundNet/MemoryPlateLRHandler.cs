@@ -19,6 +19,9 @@ public class MemoryPlateLRHandler : MonoBehaviour
     private List <GameObject> memoryPlateFilledPlates;
     [SerializeField] private int memoryPlateFillRequired;
     
+    [Header("Fade Settings")]
+    [SerializeField] private float fadeSpeed;
+    
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -44,6 +47,8 @@ public class MemoryPlateLRHandler : MonoBehaviour
                 lineRenderer.SetPosition(1, memoryPlateFilledPlates[1].transform.position);
                 lineRenderer.SetPosition(2, memoryPlateFilledPlates[2].transform.position);
                 lineRenderer.SetPosition(3, memoryPlateFilledPlates[0].transform.position);
+                
+                StartCoroutine(Fadein(lineRenderer, fadeSpeed));
             }
 
             foreach (var pair in linePointsPairs)
@@ -62,9 +67,41 @@ public class MemoryPlateLRHandler : MonoBehaviour
                     float pointsCalculate = i / (float)(numPoints - 1);
                     lr.SetPosition(i, CalculateBezierPoint(pointsCalculate, p0, p1, p2));
                 }
+                StartCoroutine(Fadein(lr, fadeSpeed));
+
             }
         }
     }
+    
+    private IEnumerator Fadein(LineRenderer lineRenderer, float duration)
+    {
+        Gradient gradient = lineRenderer.colorGradient;
+        GradientAlphaKey[] alphaKeys = gradient.alphaKeys;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            float newAlpha = t / duration;
+
+            for (int i = 0; i < alphaKeys.Length; i++)
+            {
+                alphaKeys[i].alpha = newAlpha;
+            }
+
+            gradient.alphaKeys = alphaKeys;
+
+            lineRenderer.colorGradient = gradient;
+
+            yield return null;
+        }
+
+        for (int i = 0; i < alphaKeys.Length; i++)
+        {
+            alphaKeys[i].alpha = 1f;
+        }
+        gradient.alphaKeys = alphaKeys;
+        lineRenderer.colorGradient = gradient;
+    }
+
     
     Vector3 CalculateBezierPoint(float points, Vector3 pointZero, Vector3 pointOne, Vector3 pointTwo)
     {
