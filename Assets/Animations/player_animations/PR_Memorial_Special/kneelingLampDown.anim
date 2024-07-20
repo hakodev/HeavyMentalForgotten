@@ -355,7 +355,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: -95.955}
+        value: {x: 0, y: 0, z: -15.288}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -788,7 +788,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 12.32, y: -1.786, z: -0.25}
+        value: {x: 12.81, y: -2, z: -0.25}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4315,7 +4315,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 12.32
+        value: 12.81
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4336,7 +4336,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1.786
+        value: -2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -6121,7 +6121,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -95.955
+        value: -15.288
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -9562,7 +9562,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
+    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9574,7 +9574,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
+    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9586,7 +9586,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
+    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9778,7 +9778,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
+    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9790,7 +9790,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
+    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -9802,7 +9802,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Lamp/arm_lamp/arm_lamp_1/hand_lamp/lamp
+    path: Spine/Spine2/Shoulder L/Arm L /Arm L 2
     classID: 4
     script: {fileID: 0}
     flags: 0
