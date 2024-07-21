@@ -29,7 +29,6 @@ public class NetRegeneratorHandler : MonoBehaviour
     {
         if (obj != null)
         {
-            Debug.Log("activate");
             StartCoroutine(EnableAfterDelay(obj));
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
 {
     [Header("References")]
-    private ConnectedSoundOrbHandler connectedSoundOrbHandler;
+    [SerializeField] private DisconnectedSoundOrbHandler disconnectedSoundOrbHandler;
     //public DisconnectedSoundOrbHandler disconnectedSoundOrbHandler;
 
     [SerializeField]
@@ -18,7 +18,7 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
 
     private void Awake()
     {
-        connectedSoundOrbHandler = GetComponent<ConnectedSoundOrbHandler>();
+        disconnectedSoundOrbHandler = GetComponent<DisconnectedSoundOrbHandler>();
     }
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (disconnectedSoundOrbHandler.isHovering && activatedDisconnectedHover == false)
+        if (disconnectedSoundOrbHandler.isHovering && activatedDisconnectedHover == false)
         {
             objectToActivate.SetActive(true);
             activatedDisconnectedHover = true;
@@ -39,7 +39,7 @@ public class hoverOverDisconnectedOrbTriggers : MonoBehaviour
         else if (objectToActivate.activeInHierarchy == false && activatedDisconnectedHover == true)
         {
             activatedDisconnectedHover = false;
-        }*/
+        }
     }
 }
 
