@@ -12,6 +12,7 @@ public class MemoryPlateEndAnimationHandler : MonoBehaviour
     private bool hasPlayedEndAnimation = false;
     [SerializeField] MemoryPlateHandler[] memoryPlateHandler;
     private List<DisconnectedSoundOrbHandler> disconnectedSoundOrbHandlers = new List<DisconnectedSoundOrbHandler>();
+    public List<Light2D> lights = new List<Light2D>();
 
     [Header("Glow Effect")]
     [SerializeField] private float maxIntensity;
@@ -24,6 +25,18 @@ public class MemoryPlateEndAnimationHandler : MonoBehaviour
 
     void Update()
     {
+        foreach (var memoryPlate in memoryPlateHandler)
+        {
+            if (memoryPlate.isSnapped)
+            {
+                Light2D light = memoryPlate.snappedObject.GetComponentInChildren<Light2D>();
+                if (light != null && !lights.Contains(light))
+                {
+                    lights.Add(light);
+                }
+            }
+        }
+        
         if(memoryPlateHandler.Length == MemoryPlateHandler.filledPlates.Count)
         {
             PlayEndAnimation();
@@ -72,15 +85,18 @@ public class MemoryPlateEndAnimationHandler : MonoBehaviour
         int arrayElement = 0;
         foreach (AudioClip clip in audioClips)
         {
-            light2D = memoryPlateHandler[arrayElement].snappedObject.GetComponentInChildren<Light2D>();
-            StartCoroutine(ChangeLightIntensity(light2D, 0.8f, maxIntensity, clip.length));
+            if (arrayElement < lights.Count)
+            {
+                Light2D light = lights[arrayElement];
+                StartCoroutine(ChangeLightIntensity(light, 0.8f, maxIntensity, clip.length));
 
-            audioSource.clip = clip;
-            audioSource.Play();
-            yield return new WaitForSeconds(clip.length);
-            arrayElement++;
+                audioSource.clip = clip;
+                audioSource.Play();
+                yield return new WaitForSeconds(clip.length);
+                arrayElement++;
+            }
         }
-        
+
         memoryPlateHandler[0].SelectNextLevel();
     }
     
