@@ -19,6 +19,7 @@ public class AnimationOrphanageHandler : MonoBehaviour
 
     [Header("Level Specific:")]
     [SerializeField] private bool isSneakingInsteadWalking;
+    [SerializeField] private bool lighterON;
 
     [Header("Assign references:")]
     [SerializeField] private PlayerMovement playerMovementScript;
@@ -29,7 +30,9 @@ public class AnimationOrphanageHandler : MonoBehaviour
     private const string PLAYER_IS_WALKING = "isWalking";
     private const string PLAYER_IS_RUNNING = "isRunning";
     private const string PLAYER_IS_SNEAKING = "isSneaking";
+    private const string PLAYER_IN_SNEAKMODE = "inSneakMode";
     private const string PLAYER_VELOCITY = "velocity";
+
 
     private const string IS_TAKING_DOCS = "isTakingDocs";
     private const string DOCS_TAKEN = "DocsTaken";
@@ -37,6 +40,7 @@ public class AnimationOrphanageHandler : MonoBehaviour
 
     private const string LIGHTER_USE_TIME = "LighterUseTime";
     private const string LIGHTER_ON = "LighterON";
+    private const string LIGHTER_ACTIVE = "LighterActive";
 
     private const string BURN_DOCS_TIME = "BurnDocsTime";
     private const string DOCS_BURNED = "DocsBurned";
@@ -79,15 +83,20 @@ public class AnimationOrphanageHandler : MonoBehaviour
         //player
         HorizontalAxis = Mathf.Abs(playerMovementScript.HorizontalAxis);
         runMode = GameManager.Ins.RunMode;
-
-        //lighter
-        lighterEmitsSpark = lighterActivation.isEmmittingSpark;
-        lighterOnFire = lighterActivation.onFire;
-        burnedPaper = lighterActivation.burnedPaper;
-
-        //docs
-        docsHoldedByPlayer = itemBehaviour.holdedByPlayer;
-        docsWereAlreadyCollected = itemBehaviour.wasAlreadyCollected;
+        
+        if (lighterActivation !=null)
+        {
+            //lighter
+            lighterEmitsSpark = lighterActivation.isEmmittingSpark;
+            lighterOnFire = lighterActivation.onFire;
+            burnedPaper = lighterActivation.burnedPaper;
+        }      
+        if (itemBehaviour != null)
+        {
+            //docs
+            docsHoldedByPlayer = itemBehaviour.holdedByPlayer;
+            docsWereAlreadyCollected = itemBehaviour.wasAlreadyCollected;
+        }     
     }
 
     private void SetDocsAnimationValues()
@@ -108,38 +117,54 @@ public class AnimationOrphanageHandler : MonoBehaviour
     }
     private void SetLighterAnimationValues()
     {
+        
         if (lighterOnFire
             || lighterEmitsSpark   //to be tested if it looks nice
             )
         {
             lighterUseTime += Time.deltaTime;
-            animator.SetBool(LIGHTER_ON, true);
+            animator.SetBool(LIGHTER_ACTIVE, true);
         }
         else
         {
             lighterUseTime = 0;
+            animator.SetBool(LIGHTER_ACTIVE, false);
         }
         animator.SetFloat(LIGHTER_USE_TIME, lighterUseTime);
+        animator.SetBool(LIGHTER_ON, lighterON);
+
     }
 
     private void SetMovementAnimationValues()
     {
         //Movement
-        if (HorizontalAxis < 0)
+        if (HorizontalAxis > 0)
         {
             if (runMode)
             {
                 animator.SetBool(PLAYER_IS_RUNNING, true);
+                animator.SetBool(PLAYER_IS_SNEAKING, false);
+                animator.SetBool(PLAYER_IS_WALKING, false);
             }
             else
             {
+
                 if (isSneakingInsteadWalking)
                 {
+                    animator.SetBool(PLAYER_IN_SNEAKMODE, true);
+
                     animator.SetBool(PLAYER_IS_SNEAKING, true);
+                    animator.SetBool(PLAYER_IS_WALKING, false);
+                    animator.SetBool(PLAYER_IS_RUNNING, false);
                 }
                 else
                 {
+                    animator.SetBool(PLAYER_IN_SNEAKMODE, false);
+
+
                     animator.SetBool(PLAYER_IS_WALKING, true);
+                    animator.SetBool(PLAYER_IS_SNEAKING, false);
+                    animator.SetBool(PLAYER_IS_RUNNING, false);
                 }
             }
         }

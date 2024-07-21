@@ -8,7 +8,7 @@ public class MemoryPlateHandler : MonoBehaviour
     [SerializeField] private float snapSpeed = 5f;
     private SpriteRenderer spriteRenderer;
     private float time = 1.5f;
-    private bool isSnapped = false;
+    public bool isSnapped = false;
     public static List<GameObject> filledPlates = new();
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioA;
