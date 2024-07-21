@@ -30,7 +30,9 @@ public class AnimationOrphanageHandler : MonoBehaviour
     private const string PLAYER_IS_WALKING = "isWalking";
     private const string PLAYER_IS_RUNNING = "isRunning";
     private const string PLAYER_IS_SNEAKING = "isSneaking";
+    private const string PLAYER_IN_SNEAKMODE = "inSneakMode";
     private const string PLAYER_VELOCITY = "velocity";
+
 
     private const string IS_TAKING_DOCS = "isTakingDocs";
     private const string DOCS_TAKEN = "DocsTaken";
@@ -141,7 +143,6 @@ public class AnimationOrphanageHandler : MonoBehaviour
             if (runMode)
             {
                 animator.SetBool(PLAYER_IS_RUNNING, true);
-
                 animator.SetBool(PLAYER_IS_SNEAKING, false);
                 animator.SetBool(PLAYER_IS_WALKING, false);
             }
@@ -150,13 +151,17 @@ public class AnimationOrphanageHandler : MonoBehaviour
 
                 if (isSneakingInsteadWalking)
                 {
-                    animator.SetBool(PLAYER_IS_SNEAKING, true);
+                    animator.SetBool(PLAYER_IN_SNEAKMODE, true);
 
+                    animator.SetBool(PLAYER_IS_SNEAKING, true);
                     animator.SetBool(PLAYER_IS_WALKING, false);
                     animator.SetBool(PLAYER_IS_RUNNING, false);
                 }
                 else
                 {
+                    animator.SetBool(PLAYER_IN_SNEAKMODE, false);
+
+
                     animator.SetBool(PLAYER_IS_WALKING, true);
                     animator.SetBool(PLAYER_IS_SNEAKING, false);
                     animator.SetBool(PLAYER_IS_RUNNING, false);
