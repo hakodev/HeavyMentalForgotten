@@ -109,36 +109,27 @@ public class MemoryPlateHandler : MonoBehaviour
             Debug.Log("Selecting next level.");
             if(LayerAOrbIsMajority()) {
                 //result A
-                audioSource.PlayOneShot(audioA, 1f);
-                StartCoroutine(PlayAudio(audioA));
-                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
+                StartCoroutine(PlayAudio(audioA, GameManager.Ins.NextLevelLayerA));
             } else if(LayerBOrbIsMajority()) {
-                StartCoroutine(PlayAudio(audioB));
-                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
+                StartCoroutine(PlayAudio(audioB, GameManager.Ins.NextLevelLayerB));
             } else if(LayerCOrbIsMajority()) {
-                StartCoroutine(PlayAudio(audioC));
-                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
+                StartCoroutine(PlayAudio(audioC, GameManager.Ins.NextLevelLayerC));
             } else if(LayerDOrbIsMajority()) {
-                StartCoroutine(PlayAudio(audioD));
-                GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
+                StartCoroutine(PlayAudio(audioD, GameManager.Ins.NextLevelLayerD));
             } else {
                 //Stay in the current layer and load next scene
                 switch(GameManager.Ins.CurrentMemoryLayer) {
                     case MemoryLayers.A:
-                        audioSource.PlayOneShot(audioA, 1f);
-                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerA);
+                        StartCoroutine(PlayAudio(audioA, GameManager.Ins.NextLevelLayerA));
                         break;
                     case MemoryLayers.B:
-                        audioSource.PlayOneShot(audioB, 1f);
-                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerB);
+                        StartCoroutine(PlayAudio(audioB, GameManager.Ins.NextLevelLayerB));
                         break;
                     case MemoryLayers.C:
-                        audioSource.PlayOneShot(audioC, 1f);
-                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerC);
+                        StartCoroutine(PlayAudio(audioC, GameManager.Ins.NextLevelLayerC));
                         break;
                     case MemoryLayers.D:
-                        audioSource.PlayOneShot(audioD, 1f);
-                        GameManager.Ins.LoadNextLevel(GameManager.Ins.NextLevelLayerD);
+                        StartCoroutine(PlayAudio(audioD, GameManager.Ins.NextLevelLayerD));
                         break;
                 }
             }
@@ -200,9 +191,10 @@ public class MemoryPlateHandler : MonoBehaviour
         }
     }
     
-    private IEnumerator PlayAudio(AudioClip audioClip)
+    private IEnumerator PlayAudio(AudioClip audioClip, Levels nextLevel)
     {
         audioSource.PlayOneShot(audioClip, 1f);
         yield return new WaitForSeconds(audioClip.length);
+        GameManager.Ins.LoadNextLevel(nextLevel);
     }
 }

@@ -33,8 +33,8 @@ public class LighterActivation : MonoBehaviour
     [Header("STORY RELEVANT:")]
     [Header("Bools need to be false")]
     private bool wentOutside;
-    [SerializeField]
-    private bool burnedPaper;
+    
+    public bool burnedPaper { get; private set; }
     [Header("Put the system in here which is responsible for burning the paper etc")]
     public GameObject DialogueEventListForBurningPaper;
 

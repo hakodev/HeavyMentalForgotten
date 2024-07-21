@@ -10,10 +10,8 @@ public class ItemBehaviour : MonoBehaviour
     public GameObject itemAtPlayer;
     public GameObject itemAtEnd;
 
-    [SerializeField]
-    private bool wasAlreadyCollected;
-    [SerializeField]
-    private bool holdedByPlayer;
+    public bool wasAlreadyCollected { get; private set; }
+    public bool holdedByPlayer { get; private set; }
 
     // Start is called before the first frame update
     void Start()
