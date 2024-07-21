@@ -35028,6 +35028,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
+      propertyPath: subtitles
+      value: 1234546789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: fadeOutTime
       value: 3
       objectReference: {fileID: 0}

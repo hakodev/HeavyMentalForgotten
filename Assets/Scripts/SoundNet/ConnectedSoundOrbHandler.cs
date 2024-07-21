@@ -79,6 +79,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         
         particleSystemm.gameObject.SetActive(false);
         mouseParticleSystem.gameObject.SetActive(false);
+        subtitleText.text = "";
     }
 
     void Update()
@@ -455,10 +456,45 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
     private IEnumerator Subtitles()
     {
         float audioLength = connectedAudioClip.length;
+        float elapsedTime = 0f;
+
+        Color textColor = subtitleText.color;
+        textColor.a = 0f;
+        subtitleText.color = textColor;
+
         subtitleText.enabled = true;
         subtitleText.text = subtitles;
+
+        while (elapsedTime < audioLength)
+        {
+            float newAlpha = elapsedTime / audioLength;
+            textColor.a = newAlpha;
+            subtitleText.color = textColor;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        textColor.a = 1f;
+        subtitleText.color = textColor;
+
         yield return new WaitForSeconds(audioLength);
-        subtitleText.enabled = false;
+
+        elapsedTime = 0f;
+        while (elapsedTime < audioLength)
+        {
+            float newAlpha = 1f - (elapsedTime / audioLength);
+            textColor.a = newAlpha;
+            subtitleText.color = textColor;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        textColor.a = 0f;
+        subtitleText.color = textColor;
+
+        subtitleText.text = "";
     }
     
 }
