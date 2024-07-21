@@ -38,6 +38,12 @@ public class LighterActivation : MonoBehaviour
     [Header("Put the system in here which is responsible for burning the paper etc")]
     public GameObject DialogueEventListForBurningPaper;
 
+    [Header("Additional light effects")]
+    [SerializeField] private Light2D hallwayDarkness;
+    [SerializeField] private Light2D flickeringLight1;
+    [SerializeField] private Light2D flickeringLight2;
+
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -104,6 +110,7 @@ public class LighterActivation : MonoBehaviour
             flameParticle.Stop();
         }
 
+        LightEffects();
         StoryEvents();
     }
 
@@ -112,6 +119,24 @@ public class LighterActivation : MonoBehaviour
         wentOutside = true;
     }
 
+    private void LightEffects()
+    {
+        if (onFire)
+        {
+            flickeringLight1.gameObject.SetActive(true);
+            flickeringLight2.gameObject.SetActive(true);
+            hallwayDarkness.gameObject.SetActive(false);
+        } 
+        else
+        {
+            flickeringLight1.gameObject.SetActive(false);
+            flickeringLight2.gameObject.SetActive(false);
+            hallwayDarkness.gameObject.SetActive(true);
+
+                 
+        }
+        
+    }
 
     //Story related
     private void StoryEvents()
