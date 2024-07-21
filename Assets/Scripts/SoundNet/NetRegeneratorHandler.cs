@@ -27,7 +27,7 @@ public class NetRegeneratorHandler : MonoBehaviour
     
     public void ActivateAfterDelay(GameObject obj)
     {
-        if (obj != null)
+        if (obj != null && !obj.activeSelf)
         {
             StartCoroutine(EnableAfterDelay(obj));
         }
