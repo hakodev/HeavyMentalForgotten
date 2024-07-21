@@ -92,11 +92,12 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (isOutsideOfCircle && isHovering)
         {
-            spriteRenderer.material.color = outsideHoverColor;
+            Debug.Log("Outside of circle");
+            spriteRenderer.color = outsideHoverColor;
         }
         else
         {
-            spriteRenderer.material.color = connectedStartColor;
+            spriteRenderer.color = connectedStartColor;
         }
         
         //Follow Mouse
@@ -156,17 +157,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
                 }
                 lineRendererGameObject.Clear();
 
-                // stopPlayingAudio = true;
                 Destroy(this.gameObject);
-
-                // if (stopPlayingAudio)
-                // {
-                //     Destroy(this.gameObject);
-                // }
-                // else
-                // {
-                //     stopPlayingAudio = true;
-                // }
             }
         }
         
@@ -234,7 +225,6 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
         
         if (isOutsideOfCircle)
         {
-            Debug.Log("Outside of circle");
             StartCoroutine(Subtitles());
         }
         
