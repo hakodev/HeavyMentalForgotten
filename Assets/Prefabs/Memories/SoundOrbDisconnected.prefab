@@ -288,10 +288,10 @@ MonoBehaviour:
   speedOfMovement: 0.008
   isPlacedOnSnap: 0
   notConnectedAudio: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
-  startColor: {r: 1, g: 0.827451, b: 0.05882353, a: 1}
-  endColor: {r: 1, g: 0.64832205, b: 0, a: 1}
-  fadeOutTime: 2
-  isHovering: 0
+  startColor: {r: 1, g: 0.72633815, b: 0.60062885, a: 0.57254905}
+  endColor: {r: 1, g: 0.597418, b: 0.25471687, a: 0.5529412}
+  fadeOutTime: 2.09
+  isHovering: 1
   ConnectedColorTransitionSpeed: 5
   followMouse: 0
   subtitleText: {fileID: 0}
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.61
-  m_Color: {r: 1, g: 0.758548, b: 0.42830187, a: 1}
+  m_Color: {r: 1, g: 0.758548, b: 0.42830187, a: 0.67058825}
   m_Intensity: 0.8
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
