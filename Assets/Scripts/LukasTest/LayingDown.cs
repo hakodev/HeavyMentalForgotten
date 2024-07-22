@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
+using UnityEngine.Events;
+
 
 public class LayingDown : MonoBehaviour
 {
@@ -29,7 +32,8 @@ public class LayingDown : MonoBehaviour
     public float timeSinceAnim;
     public bool animationFinished = false;
 
-
+    public UnityEvent ProgressionEvent;
+    private bool eventPlayed;
 
 
 
@@ -79,6 +83,12 @@ public class LayingDown : MonoBehaviour
     {
         if (animationFinished)
         {
+            if (!eventPlayed)
+            {
+                ProgressionEvent.Invoke();
+                eventPlayed = true;
+            }
+
             timeSinceAnim += Time.deltaTime;
             if (timeSinceAnim >= timeAfterAnimToEnd)
             {
