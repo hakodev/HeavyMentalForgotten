@@ -32617,17 +32617,21 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.2036345
       objectReference: {fileID: 0}
+    - target: {fileID: 3538567512766409870, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4204864331020653551, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.65
+      value: 16.4261
       objectReference: {fileID: 0}
     - target: {fileID: 4204864331020653551, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.55
+      value: -3.098
       objectReference: {fileID: 0}
     - target: {fileID: 4204864331020653551, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.592
       objectReference: {fileID: 0}
     - target: {fileID: 4204864331020653551, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32665,6 +32669,26 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1718521559}
+    - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: endColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: endColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: flickerSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
+      propertyPath: pressColorChangeSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9032785215626964695, guid: 9146f3521c200bd48b0f665a6a13acfe, type: 3}
       propertyPath: ProgressionEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -33545,7 +33569,7 @@ Transform:
   m_GameObject: {fileID: 1574561431}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.69, y: -10.79, z: -5.36}
+  m_LocalPosition: {x: 16.69, y: -10.79, z: -5.38}
   m_LocalScale: {x: 0.45199, y: 0.45199, z: 0.45199}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33558,7 +33582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574561431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 995af8337e0b58d4ba52b5afac6cbf72, type: 3}
   m_Name: 
@@ -33603,7 +33627,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 261894695, guid: 22c51b985f80aae44a58c17cad465e57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

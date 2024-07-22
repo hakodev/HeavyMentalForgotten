@@ -36,6 +36,19 @@ public class LayingDown : MonoBehaviour
     private bool eventPlayed;
 
 
+    [Header("Sprite Flickering: ")]
+
+    private SpriteRenderer spriteRenderer;
+    private Color startColor;
+    [SerializeField]
+    private Color endColor;
+
+    [SerializeField]
+    private float flickerSpeed;
+    [SerializeField]
+    private float pressColorChangeSpeed;
+
+
 
     //private const string PLAYER_IS_WALKING = "isWalking";
 
@@ -43,13 +56,14 @@ public class LayingDown : MonoBehaviour
     private void Awake()
     {
         //animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -77,6 +91,20 @@ public class LayingDown : MonoBehaviour
             }
         }
         CheckForLevelProgression();
+        SpriteFlickerer();
+    }
+
+    private void SpriteFlickerer()
+    {
+
+        float time = Mathf.PingPong(Time.time, flickerSpeed);
+
+        if (timeMousePressed > 0)
+        {
+            time += (timeMousePressed * pressColorChangeSpeed);
+        }
+        Color newColor = Color.Lerp(startColor, endColor, time);
+        spriteRenderer.color = newColor;
     }
 
     private void CheckForLevelProgression()
