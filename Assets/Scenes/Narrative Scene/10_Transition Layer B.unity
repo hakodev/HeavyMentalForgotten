@@ -1567,6 +1567,7 @@ GameObject:
   - component: {fileID: 1115032116}
   - component: {fileID: 1115032115}
   - component: {fileID: 1115032114}
+  - component: {fileID: 1115032119}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1713,6 +1714,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115032119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115032113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3f438338bcd9f4da61be350a8f5027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222118030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,7 +1757,7 @@ PlayableDirector:
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
-  m_InitialTime: 50
+  m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 1190784798598247895, guid: 076ee7e6527c4e940b110dd90f0a125e, type: 2}
     value: {fileID: 1768911920}
@@ -2619,7 +2632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088037815512511159, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 16777215
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
       propertyPath: m_Pivot.x
@@ -2705,7 +2718,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: forgive
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3923592869378583381, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
