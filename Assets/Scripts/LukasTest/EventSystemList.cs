@@ -104,6 +104,7 @@ public class EventSystemList : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D other)
     {
+        Debug.Log("TRIGGERED "+ gameObject.name);
         if (triggerOnPlayerEnter == true && currentEvent == -1)
         {
             if (other.gameObject.CompareTag("Player"))
