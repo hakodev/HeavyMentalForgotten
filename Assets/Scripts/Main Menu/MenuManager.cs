@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour {
 
     private void Start() {
         GameManager.Ins.SetFadeDuration(this.fadeDuration);
-        playButton.Select(); // So play button is highlighted for arrow key navigation
+        //playButton.Select(); // So play button is highlighted for arrow key navigation
     }
 
     public void PlayButton() {
@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour {
             howToPlayGroup.DOFade(1f, fadeDuration);
         });
         howToPlayGroup.interactable = true;
-        howToPlayBackButton.Select(); // For enter key interaction
+        //howToPlayBackButton.Select(); // For enter key interaction
     }
 
     public void SettingsButton() {
@@ -48,7 +48,7 @@ public class MenuManager : MonoBehaviour {
             settingsGroup.DOFade(1f, fadeDuration);
         });
         settingsGroup.interactable = true;
-        settingsBackButton.Select(); // Ditto
+        //settingsBackButton.Select(); // Ditto
     }
 
     public void CreditsButton() {
@@ -65,7 +65,7 @@ public class MenuManager : MonoBehaviour {
             mainMenuGroup.DOFade(1f, fadeDuration);
         });
         mainMenuGroup.interactable = true;
-        playButton.Select();
+        //playButton.Select();
     }
 
     public void BackToMenuFromSettings() {
@@ -77,7 +77,7 @@ public class MenuManager : MonoBehaviour {
             mainMenuGroup.DOFade(1f, fadeDuration);
         });
         mainMenuGroup.interactable = true;
-        playButton.Select();
+        //playButton.Select();
     }
 
     public void QuitButton() {
