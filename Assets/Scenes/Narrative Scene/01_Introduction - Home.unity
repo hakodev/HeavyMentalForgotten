@@ -240,7 +240,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: memory
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3923592869378583381, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7700058469147228158, guid: 146deb7ad8de2be47a8f9a9a5015c137, type: 3}
@@ -2115,6 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee72ffd481fb6734a99672e5bf2fc505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimalTimeBeforeProgression: 0
 --- !u!1 &1869052500
 GameObject:
   m_ObjectHideFlags: 0
