@@ -37,10 +37,23 @@ public class AudioTriggerPrefab : MonoBehaviour
 
         foreach (Collider2D collider in colliders2D)
         {
-            if (collider.gameObject.CompareTag("SoundOrbDisconnected"))
+            if (collider.gameObject.CompareTag("SoundOrbDisconnected") || collider.gameObject.CompareTag("SoundOrbConnected"))
             {
-                MemoryLayers memoryLayer = collider.gameObject.GetComponent<DisconnectedSoundOrbHandler>().MemoryLayer;
-                bool hovering = collider.gameObject.GetComponent<DisconnectedSoundOrbHandler>().isHovering;
+                MemoryLayers memoryLayer;
+                bool hovering;
+
+                if (collider.gameObject.CompareTag("SoundOrbDisconnected"))
+                {
+                    var handler = collider.gameObject.GetComponent<DisconnectedSoundOrbHandler>();
+                    memoryLayer = handler.MemoryLayer;
+                    hovering = handler.isHovering;
+                }
+                else //SoundOrbConnected
+                {
+                    var handler = collider.gameObject.GetComponent<ConnectedSoundOrbHandler>();
+                    memoryLayer = handler.MemoryLayer;
+                    hovering = handler.isHovering;
+                }
                 
                 if (audioSource != null && !audioSource.isPlaying && memoryLayer == MemoryLayers.C && hovering)
                 {
@@ -56,10 +69,6 @@ public class AudioTriggerPrefab : MonoBehaviour
                 break;
             }
             
-            if (collider.gameObject.CompareTag("SoundOrbConnected"))
-            {
-                Debug.Log("SoundOrbConnected");
-            }
         }
     }
     
