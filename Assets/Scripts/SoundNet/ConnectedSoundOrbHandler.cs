@@ -93,7 +93,7 @@ public class ConnectedSoundOrbHandler : MonoBehaviour
 
         if (isOutsideOfCircle && isHovering)
         {
-            Debug.Log("Outside of circle");
+            // Debug.Log("Outside of circle");
             spriteRenderer.color = outsideHoverColor;
         }
         else

@@ -40,14 +40,14 @@ public class MemoryPlateHandler : MonoBehaviour
 
     private void Update()
     {
-        if(audioSource.isPlaying)
-        {
-            Debug.Log("AudioSource is currently playing.");
-        }
-        else
-        {
-            Debug.Log("AudioSource is not playing any audio.");
-        }
+        // if(audioSource.isPlaying)
+        // {
+        //     Debug.Log("AudioSource is currently playing.");
+        // }
+        // else
+        // {
+        //     Debug.Log("AudioSource is not playing any audio.");
+        // }
         
         if (snappedObject != null)
         {

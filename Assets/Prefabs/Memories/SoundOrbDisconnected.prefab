@@ -287,6 +287,7 @@ MonoBehaviour:
   duration: 40
   speedOfMovement: 0.008
   isPlacedOnSnap: 0
+  zPosition: -2
   notConnectedAudio: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
   startColor: {r: 1, g: 0.72633815, b: 0.60062885, a: 0.57254905}
   endColor: {r: 1, g: 0.597418, b: 0.25471687, a: 0.5529412}

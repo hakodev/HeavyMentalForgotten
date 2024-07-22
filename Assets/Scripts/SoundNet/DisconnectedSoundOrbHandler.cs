@@ -19,7 +19,8 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
     private Vector3 targetPosition;
     private SpriteRenderer spriteRenderer;
     public bool isPlacedOnSnap = false;
-
+    [SerializeField] private float zPosition;
+    
     [Header("Audio Source")]
     private AudioSource audioSource;
     public AudioClip notConnectedAudio;
@@ -48,6 +49,10 @@ public class DisconnectedSoundOrbHandler : MonoBehaviour
 
     private void Update()
     {
+        Vector3 newPosition = transform.position;
+        newPosition.z = zPosition;
+        transform.position = newPosition;
+        
         //Reset fade effect timer
         if (followMouse)
         {
