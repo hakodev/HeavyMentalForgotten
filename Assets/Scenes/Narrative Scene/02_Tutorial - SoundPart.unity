@@ -1206,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 13c99c1c72ccb1846bb2535c20dcd155, type: 3}
+      objectReference: {fileID: 8300000, guid: a127560b0235adb49ab2c1463a799e65, type: 3}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.b
       value: 0
@@ -2278,7 +2278,7 @@ PrefabInstance:
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: connectedAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7915e1decf63d234a86e2b9200d89bfc, type: 3}
+      objectReference: {fileID: 8300000, guid: 0b2db7ba48b06194293f39d78897a360, type: 3}
     - target: {fileID: 1183675890503930466, guid: abc8a514863c5494891c50091e529ae9, type: 3}
       propertyPath: outsideHoverColor.b
       value: 0
