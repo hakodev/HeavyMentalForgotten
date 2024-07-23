@@ -13,7 +13,7 @@ public class AudioTriggerPrefab : MonoBehaviour
     private Light2D light2d;
     private AudioSource audioSource;
     private Collider2D[] colliders2D;
-
+    
     [Header("SquareSettings")] 
     [SerializeField] private Vector3 squareDimensions;
     
@@ -136,7 +136,13 @@ public class AudioTriggerPrefab : MonoBehaviour
     private IEnumerator DisableScript(float time)
     {
         yield return new WaitForSeconds(time);
-        Levels nextLevel = GameManager.Ins.NextLevelLayerC;
+        
+        if (connectedDisconnetedTrigger)
+        {
+            Levels nextLevel = GameManager.Ins.NextLevelLayerC;
+            GameManager.Ins.LoadNextLevel(nextLevel);
+        }
+        
         this.enabled = false;
     }
     
