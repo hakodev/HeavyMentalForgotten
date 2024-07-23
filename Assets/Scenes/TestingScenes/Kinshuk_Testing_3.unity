@@ -41243,6 +41243,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2349817028312986186, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
+      propertyPath: lightSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349817028312986186, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
       propertyPath: maxIntensity
       value: 10
       objectReference: {fileID: 0}
@@ -41251,12 +41255,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 3fd6ffbfb3af0d241aef22a1888ee611, type: 3}
     - target: {fileID: 2349817028312986186, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
+      propertyPath: disableScriptTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349817028312986186, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
       propertyPath: audioClipConnectedOrb
       value: 
       objectReference: {fileID: 8300000, guid: d730d1c3f3cb41c4d881480cdd276825, type: 3}
     - target: {fileID: 2349817028312986186, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
       propertyPath: connectedDisconnetedTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2631346440467365088, guid: c6eba66af2e94f04abd2b398bbb70eeb, type: 3}
       propertyPath: m_Name
